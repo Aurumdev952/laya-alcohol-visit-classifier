@@ -1,0 +1,35 @@
+{
+  "support": {
+    "description": "Extract a support ticket's issue type, time pressure, and explicit refund request.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "issue": {"type": "string", "enum": ["billing", "technical", "delivery"], "description": "What is the main issue: a charge/payment, product or app malfunction, or shipping/delivery?"},
+        "urgency": {"type": "integer", "minimum": 0, "maximum": 2, "description": "How urgent is the request? 0 = routine with no deadline, 1 = time-sensitive within days, 2 = blocked now or needed today."},
+        "refund_requested": {"type": "boolean", "description": "Does the customer explicitly ask for money back or a refund?"}
+      }
+    }
+  },
+  "education": {
+    "description": "Extract the study year, attendance mode, and explicit financial-aid request from a student message.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "study_year": {"type": "integer", "minimum": 1, "maximum": 3, "description": "Which year of study is the student in: first, second, or third?"},
+        "mode": {"type": "string", "enum": ["campus", "online", "hybrid"], "description": "How does the student attend: entirely on campus, entirely online, or a mix of both?"},
+        "aid_requested": {"type": "boolean", "description": "Does the student explicitly ask for a scholarship, grant, bursary, or financial aid?"}
+      }
+    }
+  },
+  "mining": {
+    "description": "Extract equipment, operating state, and explicit replacement-part request from a mine maintenance note.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "asset": {"type": "string", "enum": ["conveyor", "haul_truck", "pump"], "description": "Which equipment is the report about: conveyor belt system, haul truck, or pump?"},
+        "downtime": {"type": "integer", "minimum": 0, "maximum": 2, "description": "What is the equipment status? 0 = operating normally, 1 = still running but degraded, 2 = stopped or unable to operate."},
+        "replacement_requested": {"type": "boolean", "description": "Does the report explicitly request a replacement part or component?"}
+      }
+    }
+  }
+}

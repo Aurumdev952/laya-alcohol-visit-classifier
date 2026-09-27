@@ -1,0 +1,50 @@
+{"id":"ag-c01","label":"crops","text":"Why are the maize leaves turning yellow in the north field?"}
+{"id":"ag-c02","label":"crops","text":"Can an agronomist inspect the spots on the tomato plants?"}
+{"id":"ag-c03","label":"crops","text":"Which nutrient test should we request for this low-yield plot?"}
+{"id":"ag-c04","label":"crops","text":"Are the insects on the bean leaves damaging the crop?"}
+{"id":"ag-c05","label":"crops","text":"Can we review the soil sample results before planting?"}
+{"id":"ag-c06","label":"crops","text":"Why did germination fail in several rows of seed?"}
+{"id":"ag-c07","label":"crops","text":"Could someone assess the fungal growth on the wheat?"}
+{"id":"ag-c08","label":"crops","text":"What planting density is planned for the next field?"}
+{"id":"ag-c09","label":"crops","text":"Can the field team check whether pests are spreading to the orchard?"}
+{"id":"ag-c10","label":"crops","text":"Is the crop ready for its scheduled fertilizer application?"}
+{"id":"ag-i01","label":"irrigation","text":"Can the watering schedule be moved to early morning?"}
+{"id":"ag-i02","label":"irrigation","text":"The drip line has no pressure at the far end; who checks it?"}
+{"id":"ag-i03","label":"irrigation","text":"Why has the irrigation pump stopped supplying the south field?"}
+{"id":"ag-i04","label":"irrigation","text":"Can we reduce water delivery to the plots after yesterday's rain?"}
+{"id":"ag-i05","label":"irrigation","text":"Where is the leak in the main water pipe?"}
+{"id":"ag-i06","label":"irrigation","text":"Who adjusts the sprinkler run time for the new planting?"}
+{"id":"ag-i07","label":"irrigation","text":"Can the water meter reading be checked before the next cycle?"}
+{"id":"ag-i08","label":"irrigation","text":"The canal gate is stuck closed; who restores the flow?"}
+{"id":"ag-i09","label":"irrigation","text":"How do we schedule water for the orchard during the dry week?"}
+{"id":"ag-i10","label":"irrigation","text":"Can someone inspect the blocked drip emitters in row seven?"}
+{"id":"ag-m01","label":"machinery","text":"The tractor clutch slips under load; can a mechanic inspect it?"}
+{"id":"ag-m02","label":"machinery","text":"When should the combine receive its next service?"}
+{"id":"ag-m03","label":"machinery","text":"Can we replace the broken blade on the mower?"}
+{"id":"ag-m04","label":"machinery","text":"The seed drill will not start; who repairs it?"}
+{"id":"ag-m05","label":"machinery","text":"Where can I log the harvester's engine fault?"}
+{"id":"ag-m06","label":"machinery","text":"Can the sprayer boom be calibrated after its repair?"}
+{"id":"ag-m07","label":"machinery","text":"Who maintains the grain dryer motor?"}
+{"id":"ag-m08","label":"machinery","text":"The plow attachment is bent; can the workshop fix it?"}
+{"id":"ag-m09","label":"machinery","text":"Can someone check why the baler keeps jamming?"}
+{"id":"ag-m10","label":"machinery","text":"Which spare filter fits the farm loader?"}
+{"id":"ag-l01","label":"logistics","text":"When will the harvested potatoes be collected for storage?"}
+{"id":"ag-l02","label":"logistics","text":"Can we book a truck to deliver produce to the market?"}
+{"id":"ag-l03","label":"logistics","text":"Which warehouse has space for the next grain load?"}
+{"id":"ag-l04","label":"logistics","text":"The packing crates have not arrived; who tracks the shipment?"}
+{"id":"ag-l05","label":"logistics","text":"Can we move today's milk collection to a later time?"}
+{"id":"ag-l06","label":"logistics","text":"Where should the sorted fruit be stored before dispatch?"}
+{"id":"ag-l07","label":"logistics","text":"Who coordinates delivery of seed bags to the field teams?"}
+{"id":"ag-l08","label":"logistics","text":"Can the cold-room inventory be updated after this shipment?"}
+{"id":"ag-l09","label":"logistics","text":"When is the next pickup for the harvested beans?"}
+{"id":"ag-l10","label":"logistics","text":"The delivery vehicle is delayed; can we revise the loading schedule?"}
+{"id":"ag-f01","label":"farm_finance","text":"Why was I billed twice for fertilizer?"}
+{"id":"ag-f02","label":"farm_finance","text":"Can we review the cost of seed for the next season?"}
+{"id":"ag-f03","label":"farm_finance","text":"When is the installment on the farm loan due?"}
+{"id":"ag-f04","label":"farm_finance","text":"How do I submit a claim under the crop insurance policy?"}
+{"id":"ag-f05","label":"farm_finance","text":"Can you send an invoice for last month's equipment rental?"}
+{"id":"ag-f06","label":"farm_finance","text":"Has the buyer paid for the delivered harvest?"}
+{"id":"ag-f07","label":"farm_finance","text":"What is the remaining balance on our input credit account?"}
+{"id":"ag-f08","label":"farm_finance","text":"Can we compare this year's operating costs with the budget?"}
+{"id":"ag-f09","label":"farm_finance","text":"Where is the receipt for the pesticide purchase?"}
+{"id":"ag-f10","label":"farm_finance","text":"Why was the insurance premium taken from the farm account?"}

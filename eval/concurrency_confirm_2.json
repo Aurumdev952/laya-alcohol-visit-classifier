@@ -1,0 +1,77 @@
+{
+  "model": "convaiinnovations/laya",
+  "gpu": "NVIDIA GeForce RTX 5090 Laptop GPU",
+  "endpoint": "http://127.0.0.1:8001/sentiment",
+  "workload": {
+    "texts": 50,
+    "requests_per_level": 400,
+    "warmup_requests": 20
+  },
+  "p95_target_ms": 200.0,
+  "practical_concurrency_at_target": 8,
+  "highest_tested_error_free": 8,
+  "peak_throughput_level": 8,
+  "peak_throughput_rps": 64.11,
+  "levels": [
+    {
+      "concurrency": 4,
+      "requests": 400,
+      "successes": 400,
+      "errors": {},
+      "elapsed_seconds": 6.908,
+      "throughput_rps": 57.91,
+      "p50_ms": 67.01,
+      "p95_ms": 83.52,
+      "p99_ms": 108.1,
+      "max_ms": 144.32
+    },
+    {
+      "concurrency": 5,
+      "requests": 400,
+      "successes": 400,
+      "errors": {},
+      "elapsed_seconds": 7.131,
+      "throughput_rps": 56.09,
+      "p50_ms": 86.27,
+      "p95_ms": 128.6,
+      "p99_ms": 170.34,
+      "max_ms": 184.33
+    },
+    {
+      "concurrency": 6,
+      "requests": 400,
+      "successes": 400,
+      "errors": {},
+      "elapsed_seconds": 7.219,
+      "throughput_rps": 55.41,
+      "p50_ms": 102.01,
+      "p95_ms": 153.97,
+      "p99_ms": 202.02,
+      "max_ms": 219.75
+    },
+    {
+      "concurrency": 7,
+      "requests": 400,
+      "successes": 400,
+      "errors": {},
+      "elapsed_seconds": 6.353,
+      "throughput_rps": 62.96,
+      "p50_ms": 107.88,
+      "p95_ms": 144.72,
+      "p99_ms": 162.51,
+      "max_ms": 172.81
+    },
+    {
+      "concurrency": 8,
+      "requests": 400,
+      "successes": 400,
+      "errors": {},
+      "elapsed_seconds": 6.239,
+      "throughput_rps": 64.11,
+      "p50_ms": 121.27,
+      "p95_ms": 163.02,
+      "p99_ms": 182.38,
+      "max_ms": 184.93
+    }
+  ]
+}

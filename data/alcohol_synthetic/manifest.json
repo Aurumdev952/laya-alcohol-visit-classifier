@@ -1,0 +1,36 @@
+{
+  "source": "fully_synthetic",
+  "seed": 20260927,
+  "total_cases": 30000,
+  "splits": {
+    "train": {
+      "total": 24000,
+      "labels": {
+        "direct": 8000,
+        "negative": 8000,
+        "indirect": 8000
+      }
+    },
+    "calibration": {
+      "total": 3000,
+      "labels": {
+        "indirect": 1000,
+        "direct": 1000,
+        "negative": 1000
+      }
+    },
+    "test": {
+      "total": 3000,
+      "labels": {
+        "indirect": 1000,
+        "direct": 1000,
+        "negative": 1000
+      }
+    }
+  },
+  "sha256": {
+    "train": "b6abe554213904b6696bf76088827c8f6bcecacb9f58ee114bf3bae34e4c6be0",
+    "calibration": "5b047e6214faf25ac32854e1f9bf5325a9282106e224e8b9e5f03aa0e87ad8d4",
+    "test": "0f1b26db16c70c1292f3e61c236d6108f5e0565737ea3bd4aea804cf9eb822d6"
+  }
+}

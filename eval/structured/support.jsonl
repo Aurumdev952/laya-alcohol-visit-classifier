@@ -1,0 +1,50 @@
+{"id":"su01","text":"The invoice has an extra fee, but it can wait until next week. Please refund that fee.","expected":{"issue":"billing","urgency":0,"refund_requested":true}}
+{"id":"su02","text":"I was charged twice. Please return the duplicate amount today because I need the funds now.","expected":{"issue":"billing","urgency":2,"refund_requested":true}}
+{"id":"su03","text":"Can you explain the tax line on my bill whenever you have time? I am not asking for a refund.","expected":{"issue":"billing","urgency":0,"refund_requested":false}}
+{"id":"su04","text":"My payment failed and the subscription expires in two days. Please check it; no refund is needed.","expected":{"issue":"billing","urgency":1,"refund_requested":false}}
+{"id":"su05","text":"The annual plan renewed unexpectedly and I need a refund before today's bank cutoff.","expected":{"issue":"billing","urgency":2,"refund_requested":true}}
+{"id":"su06","text":"I want to understand the price increase on last month's receipt. No deadline, and please do not refund it.","expected":{"issue":"billing","urgency":0,"refund_requested":false}}
+{"id":"su07","text":"The discount is missing from my invoice. Could you fix it by Friday and refund the difference?","expected":{"issue":"billing","urgency":1,"refund_requested":true}}
+{"id":"su08","text":"My card was billed after cancellation. I need the charge reversed today.","expected":{"issue":"billing","urgency":2,"refund_requested":true}}
+{"id":"su09","text":"Could you update the billing address on future invoices when convenient?","expected":{"issue":"billing","urgency":0,"refund_requested":false}}
+{"id":"su10","text":"I cannot complete payment for tomorrow's renewal. Please help before then; I do not need money back.","expected":{"issue":"billing","urgency":1,"refund_requested":false}}
+{"id":"su11","text":"The setup fee should not have been charged. Please refund it, though there is no rush.","expected":{"issue":"billing","urgency":0,"refund_requested":true}}
+{"id":"su12","text":"Can you send a corrected receipt by Thursday for my expense report? No refund request.","expected":{"issue":"billing","urgency":1,"refund_requested":false}}
+{"id":"su13","text":"I paid but the balance still shows overdue and my account is blocked now. Please fix the charge today.","expected":{"issue":"billing","urgency":2,"refund_requested":false}}
+{"id":"su14","text":"A duplicate tax charge appears on my statement. Please give that money back this week.","expected":{"issue":"billing","urgency":1,"refund_requested":true}}
+{"id":"su15","text":"How is the monthly fee calculated? This is just a routine question, not a refund request.","expected":{"issue":"billing","urgency":0,"refund_requested":false}}
+{"id":"su16","text":"The trial converted to a paid plan this morning. I need a refund immediately.","expected":{"issue":"billing","urgency":2,"refund_requested":true}}
+{"id":"su17","text":"My bank transfer is not reflected on the invoice. Please reconcile it within a few days; no refund is needed.","expected":{"issue":"billing","urgency":1,"refund_requested":false}}
+{"id":"su18","text":"The app crashes on launch, so I cannot work today. Please fix it; I am not requesting a refund.","expected":{"issue":"technical","urgency":2,"refund_requested":false}}
+{"id":"su19","text":"The new dashboard loads slowly. Please look at it when convenient, and no refund is needed.","expected":{"issue":"technical","urgency":0,"refund_requested":false}}
+{"id":"su20","text":"The export button fails and I need the report by Friday. Please repair it, not refund me.","expected":{"issue":"technical","urgency":1,"refund_requested":false}}
+{"id":"su21","text":"Your app erased my settings. Please refund the subscription today because I cannot use it.","expected":{"issue":"technical","urgency":2,"refund_requested":true}}
+{"id":"su22","text":"I noticed a minor display bug with no deadline. Could you log it for later?","expected":{"issue":"technical","urgency":0,"refund_requested":false}}
+{"id":"su23","text":"Login keeps failing and my webinar starts tomorrow. Please restore access before then.","expected":{"issue":"technical","urgency":1,"refund_requested":false}}
+{"id":"su24","text":"The service is down right now. I want my payment refunded immediately.","expected":{"issue":"technical","urgency":2,"refund_requested":true}}
+{"id":"su25","text":"Can you fix the broken search filter by the end of the week? I am not asking for money back.","expected":{"issue":"technical","urgency":1,"refund_requested":false}}
+{"id":"su26","text":"The mobile view has a typo. No hurry, but please return my fee if this cannot be fixed.","expected":{"issue":"technical","urgency":0,"refund_requested":true}}
+{"id":"su27","text":"The file upload is stuck and today's submission closes soon. Please make it work now.","expected":{"issue":"technical","urgency":2,"refund_requested":false}}
+{"id":"su28","text":"Could you investigate why notifications arrive late sometime this month? No refund requested.","expected":{"issue":"technical","urgency":0,"refund_requested":false}}
+{"id":"su29","text":"The integration stopped syncing. We need it restored within two days, or please refund the add-on.","expected":{"issue":"technical","urgency":1,"refund_requested":true}}
+{"id":"su30","text":"The website is unavailable and I need access today; please fix it rather than issue a refund.","expected":{"issue":"technical","urgency":2,"refund_requested":false}}
+{"id":"su31","text":"The printer feature occasionally freezes. Please check whenever possible, with no money back required.","expected":{"issue":"technical","urgency":0,"refund_requested":false}}
+{"id":"su32","text":"The API key is rejected and our demo is on Thursday. Please restore it before the demo.","expected":{"issue":"technical","urgency":1,"refund_requested":false}}
+{"id":"su33","text":"The update broke video playback for tonight's event. I need the subscription fee refunded now.","expected":{"issue":"technical","urgency":2,"refund_requested":true}}
+{"id":"su34","text":"The analytics chart labels are misaligned. Please correct them later; I do not need a refund.","expected":{"issue":"technical","urgency":0,"refund_requested":false}}
+{"id":"su35","text":"My parcel has not arrived and I need it for an event today. Please locate it immediately.","expected":{"issue":"delivery","urgency":2,"refund_requested":false}}
+{"id":"su36","text":"Can you confirm the delivery address whenever you have time? No refund request.","expected":{"issue":"delivery","urgency":0,"refund_requested":false}}
+{"id":"su37","text":"The package is delayed and I need it by Saturday. Please refund the shipping charge.","expected":{"issue":"delivery","urgency":1,"refund_requested":true}}
+{"id":"su38","text":"Tracking has not updated. Please investigate this week, but do not refund the order.","expected":{"issue":"delivery","urgency":1,"refund_requested":false}}
+{"id":"su39","text":"The courier left the box at the wrong building. I need it today and want a refund now.","expected":{"issue":"delivery","urgency":2,"refund_requested":true}}
+{"id":"su40","text":"What day is my shipment expected? There is no deadline and I am not seeking a refund.","expected":{"issue":"delivery","urgency":0,"refund_requested":false}}
+{"id":"su41","text":"The package arrived damaged. Please send my money back, though it can be handled next week.","expected":{"issue":"delivery","urgency":0,"refund_requested":true}}
+{"id":"su42","text":"Can the courier change the drop-off time before Friday? No refund is necessary.","expected":{"issue":"delivery","urgency":1,"refund_requested":false}}
+{"id":"su43","text":"The order is missing one item and the recipient needs it tonight. Please ship it now.","expected":{"issue":"delivery","urgency":2,"refund_requested":false}}
+{"id":"su44","text":"A parcel went to the old address. Please reroute it in the next two days, not refund it.","expected":{"issue":"delivery","urgency":1,"refund_requested":false}}
+{"id":"su45","text":"Could you tell me which carrier handles this order? Just a routine question.","expected":{"issue":"delivery","urgency":0,"refund_requested":false}}
+{"id":"su46","text":"Delivery was promised for this morning and nothing came. I need the shipping fee back today.","expected":{"issue":"delivery","urgency":2,"refund_requested":true}}
+{"id":"su47","text":"The tracking page shows a delay; can you send an updated arrival date by Thursday?","expected":{"issue":"delivery","urgency":1,"refund_requested":false}}
+{"id":"su48","text":"The carton is dented. I would like a refund for the item, but there is no rush.","expected":{"issue":"delivery","urgency":0,"refund_requested":true}}
+{"id":"su49","text":"The shipment is at the wrong depot and today's event starts soon. Please recover it now.","expected":{"issue":"delivery","urgency":2,"refund_requested":false}}
+{"id":"su50","text":"Can my parcel be delivered before the weekend? Please also refund the earlier shipping fee.","expected":{"issue":"delivery","urgency":1,"refund_requested":true}}

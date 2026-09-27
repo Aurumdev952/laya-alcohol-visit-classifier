@@ -1,0 +1,89 @@
+{
+  "model": "convaiinnovations/laya",
+  "gpu": "NVIDIA GeForce RTX 5090 Laptop GPU",
+  "endpoint": "http://127.0.0.1:8001/sentiment",
+  "workload": {
+    "texts": 50,
+    "requests_per_level": 200,
+    "warmup_requests": 20
+  },
+  "p95_target_ms": 200.0,
+  "practical_concurrency_at_target": 6,
+  "highest_tested_error_free": 8,
+  "peak_throughput_level": 1,
+  "peak_throughput_rps": 59.44,
+  "levels": [
+    {
+      "concurrency": 1,
+      "requests": 200,
+      "successes": 200,
+      "errors": {},
+      "elapsed_seconds": 3.365,
+      "throughput_rps": 59.44,
+      "p50_ms": 16.38,
+      "p95_ms": 18.64,
+      "p99_ms": 26.28,
+      "max_ms": 31.46
+    },
+    {
+      "concurrency": 4,
+      "requests": 200,
+      "successes": 200,
+      "errors": {},
+      "elapsed_seconds": 4.315,
+      "throughput_rps": 46.35,
+      "p50_ms": 73.71,
+      "p95_ms": 127.79,
+      "p99_ms": 229.69,
+      "max_ms": 232.82
+    },
+    {
+      "concurrency": 5,
+      "requests": 200,
+      "successes": 200,
+      "errors": {},
+      "elapsed_seconds": 4.66,
+      "throughput_rps": 42.91,
+      "p50_ms": 97.58,
+      "p95_ms": 198.74,
+      "p99_ms": 248.36,
+      "max_ms": 251.64
+    },
+    {
+      "concurrency": 6,
+      "requests": 200,
+      "successes": 200,
+      "errors": {},
+      "elapsed_seconds": 4.224,
+      "throughput_rps": 47.35,
+      "p50_ms": 112.44,
+      "p95_ms": 183.64,
+      "p99_ms": 199.96,
+      "max_ms": 204.45
+    },
+    {
+      "concurrency": 7,
+      "requests": 200,
+      "successes": 200,
+      "errors": {},
+      "elapsed_seconds": 4.511,
+      "throughput_rps": 44.34,
+      "p50_ms": 136.54,
+      "p95_ms": 243.11,
+      "p99_ms": 259.76,
+      "max_ms": 261.63
+    },
+    {
+      "concurrency": 8,
+      "requests": 200,
+      "successes": 200,
+      "errors": {},
+      "elapsed_seconds": 4.07,
+      "throughput_rps": 49.14,
+      "p50_ms": 146.41,
+      "p95_ms": 230.31,
+      "p99_ms": 253.19,
+      "max_ms": 268.04
+    }
+  ]
+}

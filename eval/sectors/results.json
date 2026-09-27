@@ -1,0 +1,4013 @@
+{
+  "model": "convaiinnovations/laya",
+  "laya_version": "0.3.20",
+  "torch_version": "2.14.0+cu130",
+  "gpu": "NVIDIA GeForce RTX 5090 Laptop GPU",
+  "device": "cuda",
+  "autocast_dtype": "torch.bfloat16",
+  "batch_size": 8,
+  "summary": {
+    "sectors": 5,
+    "cases_per_sector": 50,
+    "total_cases": 250,
+    "correct": 227,
+    "overall_accuracy": 0.908,
+    "mean_sector_macro_f1": 0.9098
+  },
+  "sectors": {
+    "education": {
+      "total": 50,
+      "correct": 45,
+      "accuracy": 0.9,
+      "macro_f1": 0.9062,
+      "per_label": {
+        "admissions": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8889
+        },
+        "coursework": {
+          "support": 10,
+          "precision": 0.6667,
+          "recall": 1.0,
+          "f1": 0.8
+        },
+        "fees_aid": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        },
+        "technology": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        },
+        "student_support": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        }
+      },
+      "confusion_matrix": {
+        "admissions": {
+          "admissions": 8,
+          "coursework": 2,
+          "fees_aid": 0,
+          "technology": 0,
+          "student_support": 0
+        },
+        "coursework": {
+          "admissions": 0,
+          "coursework": 10,
+          "fees_aid": 0,
+          "technology": 0,
+          "student_support": 0
+        },
+        "fees_aid": {
+          "admissions": 0,
+          "coursework": 1,
+          "fees_aid": 9,
+          "technology": 0,
+          "student_support": 0
+        },
+        "technology": {
+          "admissions": 0,
+          "coursework": 1,
+          "fees_aid": 0,
+          "technology": 9,
+          "student_support": 0
+        },
+        "student_support": {
+          "admissions": 0,
+          "coursework": 1,
+          "fees_aid": 0,
+          "technology": 0,
+          "student_support": 9
+        }
+      },
+      "mistakes": [
+        {
+          "id": "ed-a09",
+          "text": "I was placed on the waitlist; when might I hear back?",
+          "expected": "admissions",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.2563,
+            "coursework": 0.2749,
+            "fees_aid": 0.1345,
+            "technology": 0.1193,
+            "student_support": 0.2149
+          }
+        },
+        {
+          "id": "ed-a10",
+          "text": "What are the entry requirements for the teaching diploma?",
+          "expected": "admissions",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.2366,
+            "coursework": 0.4299,
+            "fees_aid": 0.098,
+            "technology": 0.0778,
+            "student_support": 0.1576
+          }
+        },
+        {
+          "id": "ed-f09",
+          "text": "What documents are needed to renew my bursary?",
+          "expected": "fees_aid",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.1772,
+            "coursework": 0.3633,
+            "fees_aid": 0.2327,
+            "technology": 0.0947,
+            "student_support": 0.1321
+          }
+        },
+        {
+          "id": "ed-t02",
+          "text": "Why will the learning platform not upload my completed assignment file?",
+          "expected": "technology",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.0177,
+            "coursework": 0.8272,
+            "fees_aid": 0.0187,
+            "technology": 0.0943,
+            "student_support": 0.0421
+          }
+        },
+        {
+          "id": "ed-s06",
+          "text": "Can I get help balancing family responsibilities with school?",
+          "expected": "student_support",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.1568,
+            "coursework": 0.3033,
+            "fees_aid": 0.1579,
+            "technology": 0.1199,
+            "student_support": 0.2622
+          }
+        }
+      ],
+      "sector": "education",
+      "instructions": "Which school team should handle this message? Choose its primary purpose.",
+      "criteria": {
+        "admissions": "applications, eligibility, acceptance, enrollment or transfer into the school",
+        "coursework": "classes, assignments, grades, exams, curriculum or academic progress",
+        "fees_aid": "tuition charges, payments, scholarships or financial aid",
+        "technology": "school accounts, login, learning platform, software or device access",
+        "student_support": "counseling, accessibility, housing or general student wellbeing"
+      },
+      "elapsed_seconds": 4.355,
+      "cases": [
+        {
+          "id": "ed-a01",
+          "text": "Can I apply for the autumn intake if I finish secondary school in June?",
+          "expected": "admissions",
+          "predicted": "admissions",
+          "probabilities": {
+            "admissions": 0.6862,
+            "coursework": 0.1045,
+            "fees_aid": 0.0595,
+            "technology": 0.0507,
+            "student_support": 0.0991
+          }
+        },
+        {
+          "id": "ed-a02",
+          "text": "When will decisions on my application be released?",
+          "expected": "admissions",
+          "predicted": "admissions",
+          "probabilities": {
+            "admissions": 0.6388,
+            "coursework": 0.131,
+            "fees_aid": 0.0688,
+            "technology": 0.0532,
+            "student_support": 0.1082
+          }
+        },
+        {
+          "id": "ed-a03",
+          "text": "Do transfer students need to submit transcripts from every previous college?",
+          "expected": "admissions",
+          "predicted": "admissions",
+          "probabilities": {
+            "admissions": 0.3525,
+            "coursework": 0.2814,
+            "fees_aid": 0.1019,
+            "technology": 0.0642,
+            "student_support": 0.2
+          }
+        },
+        {
+          "id": "ed-a04",
+          "text": "I accepted my offer; what must I do to enroll?",
+          "expected": "admissions",
+          "predicted": "admissions",
+          "probabilities": {
+            "admissions": 0.6113,
+            "coursework": 0.1316,
+            "fees_aid": 0.067,
+            "technology": 0.0659,
+            "student_support": 0.1242
+          }
+        },
+        {
+          "id": "ed-a05",
+          "text": "Is there still room in the incoming first-year class?",
+          "expected": "admissions",
+          "predicted": "admissions",
+          "probabilities": {
+            "admissions": 0.782,
+            "coursework": 0.0754,
+            "fees_aid": 0.0422,
+            "technology": 0.0314,
+            "student_support": 0.069
+          }
+        },
+        {
+          "id": "ed-a06",
+          "text": "How do I change the major listed on my application before admission?",
+          "expected": "admissions",
+          "predicted": "admissions",
+          "probabilities": {
+            "admissions": 0.5665,
+            "coursework": 0.1937,
+            "fees_aid": 0.0539,
+            "technology": 0.0534,
+            "student_support": 0.1324
+          }
+        },
+        {
+          "id": "ed-a07",
+          "text": "Can an international applicant submit an alternative English test?",
+          "expected": "admissions",
+          "predicted": "admissions",
+          "probabilities": {
+            "admissions": 0.3737,
+            "coursework": 0.1478,
+            "fees_aid": 0.0805,
+            "technology": 0.2192,
+            "student_support": 0.1789
+          }
+        },
+        {
+          "id": "ed-a08",
+          "text": "Where should I upload the recommendation letter for my application?",
+          "expected": "admissions",
+          "predicted": "admissions",
+          "probabilities": {
+            "admissions": 0.5757,
+            "coursework": 0.1325,
+            "fees_aid": 0.0774,
+            "technology": 0.0778,
+            "student_support": 0.1367
+          }
+        },
+        {
+          "id": "ed-a09",
+          "text": "I was placed on the waitlist; when might I hear back?",
+          "expected": "admissions",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.2563,
+            "coursework": 0.2749,
+            "fees_aid": 0.1345,
+            "technology": 0.1193,
+            "student_support": 0.2149
+          }
+        },
+        {
+          "id": "ed-a10",
+          "text": "What are the entry requirements for the teaching diploma?",
+          "expected": "admissions",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.2366,
+            "coursework": 0.4299,
+            "fees_aid": 0.098,
+            "technology": 0.0778,
+            "student_support": 0.1576
+          }
+        },
+        {
+          "id": "ed-c01",
+          "text": "Where can I find the reading list for next week's history class?",
+          "expected": "coursework",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.0907,
+            "coursework": 0.7114,
+            "fees_aid": 0.0552,
+            "technology": 0.0523,
+            "student_support": 0.0903
+          }
+        },
+        {
+          "id": "ed-c02",
+          "text": "Can I submit my essay one day late because the deadline changed?",
+          "expected": "coursework",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.1952,
+            "coursework": 0.3773,
+            "fees_aid": 0.0878,
+            "technology": 0.0934,
+            "student_support": 0.2464
+          }
+        },
+        {
+          "id": "ed-c03",
+          "text": "Why does my final grade differ from the marks shown for the assignments?",
+          "expected": "coursework",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.0525,
+            "coursework": 0.7205,
+            "fees_aid": 0.0564,
+            "technology": 0.0559,
+            "student_support": 0.1147
+          }
+        },
+        {
+          "id": "ed-c04",
+          "text": "Which chapters are covered on the chemistry exam?",
+          "expected": "coursework",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.1788,
+            "coursework": 0.3787,
+            "fees_aid": 0.1142,
+            "technology": 0.1259,
+            "student_support": 0.2024
+          }
+        },
+        {
+          "id": "ed-c05",
+          "text": "May I switch from the morning calculus section to the afternoon section?",
+          "expected": "coursework",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.1042,
+            "coursework": 0.5105,
+            "fees_aid": 0.0767,
+            "technology": 0.1223,
+            "student_support": 0.1864
+          }
+        },
+        {
+          "id": "ed-c06",
+          "text": "How many laboratory sessions must I attend to pass this module?",
+          "expected": "coursework",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.0537,
+            "coursework": 0.8046,
+            "fees_aid": 0.039,
+            "technology": 0.04,
+            "student_support": 0.0627
+          }
+        },
+        {
+          "id": "ed-c07",
+          "text": "Could the instructor explain the feedback on my project?",
+          "expected": "coursework",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.0546,
+            "coursework": 0.7233,
+            "fees_aid": 0.0532,
+            "technology": 0.0592,
+            "student_support": 0.1097
+          }
+        },
+        {
+          "id": "ed-c08",
+          "text": "Is the statistics prerequisite required for this course?",
+          "expected": "coursework",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.1867,
+            "coursework": 0.5113,
+            "fees_aid": 0.0762,
+            "technology": 0.099,
+            "student_support": 0.1269
+          }
+        },
+        {
+          "id": "ed-c09",
+          "text": "When will the make-up exam timetable be published?",
+          "expected": "coursework",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.1112,
+            "coursework": 0.6393,
+            "fees_aid": 0.0812,
+            "technology": 0.0633,
+            "student_support": 0.105
+          }
+        },
+        {
+          "id": "ed-c10",
+          "text": "How do I appeal the score on my literature paper?",
+          "expected": "coursework",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.1016,
+            "coursework": 0.6384,
+            "fees_aid": 0.0551,
+            "technology": 0.0561,
+            "student_support": 0.1489
+          }
+        },
+        {
+          "id": "ed-f01",
+          "text": "Why was I charged tuition twice this term?",
+          "expected": "fees_aid",
+          "predicted": "fees_aid",
+          "probabilities": {
+            "admissions": 0.0283,
+            "coursework": 0.0687,
+            "fees_aid": 0.8107,
+            "technology": 0.0288,
+            "student_support": 0.0634
+          }
+        },
+        {
+          "id": "ed-f02",
+          "text": "When is the last day to pay the semester fee?",
+          "expected": "fees_aid",
+          "predicted": "fees_aid",
+          "probabilities": {
+            "admissions": 0.0113,
+            "coursework": 0.0433,
+            "fees_aid": 0.9222,
+            "technology": 0.0091,
+            "student_support": 0.0141
+          }
+        },
+        {
+          "id": "ed-f03",
+          "text": "Can my scholarship cover the required field trip cost?",
+          "expected": "fees_aid",
+          "predicted": "fees_aid",
+          "probabilities": {
+            "admissions": 0.1587,
+            "coursework": 0.1871,
+            "fees_aid": 0.3865,
+            "technology": 0.0773,
+            "student_support": 0.1904
+          }
+        },
+        {
+          "id": "ed-f04",
+          "text": "How do I apply for need-based financial aid?",
+          "expected": "fees_aid",
+          "predicted": "fees_aid",
+          "probabilities": {
+            "admissions": 0.2966,
+            "coursework": 0.1677,
+            "fees_aid": 0.33,
+            "technology": 0.0615,
+            "student_support": 0.1442
+          }
+        },
+        {
+          "id": "ed-f05",
+          "text": "Where can I download a receipt for my school payment?",
+          "expected": "fees_aid",
+          "predicted": "fees_aid",
+          "probabilities": {
+            "admissions": 0.0999,
+            "coursework": 0.1995,
+            "fees_aid": 0.452,
+            "technology": 0.1293,
+            "student_support": 0.1193
+          }
+        },
+        {
+          "id": "ed-f06",
+          "text": "My grant has not appeared on the latest bill; who can correct it?",
+          "expected": "fees_aid",
+          "predicted": "fees_aid",
+          "probabilities": {
+            "admissions": 0.0646,
+            "coursework": 0.1182,
+            "fees_aid": 0.6189,
+            "technology": 0.0607,
+            "student_support": 0.1375
+          }
+        },
+        {
+          "id": "ed-f07",
+          "text": "Do you offer a monthly installment plan for tuition?",
+          "expected": "fees_aid",
+          "predicted": "fees_aid",
+          "probabilities": {
+            "admissions": 0.1089,
+            "coursework": 0.0888,
+            "fees_aid": 0.6457,
+            "technology": 0.0514,
+            "student_support": 0.1051
+          }
+        },
+        {
+          "id": "ed-f08",
+          "text": "Will withdrawing before classes start qualify me for a fee refund?",
+          "expected": "fees_aid",
+          "predicted": "fees_aid",
+          "probabilities": {
+            "admissions": 0.0064,
+            "coursework": 0.04,
+            "fees_aid": 0.9438,
+            "technology": 0.0037,
+            "student_support": 0.006
+          }
+        },
+        {
+          "id": "ed-f09",
+          "text": "What documents are needed to renew my bursary?",
+          "expected": "fees_aid",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.1772,
+            "coursework": 0.3633,
+            "fees_aid": 0.2327,
+            "technology": 0.0947,
+            "student_support": 0.1321
+          }
+        },
+        {
+          "id": "ed-f10",
+          "text": "Can you explain the laboratory charge on my account statement?",
+          "expected": "fees_aid",
+          "predicted": "fees_aid",
+          "probabilities": {
+            "admissions": 0.0835,
+            "coursework": 0.1419,
+            "fees_aid": 0.5266,
+            "technology": 0.1447,
+            "student_support": 0.1033
+          }
+        },
+        {
+          "id": "ed-t01",
+          "text": "I cannot sign in to the student portal after resetting my password; can you help?",
+          "expected": "technology",
+          "predicted": "technology",
+          "probabilities": {
+            "admissions": 0.126,
+            "coursework": 0.0963,
+            "fees_aid": 0.0751,
+            "technology": 0.472,
+            "student_support": 0.2305
+          }
+        },
+        {
+          "id": "ed-t02",
+          "text": "Why will the learning platform not upload my completed assignment file?",
+          "expected": "technology",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.0177,
+            "coursework": 0.8272,
+            "fees_aid": 0.0187,
+            "technology": 0.0943,
+            "student_support": 0.0421
+          }
+        },
+        {
+          "id": "ed-t03",
+          "text": "How do I connect my laptop to campus Wi-Fi?",
+          "expected": "technology",
+          "predicted": "technology",
+          "probabilities": {
+            "admissions": 0.0467,
+            "coursework": 0.0581,
+            "fees_aid": 0.0402,
+            "technology": 0.7932,
+            "student_support": 0.0618
+          }
+        },
+        {
+          "id": "ed-t04",
+          "text": "The classroom video link shows an access error; who can fix it?",
+          "expected": "technology",
+          "predicted": "technology",
+          "probabilities": {
+            "admissions": 0.0287,
+            "coursework": 0.085,
+            "fees_aid": 0.0236,
+            "technology": 0.8149,
+            "student_support": 0.0478
+          }
+        },
+        {
+          "id": "ed-t05",
+          "text": "Can I get the software license required for the design course?",
+          "expected": "technology",
+          "predicted": "technology",
+          "probabilities": {
+            "admissions": 0.0911,
+            "coursework": 0.1884,
+            "fees_aid": 0.0564,
+            "technology": 0.5825,
+            "student_support": 0.0815
+          }
+        },
+        {
+          "id": "ed-t06",
+          "text": "My two-factor code never arrives when I log in; what should I do?",
+          "expected": "technology",
+          "predicted": "technology",
+          "probabilities": {
+            "admissions": 0.0543,
+            "coursework": 0.0527,
+            "fees_aid": 0.049,
+            "technology": 0.7721,
+            "student_support": 0.0718
+          }
+        },
+        {
+          "id": "ed-t07",
+          "text": "The online library page keeps timing out on my device; can IT check it?",
+          "expected": "technology",
+          "predicted": "technology",
+          "probabilities": {
+            "admissions": 0.0544,
+            "coursework": 0.0922,
+            "fees_aid": 0.0539,
+            "technology": 0.6855,
+            "student_support": 0.1141
+          }
+        },
+        {
+          "id": "ed-t08",
+          "text": "Where do I report a broken tablet issued by the school?",
+          "expected": "technology",
+          "predicted": "technology",
+          "probabilities": {
+            "admissions": 0.1042,
+            "coursework": 0.1725,
+            "fees_aid": 0.1085,
+            "technology": 0.3981,
+            "student_support": 0.2167
+          }
+        },
+        {
+          "id": "ed-t09",
+          "text": "Can someone restore access to my school email account?",
+          "expected": "technology",
+          "predicted": "technology",
+          "probabilities": {
+            "admissions": 0.0898,
+            "coursework": 0.1141,
+            "fees_aid": 0.0752,
+            "technology": 0.6083,
+            "student_support": 0.1126
+          }
+        },
+        {
+          "id": "ed-t10",
+          "text": "The exam browser freezes before I can start the test; can support look at it?",
+          "expected": "technology",
+          "predicted": "technology",
+          "probabilities": {
+            "admissions": 0.0678,
+            "coursework": 0.2034,
+            "fees_aid": 0.0768,
+            "technology": 0.4844,
+            "student_support": 0.1677
+          }
+        },
+        {
+          "id": "ed-s01",
+          "text": "How can I arrange a meeting with a student counselor?",
+          "expected": "student_support",
+          "predicted": "student_support",
+          "probabilities": {
+            "admissions": 0.0257,
+            "coursework": 0.0226,
+            "fees_aid": 0.0156,
+            "technology": 0.0115,
+            "student_support": 0.9246
+          }
+        },
+        {
+          "id": "ed-s02",
+          "text": "Where can I request classroom accommodations for a disability?",
+          "expected": "student_support",
+          "predicted": "student_support",
+          "probabilities": {
+            "admissions": 0.1433,
+            "coursework": 0.2558,
+            "fees_aid": 0.067,
+            "technology": 0.0682,
+            "student_support": 0.4657
+          }
+        },
+        {
+          "id": "ed-s03",
+          "text": "I am struggling to settle in and would like someone to talk to; who can help?",
+          "expected": "student_support",
+          "predicted": "student_support",
+          "probabilities": {
+            "admissions": 0.1535,
+            "coursework": 0.0946,
+            "fees_aid": 0.0675,
+            "technology": 0.0604,
+            "student_support": 0.624
+          }
+        },
+        {
+          "id": "ed-s04",
+          "text": "Is there a support office for finding student housing?",
+          "expected": "student_support",
+          "predicted": "student_support",
+          "probabilities": {
+            "admissions": 0.2548,
+            "coursework": 0.1429,
+            "fees_aid": 0.1355,
+            "technology": 0.0967,
+            "student_support": 0.3702
+          }
+        },
+        {
+          "id": "ed-s05",
+          "text": "How do I report bullying in my residence hall?",
+          "expected": "student_support",
+          "predicted": "student_support",
+          "probabilities": {
+            "admissions": 0.156,
+            "coursework": 0.1512,
+            "fees_aid": 0.0888,
+            "technology": 0.0904,
+            "student_support": 0.5137
+          }
+        },
+        {
+          "id": "ed-s06",
+          "text": "Can I get help balancing family responsibilities with school?",
+          "expected": "student_support",
+          "predicted": "coursework",
+          "probabilities": {
+            "admissions": 0.1568,
+            "coursework": 0.3033,
+            "fees_aid": 0.1579,
+            "technology": 0.1199,
+            "student_support": 0.2622
+          }
+        },
+        {
+          "id": "ed-s07",
+          "text": "Who can help arrange a quiet testing room for my accessibility needs?",
+          "expected": "student_support",
+          "predicted": "student_support",
+          "probabilities": {
+            "admissions": 0.1632,
+            "coursework": 0.1864,
+            "fees_aid": 0.1075,
+            "technology": 0.1823,
+            "student_support": 0.3606
+          }
+        },
+        {
+          "id": "ed-s08",
+          "text": "I feel isolated on campus; are peer support groups available?",
+          "expected": "student_support",
+          "predicted": "student_support",
+          "probabilities": {
+            "admissions": 0.1091,
+            "coursework": 0.1344,
+            "fees_aid": 0.087,
+            "technology": 0.0646,
+            "student_support": 0.605
+          }
+        },
+        {
+          "id": "ed-s09",
+          "text": "Where can I get assistance after losing my room in student housing?",
+          "expected": "student_support",
+          "predicted": "student_support",
+          "probabilities": {
+            "admissions": 0.1796,
+            "coursework": 0.1459,
+            "fees_aid": 0.2454,
+            "technology": 0.0737,
+            "student_support": 0.3554
+          }
+        },
+        {
+          "id": "ed-s10",
+          "text": "How do I contact the office that supports students in crisis?",
+          "expected": "student_support",
+          "predicted": "student_support",
+          "probabilities": {
+            "admissions": 0.0861,
+            "coursework": 0.0846,
+            "fees_aid": 0.0568,
+            "technology": 0.0409,
+            "student_support": 0.7316
+          }
+        }
+      ]
+    },
+    "healthcare": {
+      "total": 50,
+      "correct": 47,
+      "accuracy": 0.94,
+      "macro_f1": 0.9424,
+      "per_label": {
+        "appointments": {
+          "support": 10,
+          "precision": 0.7692,
+          "recall": 1.0,
+          "f1": 0.8696
+        },
+        "billing_insurance": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        },
+        "records": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        },
+        "prescriptions": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "care_team": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        }
+      },
+      "confusion_matrix": {
+        "appointments": {
+          "appointments": 10,
+          "billing_insurance": 0,
+          "records": 0,
+          "prescriptions": 0,
+          "care_team": 0
+        },
+        "billing_insurance": {
+          "appointments": 1,
+          "billing_insurance": 9,
+          "records": 0,
+          "prescriptions": 0,
+          "care_team": 0
+        },
+        "records": {
+          "appointments": 1,
+          "billing_insurance": 0,
+          "records": 9,
+          "prescriptions": 0,
+          "care_team": 0
+        },
+        "prescriptions": {
+          "appointments": 0,
+          "billing_insurance": 0,
+          "records": 0,
+          "prescriptions": 10,
+          "care_team": 0
+        },
+        "care_team": {
+          "appointments": 1,
+          "billing_insurance": 0,
+          "records": 0,
+          "prescriptions": 0,
+          "care_team": 9
+        }
+      },
+      "mistakes": [
+        {
+          "id": "hc-b02",
+          "text": "Does my insurance cover the visit I had last month?",
+          "expected": "billing_insurance",
+          "predicted": "appointments",
+          "probabilities": {
+            "appointments": 0.3157,
+            "billing_insurance": 0.2594,
+            "records": 0.1285,
+            "prescriptions": 0.0643,
+            "care_team": 0.2321
+          }
+        },
+        {
+          "id": "hc-r03",
+          "text": "Can you send my visit summary to my new doctor?",
+          "expected": "records",
+          "predicted": "appointments",
+          "probabilities": {
+            "appointments": 0.633,
+            "billing_insurance": 0.0558,
+            "records": 0.0769,
+            "prescriptions": 0.0489,
+            "care_team": 0.1853
+          }
+        },
+        {
+          "id": "hc-c06",
+          "text": "The instructions after my visit are unclear; can someone from the care team call me?",
+          "expected": "care_team",
+          "predicted": "appointments",
+          "probabilities": {
+            "appointments": 0.4262,
+            "billing_insurance": 0.0502,
+            "records": 0.0543,
+            "prescriptions": 0.0506,
+            "care_team": 0.4187
+          }
+        }
+      ],
+      "sector": "healthcare",
+      "instructions": "Which healthcare service team should route this patient message to? This is message routing, not medical triage or diagnosis.",
+      "criteria": {
+        "appointments": "booking, changing or canceling visits and scheduling logistics",
+        "billing_insurance": "charges, invoices, insurance coverage or claim processing",
+        "records": "copies of medical records, test reports, chart corrections or record access",
+        "prescriptions": "refills, pharmacy transfers or medication order processing",
+        "care_team": "questions about symptoms, treatment, recovery or a clinician's care instructions"
+      },
+      "elapsed_seconds": 0.509,
+      "cases": [
+        {
+          "id": "hc-a01",
+          "text": "Can I book a follow-up visit for next Tuesday?",
+          "expected": "appointments",
+          "predicted": "appointments",
+          "probabilities": {
+            "appointments": 0.9267,
+            "billing_insurance": 0.0116,
+            "records": 0.0124,
+            "prescriptions": 0.0112,
+            "care_team": 0.038
+          }
+        },
+        {
+          "id": "hc-a02",
+          "text": "What is the earliest available slot with my specialist?",
+          "expected": "appointments",
+          "predicted": "appointments",
+          "probabilities": {
+            "appointments": 0.9299,
+            "billing_insurance": 0.0098,
+            "records": 0.0104,
+            "prescriptions": 0.013,
+            "care_team": 0.0369
+          }
+        },
+        {
+          "id": "hc-a03",
+          "text": "I need to move tomorrow's appointment to a later date; can you help?",
+          "expected": "appointments",
+          "predicted": "appointments",
+          "probabilities": {
+            "appointments": 0.8724,
+            "billing_insurance": 0.0248,
+            "records": 0.0257,
+            "prescriptions": 0.0229,
+            "care_team": 0.0542
+          }
+        },
+        {
+          "id": "hc-a04",
+          "text": "Could you cancel my Friday clinic visit?",
+          "expected": "appointments",
+          "predicted": "appointments",
+          "probabilities": {
+            "appointments": 0.7993,
+            "billing_insurance": 0.0339,
+            "records": 0.0367,
+            "prescriptions": 0.031,
+            "care_team": 0.099
+          }
+        },
+        {
+          "id": "hc-a05",
+          "text": "Where should I check in for my scheduled imaging visit?",
+          "expected": "appointments",
+          "predicted": "appointments",
+          "probabilities": {
+            "appointments": 0.4188,
+            "billing_insurance": 0.0866,
+            "records": 0.13,
+            "prescriptions": 0.0934,
+            "care_team": 0.2711
+          }
+        },
+        {
+          "id": "hc-a06",
+          "text": "Can my consultation be changed from in-person to video?",
+          "expected": "appointments",
+          "predicted": "appointments",
+          "probabilities": {
+            "appointments": 0.657,
+            "billing_insurance": 0.0423,
+            "records": 0.0488,
+            "prescriptions": 0.0542,
+            "care_team": 0.1977
+          }
+        },
+        {
+          "id": "hc-a07",
+          "text": "How long is the wait for a routine appointment?",
+          "expected": "appointments",
+          "predicted": "appointments",
+          "probabilities": {
+            "appointments": 0.8517,
+            "billing_insurance": 0.0251,
+            "records": 0.03,
+            "prescriptions": 0.0258,
+            "care_team": 0.0674
+          }
+        },
+        {
+          "id": "hc-a08",
+          "text": "I missed my visit this morning; may I rebook it?",
+          "expected": "appointments",
+          "predicted": "appointments",
+          "probabilities": {
+            "appointments": 0.6835,
+            "billing_insurance": 0.0559,
+            "records": 0.0535,
+            "prescriptions": 0.0448,
+            "care_team": 0.1623
+          }
+        },
+        {
+          "id": "hc-a09",
+          "text": "Will the clinic remind me of the time of my next appointment?",
+          "expected": "appointments",
+          "predicted": "appointments",
+          "probabilities": {
+            "appointments": 0.678,
+            "billing_insurance": 0.0585,
+            "records": 0.0634,
+            "prescriptions": 0.0601,
+            "care_team": 0.1401
+          }
+        },
+        {
+          "id": "hc-a10",
+          "text": "Can two family members be scheduled back to back?",
+          "expected": "appointments",
+          "predicted": "appointments",
+          "probabilities": {
+            "appointments": 0.9201,
+            "billing_insurance": 0.0136,
+            "records": 0.0154,
+            "prescriptions": 0.015,
+            "care_team": 0.036
+          }
+        },
+        {
+          "id": "hc-b01",
+          "text": "Why did I receive a charge after paying my copay?",
+          "expected": "billing_insurance",
+          "predicted": "billing_insurance",
+          "probabilities": {
+            "appointments": 0.0217,
+            "billing_insurance": 0.905,
+            "records": 0.0219,
+            "prescriptions": 0.0219,
+            "care_team": 0.0294
+          }
+        },
+        {
+          "id": "hc-b02",
+          "text": "Does my insurance cover the visit I had last month?",
+          "expected": "billing_insurance",
+          "predicted": "appointments",
+          "probabilities": {
+            "appointments": 0.3157,
+            "billing_insurance": 0.2594,
+            "records": 0.1285,
+            "prescriptions": 0.0643,
+            "care_team": 0.2321
+          }
+        },
+        {
+          "id": "hc-b03",
+          "text": "Can you send an itemized statement for my hospital bill?",
+          "expected": "billing_insurance",
+          "predicted": "billing_insurance",
+          "probabilities": {
+            "appointments": 0.0358,
+            "billing_insurance": 0.864,
+            "records": 0.0422,
+            "prescriptions": 0.0269,
+            "care_team": 0.0311
+          }
+        },
+        {
+          "id": "hc-b04",
+          "text": "My insurer says the claim was denied; who can review the coding?",
+          "expected": "billing_insurance",
+          "predicted": "billing_insurance",
+          "probabilities": {
+            "appointments": 0.0437,
+            "billing_insurance": 0.8557,
+            "records": 0.0318,
+            "prescriptions": 0.0315,
+            "care_team": 0.0373
+          }
+        },
+        {
+          "id": "hc-b05",
+          "text": "Is there a payment plan for this balance?",
+          "expected": "billing_insurance",
+          "predicted": "billing_insurance",
+          "probabilities": {
+            "appointments": 0.1405,
+            "billing_insurance": 0.4151,
+            "records": 0.089,
+            "prescriptions": 0.1309,
+            "care_team": 0.2245
+          }
+        },
+        {
+          "id": "hc-b06",
+          "text": "Why was the same consultation charged twice?",
+          "expected": "billing_insurance",
+          "predicted": "billing_insurance",
+          "probabilities": {
+            "appointments": 0.041,
+            "billing_insurance": 0.8813,
+            "records": 0.0238,
+            "prescriptions": 0.0253,
+            "care_team": 0.0286
+          }
+        },
+        {
+          "id": "hc-b07",
+          "text": "Where can I update my insurance policy information?",
+          "expected": "billing_insurance",
+          "predicted": "billing_insurance",
+          "probabilities": {
+            "appointments": 0.2076,
+            "billing_insurance": 0.3347,
+            "records": 0.1208,
+            "prescriptions": 0.1415,
+            "care_team": 0.1954
+          }
+        },
+        {
+          "id": "hc-b08",
+          "text": "Can you explain the deductible shown on my invoice?",
+          "expected": "billing_insurance",
+          "predicted": "billing_insurance",
+          "probabilities": {
+            "appointments": 0.0374,
+            "billing_insurance": 0.8542,
+            "records": 0.0425,
+            "prescriptions": 0.0298,
+            "care_team": 0.0361
+          }
+        },
+        {
+          "id": "hc-b09",
+          "text": "When will my refund for the overpayment be issued?",
+          "expected": "billing_insurance",
+          "predicted": "billing_insurance",
+          "probabilities": {
+            "appointments": 0.0813,
+            "billing_insurance": 0.6788,
+            "records": 0.0657,
+            "prescriptions": 0.0778,
+            "care_team": 0.0963
+          }
+        },
+        {
+          "id": "hc-b10",
+          "text": "How do I dispute a billing error on my account?",
+          "expected": "billing_insurance",
+          "predicted": "billing_insurance",
+          "probabilities": {
+            "appointments": 0.0027,
+            "billing_insurance": 0.9917,
+            "records": 0.0016,
+            "prescriptions": 0.0018,
+            "care_team": 0.0022
+          }
+        },
+        {
+          "id": "hc-r01",
+          "text": "How can I get a copy of my laboratory report?",
+          "expected": "records",
+          "predicted": "records",
+          "probabilities": {
+            "appointments": 0.1335,
+            "billing_insurance": 0.124,
+            "records": 0.4697,
+            "prescriptions": 0.0998,
+            "care_team": 0.173
+          }
+        },
+        {
+          "id": "hc-r02",
+          "text": "The date of birth in my medical chart is wrong; can it be corrected?",
+          "expected": "records",
+          "predicted": "records",
+          "probabilities": {
+            "appointments": 0.1456,
+            "billing_insurance": 0.0972,
+            "records": 0.4377,
+            "prescriptions": 0.0901,
+            "care_team": 0.2294
+          }
+        },
+        {
+          "id": "hc-r03",
+          "text": "Can you send my visit summary to my new doctor?",
+          "expected": "records",
+          "predicted": "appointments",
+          "probabilities": {
+            "appointments": 0.633,
+            "billing_insurance": 0.0558,
+            "records": 0.0769,
+            "prescriptions": 0.0489,
+            "care_team": 0.1853
+          }
+        },
+        {
+          "id": "hc-r04",
+          "text": "Where do I download the imaging report from my portal?",
+          "expected": "records",
+          "predicted": "records",
+          "probabilities": {
+            "appointments": 0.1872,
+            "billing_insurance": 0.1347,
+            "records": 0.3204,
+            "prescriptions": 0.1079,
+            "care_team": 0.2498
+          }
+        },
+        {
+          "id": "hc-r05",
+          "text": "How do I request records from my surgery two years ago?",
+          "expected": "records",
+          "predicted": "records",
+          "probabilities": {
+            "appointments": 0.0217,
+            "billing_insurance": 0.0185,
+            "records": 0.9179,
+            "prescriptions": 0.0132,
+            "care_team": 0.0288
+          }
+        },
+        {
+          "id": "hc-r06",
+          "text": "My test result is missing from the record; can someone locate it?",
+          "expected": "records",
+          "predicted": "records",
+          "probabilities": {
+            "appointments": 0.0368,
+            "billing_insurance": 0.0375,
+            "records": 0.8307,
+            "prescriptions": 0.0314,
+            "care_team": 0.0636
+          }
+        },
+        {
+          "id": "hc-r07",
+          "text": "Can I obtain a printed copy of my vaccination history?",
+          "expected": "records",
+          "predicted": "records",
+          "probabilities": {
+            "appointments": 0.0986,
+            "billing_insurance": 0.0808,
+            "records": 0.5872,
+            "prescriptions": 0.0752,
+            "care_team": 0.1582
+          }
+        },
+        {
+          "id": "hc-r08",
+          "text": "What form authorizes release of my chart to another clinic?",
+          "expected": "records",
+          "predicted": "records",
+          "probabilities": {
+            "appointments": 0.1206,
+            "billing_insurance": 0.101,
+            "records": 0.5334,
+            "prescriptions": 0.0816,
+            "care_team": 0.1634
+          }
+        },
+        {
+          "id": "hc-r09",
+          "text": "I cannot see the discharge note in my portal; where is it?",
+          "expected": "records",
+          "predicted": "records",
+          "probabilities": {
+            "appointments": 0.1567,
+            "billing_insurance": 0.0853,
+            "records": 0.3914,
+            "prescriptions": 0.076,
+            "care_team": 0.2906
+          }
+        },
+        {
+          "id": "hc-r10",
+          "text": "Can you correct the spelling of my name in the patient record?",
+          "expected": "records",
+          "predicted": "records",
+          "probabilities": {
+            "appointments": 0.1411,
+            "billing_insurance": 0.1296,
+            "records": 0.4194,
+            "prescriptions": 0.1105,
+            "care_team": 0.1994
+          }
+        },
+        {
+          "id": "hc-p01",
+          "text": "Can my regular medication be refilled before I run out?",
+          "expected": "prescriptions",
+          "predicted": "prescriptions",
+          "probabilities": {
+            "appointments": 0.0328,
+            "billing_insurance": 0.0492,
+            "records": 0.0248,
+            "prescriptions": 0.8254,
+            "care_team": 0.0679
+          }
+        },
+        {
+          "id": "hc-p02",
+          "text": "Please send the prescription to the pharmacy near my new address.",
+          "expected": "prescriptions",
+          "predicted": "prescriptions",
+          "probabilities": {
+            "appointments": 0.0352,
+            "billing_insurance": 0.0343,
+            "records": 0.0289,
+            "prescriptions": 0.8646,
+            "care_team": 0.037
+          }
+        },
+        {
+          "id": "hc-p03",
+          "text": "Why has my refill request not reached the pharmacy?",
+          "expected": "prescriptions",
+          "predicted": "prescriptions",
+          "probabilities": {
+            "appointments": 0.0154,
+            "billing_insurance": 0.027,
+            "records": 0.0193,
+            "prescriptions": 0.9082,
+            "care_team": 0.03
+          }
+        },
+        {
+          "id": "hc-p04",
+          "text": "Can I renew the inhaler order that expired last week?",
+          "expected": "prescriptions",
+          "predicted": "prescriptions",
+          "probabilities": {
+            "appointments": 0.0548,
+            "billing_insurance": 0.1358,
+            "records": 0.0979,
+            "prescriptions": 0.5867,
+            "care_team": 0.1248
+          }
+        },
+        {
+          "id": "hc-p05",
+          "text": "The pharmacy says the prescription lacks a signature; who can resend it?",
+          "expected": "prescriptions",
+          "predicted": "prescriptions",
+          "probabilities": {
+            "appointments": 0.0392,
+            "billing_insurance": 0.0367,
+            "records": 0.0303,
+            "prescriptions": 0.8538,
+            "care_team": 0.0399
+          }
+        },
+        {
+          "id": "hc-p06",
+          "text": "How can I request another supply of my current tablets?",
+          "expected": "prescriptions",
+          "predicted": "prescriptions",
+          "probabilities": {
+            "appointments": 0.0426,
+            "billing_insurance": 0.0451,
+            "records": 0.0329,
+            "prescriptions": 0.818,
+            "care_team": 0.0615
+          }
+        },
+        {
+          "id": "hc-p07",
+          "text": "Can you transfer my medication order to a different pharmacy?",
+          "expected": "prescriptions",
+          "predicted": "prescriptions",
+          "probabilities": {
+            "appointments": 0.0593,
+            "billing_insurance": 0.0628,
+            "records": 0.0477,
+            "prescriptions": 0.7375,
+            "care_team": 0.0928
+          }
+        },
+        {
+          "id": "hc-p08",
+          "text": "My usual prescription is no longer listed for renewal; can you check?",
+          "expected": "prescriptions",
+          "predicted": "prescriptions",
+          "probabilities": {
+            "appointments": 0.0419,
+            "billing_insurance": 0.0368,
+            "records": 0.0378,
+            "prescriptions": 0.8299,
+            "care_team": 0.0537
+          }
+        },
+        {
+          "id": "hc-p09",
+          "text": "Could the care team issue the next refill for my existing medicine?",
+          "expected": "prescriptions",
+          "predicted": "prescriptions",
+          "probabilities": {
+            "appointments": 0.0555,
+            "billing_insurance": 0.058,
+            "records": 0.0435,
+            "prescriptions": 0.7443,
+            "care_team": 0.0988
+          }
+        },
+        {
+          "id": "hc-p10",
+          "text": "I picked up only part of my prescribed supply; can the remaining order be sent?",
+          "expected": "prescriptions",
+          "predicted": "prescriptions",
+          "probabilities": {
+            "appointments": 0.0495,
+            "billing_insurance": 0.0853,
+            "records": 0.0499,
+            "prescriptions": 0.7194,
+            "care_team": 0.0959
+          }
+        },
+        {
+          "id": "hc-c01",
+          "text": "My symptoms have changed since the visit; can the clinician review my message?",
+          "expected": "care_team",
+          "predicted": "care_team",
+          "probabilities": {
+            "appointments": 0.2373,
+            "billing_insurance": 0.1102,
+            "records": 0.1142,
+            "prescriptions": 0.0931,
+            "care_team": 0.4452
+          }
+        },
+        {
+          "id": "hc-c02",
+          "text": "I do not understand the treatment plan the doctor gave me; who can explain it?",
+          "expected": "care_team",
+          "predicted": "care_team",
+          "probabilities": {
+            "appointments": 0.1474,
+            "billing_insurance": 0.0897,
+            "records": 0.1229,
+            "prescriptions": 0.1085,
+            "care_team": 0.5316
+          }
+        },
+        {
+          "id": "hc-c03",
+          "text": "Should I tell my care team that the pain returned after therapy?",
+          "expected": "care_team",
+          "predicted": "care_team",
+          "probabilities": {
+            "appointments": 0.1158,
+            "billing_insurance": 0.0622,
+            "records": 0.0756,
+            "prescriptions": 0.0662,
+            "care_team": 0.6803
+          }
+        },
+        {
+          "id": "hc-c04",
+          "text": "Can a nurse discuss how I am recovering after the procedure?",
+          "expected": "care_team",
+          "predicted": "care_team",
+          "probabilities": {
+            "appointments": 0.1903,
+            "billing_insurance": 0.0944,
+            "records": 0.1157,
+            "prescriptions": 0.1022,
+            "care_team": 0.4974
+          }
+        },
+        {
+          "id": "hc-c05",
+          "text": "I have a question about the side effects I noticed; may I speak with my clinician?",
+          "expected": "care_team",
+          "predicted": "care_team",
+          "probabilities": {
+            "appointments": 0.1314,
+            "billing_insurance": 0.0595,
+            "records": 0.0686,
+            "prescriptions": 0.1041,
+            "care_team": 0.6365
+          }
+        },
+        {
+          "id": "hc-c06",
+          "text": "The instructions after my visit are unclear; can someone from the care team call me?",
+          "expected": "care_team",
+          "predicted": "appointments",
+          "probabilities": {
+            "appointments": 0.4262,
+            "billing_insurance": 0.0502,
+            "records": 0.0543,
+            "prescriptions": 0.0506,
+            "care_team": 0.4187
+          }
+        },
+        {
+          "id": "hc-c07",
+          "text": "Can the doctor explain what my recent findings mean for my care?",
+          "expected": "care_team",
+          "predicted": "care_team",
+          "probabilities": {
+            "appointments": 0.1434,
+            "billing_insurance": 0.0996,
+            "records": 0.1342,
+            "prescriptions": 0.0846,
+            "care_team": 0.5382
+          }
+        },
+        {
+          "id": "hc-c08",
+          "text": "I am still feeling unwell after the treatment; how do I contact the nurse?",
+          "expected": "care_team",
+          "predicted": "care_team",
+          "probabilities": {
+            "appointments": 0.1227,
+            "billing_insurance": 0.0695,
+            "records": 0.0957,
+            "prescriptions": 0.0948,
+            "care_team": 0.6173
+          }
+        },
+        {
+          "id": "hc-c09",
+          "text": "Who can answer a clinical question about my recovery plan?",
+          "expected": "care_team",
+          "predicted": "care_team",
+          "probabilities": {
+            "appointments": 0.1762,
+            "billing_insurance": 0.0947,
+            "records": 0.0972,
+            "prescriptions": 0.0902,
+            "care_team": 0.5417
+          }
+        },
+        {
+          "id": "hc-c10",
+          "text": "Can my clinician review whether the current plan is helping?",
+          "expected": "care_team",
+          "predicted": "care_team",
+          "probabilities": {
+            "appointments": 0.2743,
+            "billing_insurance": 0.0842,
+            "records": 0.0857,
+            "prescriptions": 0.0884,
+            "care_team": 0.4673
+          }
+        }
+      ]
+    },
+    "mining": {
+      "total": 50,
+      "correct": 47,
+      "accuracy": 0.94,
+      "macro_f1": 0.937,
+      "per_label": {
+        "safety": {
+          "support": 10,
+          "precision": 0.9091,
+          "recall": 1.0,
+          "f1": 0.9524
+        },
+        "equipment": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "geology": {
+          "support": 10,
+          "precision": 0.8333,
+          "recall": 1.0,
+          "f1": 0.9091
+        },
+        "logistics": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "environment": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 0.7,
+          "f1": 0.8235
+        }
+      },
+      "confusion_matrix": {
+        "safety": {
+          "safety": 10,
+          "equipment": 0,
+          "geology": 0,
+          "logistics": 0,
+          "environment": 0
+        },
+        "equipment": {
+          "safety": 0,
+          "equipment": 10,
+          "geology": 0,
+          "logistics": 0,
+          "environment": 0
+        },
+        "geology": {
+          "safety": 0,
+          "equipment": 0,
+          "geology": 10,
+          "logistics": 0,
+          "environment": 0
+        },
+        "logistics": {
+          "safety": 0,
+          "equipment": 0,
+          "geology": 0,
+          "logistics": 10,
+          "environment": 0
+        },
+        "environment": {
+          "safety": 1,
+          "equipment": 0,
+          "geology": 2,
+          "logistics": 0,
+          "environment": 7
+        }
+      },
+      "mistakes": [
+        {
+          "id": "mi-n03",
+          "text": "Can the disturbed hillside be included in the rehabilitation plan?",
+          "expected": "environment",
+          "predicted": "safety",
+          "probabilities": {
+            "safety": 0.3273,
+            "equipment": 0.1473,
+            "geology": 0.1646,
+            "logistics": 0.1185,
+            "environment": 0.2422
+          }
+        },
+        {
+          "id": "mi-n05",
+          "text": "The air sampler recorded a high reading near the boundary; who reviews it?",
+          "expected": "environment",
+          "predicted": "geology",
+          "probabilities": {
+            "safety": 0.1429,
+            "equipment": 0.0994,
+            "geology": 0.6136,
+            "logistics": 0.0627,
+            "environment": 0.0814
+          }
+        },
+        {
+          "id": "mi-n10",
+          "text": "The oil storage area may be leaking into soil; who handles environmental sampling?",
+          "expected": "environment",
+          "predicted": "geology",
+          "probabilities": {
+            "safety": 0.1373,
+            "equipment": 0.092,
+            "geology": 0.4124,
+            "logistics": 0.0692,
+            "environment": 0.2891
+          }
+        }
+      ],
+      "sector": "mining",
+      "instructions": "Which mine operations team should handle this report? Choose its primary purpose.",
+      "criteria": {
+        "safety": "worker hazards, incidents, protective controls or unsafe conditions",
+        "equipment": "repair, servicing, failure or maintenance of mine machinery",
+        "geology": "ore samples, drilling results, grade estimates or deposit interpretation",
+        "logistics": "ore hauling, supplies, transport, stockpiles or dispatch",
+        "environment": "water, dust, emissions, waste, rehabilitation or environmental monitoring"
+      },
+      "elapsed_seconds": 0.93,
+      "cases": [
+        {
+          "id": "mi-s01",
+          "text": "Can someone inspect the loose rock above the walkway before the next shift?",
+          "expected": "safety",
+          "predicted": "safety",
+          "probabilities": {
+            "safety": 0.4409,
+            "equipment": 0.1619,
+            "geology": 0.1422,
+            "logistics": 0.1061,
+            "environment": 0.149
+          }
+        },
+        {
+          "id": "mi-s02",
+          "text": "Where should I report a near miss involving a reversing truck?",
+          "expected": "safety",
+          "predicted": "safety",
+          "probabilities": {
+            "safety": 0.3652,
+            "equipment": 0.2214,
+            "geology": 0.1217,
+            "logistics": 0.1391,
+            "environment": 0.1527
+          }
+        },
+        {
+          "id": "mi-s03",
+          "text": "The ventilation alarm sounded underground; who handles the hazard report?",
+          "expected": "safety",
+          "predicted": "safety",
+          "probabilities": {
+            "safety": 0.7483,
+            "equipment": 0.0588,
+            "geology": 0.0563,
+            "logistics": 0.0414,
+            "environment": 0.0952
+          }
+        },
+        {
+          "id": "mi-s04",
+          "text": "Can we replace the missing guardrail beside the work platform?",
+          "expected": "safety",
+          "predicted": "safety",
+          "probabilities": {
+            "safety": 0.3473,
+            "equipment": 0.3067,
+            "geology": 0.0893,
+            "logistics": 0.1197,
+            "environment": 0.1369
+          }
+        },
+        {
+          "id": "mi-s05",
+          "text": "I saw workers entering the area without required protective gear; whom do I notify?",
+          "expected": "safety",
+          "predicted": "safety",
+          "probabilities": {
+            "safety": 0.7482,
+            "equipment": 0.0457,
+            "geology": 0.0389,
+            "logistics": 0.0736,
+            "environment": 0.0936
+          }
+        },
+        {
+          "id": "mi-s06",
+          "text": "Who reviews the slip incident that occurred at the wash plant?",
+          "expected": "safety",
+          "predicted": "safety",
+          "probabilities": {
+            "safety": 0.6339,
+            "equipment": 0.0919,
+            "geology": 0.0689,
+            "logistics": 0.0608,
+            "environment": 0.1444
+          }
+        },
+        {
+          "id": "mi-s07",
+          "text": "The escape route is blocked by stored pallets; can this be made safe?",
+          "expected": "safety",
+          "predicted": "safety",
+          "probabilities": {
+            "safety": 0.5737,
+            "equipment": 0.1133,
+            "geology": 0.0697,
+            "logistics": 0.0828,
+            "environment": 0.1605
+          }
+        },
+        {
+          "id": "mi-s08",
+          "text": "A cable crosses the pedestrian path and could trip someone; where do I report it?",
+          "expected": "safety",
+          "predicted": "safety",
+          "probabilities": {
+            "safety": 0.4916,
+            "equipment": 0.143,
+            "geology": 0.1146,
+            "logistics": 0.0975,
+            "environment": 0.1532
+          }
+        },
+        {
+          "id": "mi-s09",
+          "text": "Can the team reassess the controls before crews enter the confined space?",
+          "expected": "safety",
+          "predicted": "safety",
+          "probabilities": {
+            "safety": 0.6787,
+            "equipment": 0.1125,
+            "geology": 0.0583,
+            "logistics": 0.0461,
+            "environment": 0.1045
+          }
+        },
+        {
+          "id": "mi-s10",
+          "text": "Who can investigate the unreported injury on yesterday's shift?",
+          "expected": "safety",
+          "predicted": "safety",
+          "probabilities": {
+            "safety": 0.7416,
+            "equipment": 0.0599,
+            "geology": 0.057,
+            "logistics": 0.058,
+            "environment": 0.0835
+          }
+        },
+        {
+          "id": "mi-e01",
+          "text": "The excavator hydraulic arm is leaking; can maintenance inspect it?",
+          "expected": "equipment",
+          "predicted": "equipment",
+          "probabilities": {
+            "safety": 0.2234,
+            "equipment": 0.4763,
+            "geology": 0.1035,
+            "logistics": 0.0629,
+            "environment": 0.1338
+          }
+        },
+        {
+          "id": "mi-e02",
+          "text": "When is the crusher due for its next service?",
+          "expected": "equipment",
+          "predicted": "equipment",
+          "probabilities": {
+            "safety": 0.1538,
+            "equipment": 0.5928,
+            "geology": 0.1036,
+            "logistics": 0.0759,
+            "environment": 0.0739
+          }
+        },
+        {
+          "id": "mi-e03",
+          "text": "The conveyor motor stops after ten minutes; who can repair it?",
+          "expected": "equipment",
+          "predicted": "equipment",
+          "probabilities": {
+            "safety": 0.1998,
+            "equipment": 0.54,
+            "geology": 0.0729,
+            "logistics": 0.1054,
+            "environment": 0.0819
+          }
+        },
+        {
+          "id": "mi-e04",
+          "text": "Can someone replace the worn tires on haul truck 12?",
+          "expected": "equipment",
+          "predicted": "equipment",
+          "probabilities": {
+            "safety": 0.0876,
+            "equipment": 0.6932,
+            "geology": 0.0276,
+            "logistics": 0.1516,
+            "environment": 0.0399
+          }
+        },
+        {
+          "id": "mi-e05",
+          "text": "The drill rig will not start after fueling; can a technician check it?",
+          "expected": "equipment",
+          "predicted": "equipment",
+          "probabilities": {
+            "safety": 0.1413,
+            "equipment": 0.5728,
+            "geology": 0.1502,
+            "logistics": 0.0642,
+            "environment": 0.0714
+          }
+        },
+        {
+          "id": "mi-e06",
+          "text": "Where do I log a fault on the loader's transmission?",
+          "expected": "equipment",
+          "predicted": "equipment",
+          "probabilities": {
+            "safety": 0.2568,
+            "equipment": 0.4473,
+            "geology": 0.0847,
+            "logistics": 0.1098,
+            "environment": 0.1014
+          }
+        },
+        {
+          "id": "mi-e07",
+          "text": "Can the pump bearings be inspected during the shutdown?",
+          "expected": "equipment",
+          "predicted": "equipment",
+          "probabilities": {
+            "safety": 0.1736,
+            "equipment": 0.6589,
+            "geology": 0.0594,
+            "logistics": 0.0399,
+            "environment": 0.0682
+          }
+        },
+        {
+          "id": "mi-e08",
+          "text": "The generator output is unstable; who handles the repair ticket?",
+          "expected": "equipment",
+          "predicted": "equipment",
+          "probabilities": {
+            "safety": 0.2098,
+            "equipment": 0.5028,
+            "geology": 0.0898,
+            "logistics": 0.0833,
+            "environment": 0.1142
+          }
+        },
+        {
+          "id": "mi-e09",
+          "text": "Which crew services the screening machine this weekend?",
+          "expected": "equipment",
+          "predicted": "equipment",
+          "probabilities": {
+            "safety": 0.1202,
+            "equipment": 0.6666,
+            "geology": 0.0921,
+            "logistics": 0.0512,
+            "environment": 0.0699
+          }
+        },
+        {
+          "id": "mi-e10",
+          "text": "Can we order a replacement belt for the damaged conveyor?",
+          "expected": "equipment",
+          "predicted": "equipment",
+          "probabilities": {
+            "safety": 0.1176,
+            "equipment": 0.721,
+            "geology": 0.043,
+            "logistics": 0.0687,
+            "environment": 0.0496
+          }
+        },
+        {
+          "id": "mi-g01",
+          "text": "Can the assay team verify the grade reported for core sample 84?",
+          "expected": "geology",
+          "predicted": "geology",
+          "probabilities": {
+            "safety": 0.1104,
+            "equipment": 0.1228,
+            "geology": 0.599,
+            "logistics": 0.0741,
+            "environment": 0.0937
+          }
+        },
+        {
+          "id": "mi-g02",
+          "text": "Where are the latest drill-hole logs for the eastern zone?",
+          "expected": "geology",
+          "predicted": "geology",
+          "probabilities": {
+            "safety": 0.15,
+            "equipment": 0.1252,
+            "geology": 0.5661,
+            "logistics": 0.0866,
+            "environment": 0.0722
+          }
+        },
+        {
+          "id": "mi-g03",
+          "text": "Does the new core show the same mineralized layer as last week's hole?",
+          "expected": "geology",
+          "predicted": "geology",
+          "probabilities": {
+            "safety": 0.0887,
+            "equipment": 0.0847,
+            "geology": 0.7568,
+            "logistics": 0.0348,
+            "environment": 0.0351
+          }
+        },
+        {
+          "id": "mi-g04",
+          "text": "Can a geologist map the fault seen on the pit wall?",
+          "expected": "geology",
+          "predicted": "geology",
+          "probabilities": {
+            "safety": 0.1407,
+            "equipment": 0.1699,
+            "geology": 0.5413,
+            "logistics": 0.0646,
+            "environment": 0.0835
+          }
+        },
+        {
+          "id": "mi-g05",
+          "text": "Who can interpret the assay discrepancy between duplicate samples?",
+          "expected": "geology",
+          "predicted": "geology",
+          "probabilities": {
+            "safety": 0.1996,
+            "equipment": 0.0906,
+            "geology": 0.5323,
+            "logistics": 0.0789,
+            "environment": 0.0986
+          }
+        },
+        {
+          "id": "mi-g06",
+          "text": "What is the updated ore grade estimate for this block?",
+          "expected": "geology",
+          "predicted": "geology",
+          "probabilities": {
+            "safety": 0.1153,
+            "equipment": 0.1093,
+            "geology": 0.5851,
+            "logistics": 0.1184,
+            "environment": 0.072
+          }
+        },
+        {
+          "id": "mi-g07",
+          "text": "Can we review the planned exploration holes near the northern boundary?",
+          "expected": "geology",
+          "predicted": "geology",
+          "probabilities": {
+            "safety": 0.1025,
+            "equipment": 0.1189,
+            "geology": 0.6465,
+            "logistics": 0.0615,
+            "environment": 0.0706
+          }
+        },
+        {
+          "id": "mi-g08",
+          "text": "Where should the newly collected rock samples be catalogued?",
+          "expected": "geology",
+          "predicted": "geology",
+          "probabilities": {
+            "safety": 0.065,
+            "equipment": 0.0502,
+            "geology": 0.7838,
+            "logistics": 0.0521,
+            "environment": 0.0489
+          }
+        },
+        {
+          "id": "mi-g09",
+          "text": "The vein orientation looks different in the latest survey; who assesses it?",
+          "expected": "geology",
+          "predicted": "geology",
+          "probabilities": {
+            "safety": 0.1198,
+            "equipment": 0.1198,
+            "geology": 0.6016,
+            "logistics": 0.0876,
+            "environment": 0.0711
+          }
+        },
+        {
+          "id": "mi-g10",
+          "text": "Can the resource model be updated with the new core results?",
+          "expected": "geology",
+          "predicted": "geology",
+          "probabilities": {
+            "safety": 0.1214,
+            "equipment": 0.1574,
+            "geology": 0.5228,
+            "logistics": 0.0959,
+            "environment": 0.1025
+          }
+        },
+        {
+          "id": "mi-l01",
+          "text": "When will the ore trucks be dispatched to the processing plant?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "safety": 0.0807,
+            "equipment": 0.076,
+            "geology": 0.0585,
+            "logistics": 0.7476,
+            "environment": 0.0372
+          }
+        },
+        {
+          "id": "mi-l02",
+          "text": "Can we move the spare parts shipment to the night shift?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "safety": 0.3533,
+            "equipment": 0.1451,
+            "geology": 0.0604,
+            "logistics": 0.386,
+            "environment": 0.0553
+          }
+        },
+        {
+          "id": "mi-l03",
+          "text": "Which stockpile should receive today's low-grade material?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "safety": 0.1759,
+            "equipment": 0.1486,
+            "geology": 0.2667,
+            "logistics": 0.2752,
+            "environment": 0.1336
+          }
+        },
+        {
+          "id": "mi-l04",
+          "text": "The access road is congested; can dispatch stagger the haulage schedule?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "safety": 0.1206,
+            "equipment": 0.0947,
+            "geology": 0.0665,
+            "logistics": 0.6484,
+            "environment": 0.0698
+          }
+        },
+        {
+          "id": "mi-l05",
+          "text": "Where is the delayed fuel delivery for the remote camp?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "safety": 0.3025,
+            "equipment": 0.0887,
+            "geology": 0.0702,
+            "logistics": 0.3581,
+            "environment": 0.1804
+          }
+        },
+        {
+          "id": "mi-l06",
+          "text": "Can a truck collect the ore bins before the next shift?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "safety": 0.2053,
+            "equipment": 0.1624,
+            "geology": 0.1086,
+            "logistics": 0.4515,
+            "environment": 0.0722
+          }
+        },
+        {
+          "id": "mi-l07",
+          "text": "Who tracks the inventory of blasting supplies arriving tomorrow?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "safety": 0.0991,
+            "equipment": 0.0925,
+            "geology": 0.0533,
+            "logistics": 0.7061,
+            "environment": 0.049
+          }
+        },
+        {
+          "id": "mi-l08",
+          "text": "What is the revised transport schedule for concentrate shipments?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "safety": 0.0677,
+            "equipment": 0.0698,
+            "geology": 0.0665,
+            "logistics": 0.7641,
+            "environment": 0.0318
+          }
+        },
+        {
+          "id": "mi-l09",
+          "text": "Can we allocate another haul truck to the western stockpile?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "safety": 0.0961,
+            "equipment": 0.1023,
+            "geology": 0.0463,
+            "logistics": 0.7037,
+            "environment": 0.0515
+          }
+        },
+        {
+          "id": "mi-l10",
+          "text": "The warehouse has not received the ordered filters; who follows up?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "safety": 0.1226,
+            "equipment": 0.1533,
+            "geology": 0.0892,
+            "logistics": 0.5359,
+            "environment": 0.099
+          }
+        },
+        {
+          "id": "mi-n01",
+          "text": "Can the water team investigate the cloudy discharge from the settling pond?",
+          "expected": "environment",
+          "predicted": "environment",
+          "probabilities": {
+            "safety": 0.096,
+            "equipment": 0.118,
+            "geology": 0.1092,
+            "logistics": 0.0551,
+            "environment": 0.6218
+          }
+        },
+        {
+          "id": "mi-n02",
+          "text": "Where do we submit this month's dust monitoring results?",
+          "expected": "environment",
+          "predicted": "environment",
+          "probabilities": {
+            "safety": 0.1654,
+            "equipment": 0.1242,
+            "geology": 0.2793,
+            "logistics": 0.102,
+            "environment": 0.3291
+          }
+        },
+        {
+          "id": "mi-n03",
+          "text": "Can the disturbed hillside be included in the rehabilitation plan?",
+          "expected": "environment",
+          "predicted": "safety",
+          "probabilities": {
+            "safety": 0.3273,
+            "equipment": 0.1473,
+            "geology": 0.1646,
+            "logistics": 0.1185,
+            "environment": 0.2422
+          }
+        },
+        {
+          "id": "mi-n04",
+          "text": "Who checks the waste rock runoff after heavy rain?",
+          "expected": "environment",
+          "predicted": "environment",
+          "probabilities": {
+            "safety": 0.1129,
+            "equipment": 0.1024,
+            "geology": 0.1523,
+            "logistics": 0.0696,
+            "environment": 0.5629
+          }
+        },
+        {
+          "id": "mi-n05",
+          "text": "The air sampler recorded a high reading near the boundary; who reviews it?",
+          "expected": "environment",
+          "predicted": "geology",
+          "probabilities": {
+            "safety": 0.1429,
+            "equipment": 0.0994,
+            "geology": 0.6136,
+            "logistics": 0.0627,
+            "environment": 0.0814
+          }
+        },
+        {
+          "id": "mi-n06",
+          "text": "Can we inspect the tailings water level and record the result?",
+          "expected": "environment",
+          "predicted": "environment",
+          "probabilities": {
+            "safety": 0.1809,
+            "equipment": 0.1784,
+            "geology": 0.2294,
+            "logistics": 0.0715,
+            "environment": 0.3398
+          }
+        },
+        {
+          "id": "mi-n07",
+          "text": "Where are the latest groundwater monitoring measurements?",
+          "expected": "environment",
+          "predicted": "environment",
+          "probabilities": {
+            "safety": 0.1855,
+            "equipment": 0.0988,
+            "geology": 0.2766,
+            "logistics": 0.0798,
+            "environment": 0.3594
+          }
+        },
+        {
+          "id": "mi-n08",
+          "text": "Who handles the complaint about dust leaving the mine site?",
+          "expected": "environment",
+          "predicted": "environment",
+          "probabilities": {
+            "safety": 0.199,
+            "equipment": 0.1141,
+            "geology": 0.1017,
+            "logistics": 0.0871,
+            "environment": 0.4981
+          }
+        },
+        {
+          "id": "mi-n09",
+          "text": "Can the team assess vegetation recovery on the closed section?",
+          "expected": "environment",
+          "predicted": "environment",
+          "probabilities": {
+            "safety": 0.2286,
+            "equipment": 0.1956,
+            "geology": 0.1892,
+            "logistics": 0.0978,
+            "environment": 0.2889
+          }
+        },
+        {
+          "id": "mi-n10",
+          "text": "The oil storage area may be leaking into soil; who handles environmental sampling?",
+          "expected": "environment",
+          "predicted": "geology",
+          "probabilities": {
+            "safety": 0.1373,
+            "equipment": 0.092,
+            "geology": 0.4124,
+            "logistics": 0.0692,
+            "environment": 0.2891
+          }
+        }
+      ]
+    },
+    "agriculture": {
+      "total": 50,
+      "correct": 47,
+      "accuracy": 0.94,
+      "macro_f1": 0.9412,
+      "per_label": {
+        "crops": {
+          "support": 10,
+          "precision": 0.7692,
+          "recall": 1.0,
+          "f1": 0.8696
+        },
+        "irrigation": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "machinery": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "logistics": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.8889
+        },
+        "farm_finance": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        }
+      },
+      "confusion_matrix": {
+        "crops": {
+          "crops": 10,
+          "irrigation": 0,
+          "machinery": 0,
+          "logistics": 0,
+          "farm_finance": 0
+        },
+        "irrigation": {
+          "crops": 0,
+          "irrigation": 10,
+          "machinery": 0,
+          "logistics": 0,
+          "farm_finance": 0
+        },
+        "machinery": {
+          "crops": 0,
+          "irrigation": 0,
+          "machinery": 10,
+          "logistics": 0,
+          "farm_finance": 0
+        },
+        "logistics": {
+          "crops": 2,
+          "irrigation": 0,
+          "machinery": 0,
+          "logistics": 8,
+          "farm_finance": 0
+        },
+        "farm_finance": {
+          "crops": 1,
+          "irrigation": 0,
+          "machinery": 0,
+          "logistics": 0,
+          "farm_finance": 9
+        }
+      },
+      "mistakes": [
+        {
+          "id": "ag-l05",
+          "text": "Can we move today's milk collection to a later time?",
+          "expected": "logistics",
+          "predicted": "crops",
+          "probabilities": {
+            "crops": 0.3121,
+            "irrigation": 0.1155,
+            "machinery": 0.108,
+            "logistics": 0.1967,
+            "farm_finance": 0.2678
+          }
+        },
+        {
+          "id": "ag-l09",
+          "text": "When is the next pickup for the harvested beans?",
+          "expected": "logistics",
+          "predicted": "crops",
+          "probabilities": {
+            "crops": 0.6053,
+            "irrigation": 0.0738,
+            "machinery": 0.04,
+            "logistics": 0.2093,
+            "farm_finance": 0.0716
+          }
+        },
+        {
+          "id": "ag-f04",
+          "text": "How do I submit a claim under the crop insurance policy?",
+          "expected": "farm_finance",
+          "predicted": "crops",
+          "probabilities": {
+            "crops": 0.5665,
+            "irrigation": 0.073,
+            "machinery": 0.0705,
+            "logistics": 0.1164,
+            "farm_finance": 0.1736
+          }
+        }
+      ],
+      "sector": "agriculture",
+      "instructions": "Which farm operations team should handle this message? Choose its primary purpose.",
+      "criteria": {
+        "crops": "plant growth, pests, disease, soil nutrients or field agronomy",
+        "irrigation": "watering schedules, pumps, water pressure or irrigation lines",
+        "machinery": "repair, maintenance or operation of tractors and farm equipment",
+        "logistics": "harvest transport, storage, packing, delivery or inventory movement",
+        "farm_finance": "input costs, invoices, farm credit, insurance or payments"
+      },
+      "elapsed_seconds": 0.288,
+      "cases": [
+        {
+          "id": "ag-c01",
+          "text": "Why are the maize leaves turning yellow in the north field?",
+          "expected": "crops",
+          "predicted": "crops",
+          "probabilities": {
+            "crops": 0.6861,
+            "irrigation": 0.0723,
+            "machinery": 0.063,
+            "logistics": 0.1017,
+            "farm_finance": 0.0769
+          }
+        },
+        {
+          "id": "ag-c02",
+          "text": "Can an agronomist inspect the spots on the tomato plants?",
+          "expected": "crops",
+          "predicted": "crops",
+          "probabilities": {
+            "crops": 0.5117,
+            "irrigation": 0.1215,
+            "machinery": 0.1162,
+            "logistics": 0.1292,
+            "farm_finance": 0.1215
+          }
+        },
+        {
+          "id": "ag-c03",
+          "text": "Which nutrient test should we request for this low-yield plot?",
+          "expected": "crops",
+          "predicted": "crops",
+          "probabilities": {
+            "crops": 0.5978,
+            "irrigation": 0.08,
+            "machinery": 0.0647,
+            "logistics": 0.1078,
+            "farm_finance": 0.1497
+          }
+        },
+        {
+          "id": "ag-c04",
+          "text": "Are the insects on the bean leaves damaging the crop?",
+          "expected": "crops",
+          "predicted": "crops",
+          "probabilities": {
+            "crops": 0.8106,
+            "irrigation": 0.0457,
+            "machinery": 0.0393,
+            "logistics": 0.0596,
+            "farm_finance": 0.0449
+          }
+        },
+        {
+          "id": "ag-c05",
+          "text": "Can we review the soil sample results before planting?",
+          "expected": "crops",
+          "predicted": "crops",
+          "probabilities": {
+            "crops": 0.3073,
+            "irrigation": 0.1471,
+            "machinery": 0.1305,
+            "logistics": 0.2043,
+            "farm_finance": 0.2108
+          }
+        },
+        {
+          "id": "ag-c06",
+          "text": "Why did germination fail in several rows of seed?",
+          "expected": "crops",
+          "predicted": "crops",
+          "probabilities": {
+            "crops": 0.7188,
+            "irrigation": 0.0467,
+            "machinery": 0.0519,
+            "logistics": 0.1068,
+            "farm_finance": 0.0757
+          }
+        },
+        {
+          "id": "ag-c07",
+          "text": "Could someone assess the fungal growth on the wheat?",
+          "expected": "crops",
+          "predicted": "crops",
+          "probabilities": {
+            "crops": 0.84,
+            "irrigation": 0.0306,
+            "machinery": 0.0347,
+            "logistics": 0.0482,
+            "farm_finance": 0.0465
+          }
+        },
+        {
+          "id": "ag-c08",
+          "text": "What planting density is planned for the next field?",
+          "expected": "crops",
+          "predicted": "crops",
+          "probabilities": {
+            "crops": 0.4806,
+            "irrigation": 0.1631,
+            "machinery": 0.0844,
+            "logistics": 0.1501,
+            "farm_finance": 0.1219
+          }
+        },
+        {
+          "id": "ag-c09",
+          "text": "Can the field team check whether pests are spreading to the orchard?",
+          "expected": "crops",
+          "predicted": "crops",
+          "probabilities": {
+            "crops": 0.5178,
+            "irrigation": 0.1163,
+            "machinery": 0.1184,
+            "logistics": 0.1227,
+            "farm_finance": 0.1248
+          }
+        },
+        {
+          "id": "ag-c10",
+          "text": "Is the crop ready for its scheduled fertilizer application?",
+          "expected": "crops",
+          "predicted": "crops",
+          "probabilities": {
+            "crops": 0.5315,
+            "irrigation": 0.1596,
+            "machinery": 0.0634,
+            "logistics": 0.1259,
+            "farm_finance": 0.1196
+          }
+        },
+        {
+          "id": "ag-i01",
+          "text": "Can the watering schedule be moved to early morning?",
+          "expected": "irrigation",
+          "predicted": "irrigation",
+          "probabilities": {
+            "crops": 0.0556,
+            "irrigation": 0.8012,
+            "machinery": 0.0421,
+            "logistics": 0.0455,
+            "farm_finance": 0.0556
+          }
+        },
+        {
+          "id": "ag-i02",
+          "text": "The drip line has no pressure at the far end; who checks it?",
+          "expected": "irrigation",
+          "predicted": "irrigation",
+          "probabilities": {
+            "crops": 0.1431,
+            "irrigation": 0.3213,
+            "machinery": 0.1275,
+            "logistics": 0.1818,
+            "farm_finance": 0.2263
+          }
+        },
+        {
+          "id": "ag-i03",
+          "text": "Why has the irrigation pump stopped supplying the south field?",
+          "expected": "irrigation",
+          "predicted": "irrigation",
+          "probabilities": {
+            "crops": 0.0249,
+            "irrigation": 0.8585,
+            "machinery": 0.0585,
+            "logistics": 0.0279,
+            "farm_finance": 0.0302
+          }
+        },
+        {
+          "id": "ag-i04",
+          "text": "Can we reduce water delivery to the plots after yesterday's rain?",
+          "expected": "irrigation",
+          "predicted": "irrigation",
+          "probabilities": {
+            "crops": 0.0628,
+            "irrigation": 0.8428,
+            "machinery": 0.0236,
+            "logistics": 0.0351,
+            "farm_finance": 0.0357
+          }
+        },
+        {
+          "id": "ag-i05",
+          "text": "Where is the leak in the main water pipe?",
+          "expected": "irrigation",
+          "predicted": "irrigation",
+          "probabilities": {
+            "crops": 0.1299,
+            "irrigation": 0.3543,
+            "machinery": 0.1792,
+            "logistics": 0.1521,
+            "farm_finance": 0.1845
+          }
+        },
+        {
+          "id": "ag-i06",
+          "text": "Who adjusts the sprinkler run time for the new planting?",
+          "expected": "irrigation",
+          "predicted": "irrigation",
+          "probabilities": {
+            "crops": 0.0819,
+            "irrigation": 0.8107,
+            "machinery": 0.032,
+            "logistics": 0.035,
+            "farm_finance": 0.0403
+          }
+        },
+        {
+          "id": "ag-i07",
+          "text": "Can the water meter reading be checked before the next cycle?",
+          "expected": "irrigation",
+          "predicted": "irrigation",
+          "probabilities": {
+            "crops": 0.0267,
+            "irrigation": 0.8886,
+            "machinery": 0.0219,
+            "logistics": 0.0223,
+            "farm_finance": 0.0405
+          }
+        },
+        {
+          "id": "ag-i08",
+          "text": "The canal gate is stuck closed; who restores the flow?",
+          "expected": "irrigation",
+          "predicted": "irrigation",
+          "probabilities": {
+            "crops": 0.114,
+            "irrigation": 0.2993,
+            "machinery": 0.1972,
+            "logistics": 0.2137,
+            "farm_finance": 0.1757
+          }
+        },
+        {
+          "id": "ag-i09",
+          "text": "How do we schedule water for the orchard during the dry week?",
+          "expected": "irrigation",
+          "predicted": "irrigation",
+          "probabilities": {
+            "crops": 0.0957,
+            "irrigation": 0.7293,
+            "machinery": 0.0482,
+            "logistics": 0.0586,
+            "farm_finance": 0.0682
+          }
+        },
+        {
+          "id": "ag-i10",
+          "text": "Can someone inspect the blocked drip emitters in row seven?",
+          "expected": "irrigation",
+          "predicted": "irrigation",
+          "probabilities": {
+            "crops": 0.0881,
+            "irrigation": 0.5757,
+            "machinery": 0.1345,
+            "logistics": 0.0984,
+            "farm_finance": 0.1033
+          }
+        },
+        {
+          "id": "ag-m01",
+          "text": "The tractor clutch slips under load; can a mechanic inspect it?",
+          "expected": "machinery",
+          "predicted": "machinery",
+          "probabilities": {
+            "crops": 0.055,
+            "irrigation": 0.0465,
+            "machinery": 0.7748,
+            "logistics": 0.0628,
+            "farm_finance": 0.0609
+          }
+        },
+        {
+          "id": "ag-m02",
+          "text": "When should the combine receive its next service?",
+          "expected": "machinery",
+          "predicted": "machinery",
+          "probabilities": {
+            "crops": 0.0801,
+            "irrigation": 0.0823,
+            "machinery": 0.6145,
+            "logistics": 0.1213,
+            "farm_finance": 0.1018
+          }
+        },
+        {
+          "id": "ag-m03",
+          "text": "Can we replace the broken blade on the mower?",
+          "expected": "machinery",
+          "predicted": "machinery",
+          "probabilities": {
+            "crops": 0.0446,
+            "irrigation": 0.0337,
+            "machinery": 0.8307,
+            "logistics": 0.0474,
+            "farm_finance": 0.0436
+          }
+        },
+        {
+          "id": "ag-m04",
+          "text": "The seed drill will not start; who repairs it?",
+          "expected": "machinery",
+          "predicted": "machinery",
+          "probabilities": {
+            "crops": 0.104,
+            "irrigation": 0.0673,
+            "machinery": 0.6086,
+            "logistics": 0.1178,
+            "farm_finance": 0.1022
+          }
+        },
+        {
+          "id": "ag-m05",
+          "text": "Where can I log the harvester's engine fault?",
+          "expected": "machinery",
+          "predicted": "machinery",
+          "probabilities": {
+            "crops": 0.0801,
+            "irrigation": 0.0503,
+            "machinery": 0.7534,
+            "logistics": 0.0633,
+            "farm_finance": 0.053
+          }
+        },
+        {
+          "id": "ag-m06",
+          "text": "Can the sprayer boom be calibrated after its repair?",
+          "expected": "machinery",
+          "predicted": "machinery",
+          "probabilities": {
+            "crops": 0.1179,
+            "irrigation": 0.2372,
+            "machinery": 0.4254,
+            "logistics": 0.1042,
+            "farm_finance": 0.1154
+          }
+        },
+        {
+          "id": "ag-m07",
+          "text": "Who maintains the grain dryer motor?",
+          "expected": "machinery",
+          "predicted": "machinery",
+          "probabilities": {
+            "crops": 0.1609,
+            "irrigation": 0.0911,
+            "machinery": 0.335,
+            "logistics": 0.2081,
+            "farm_finance": 0.2049
+          }
+        },
+        {
+          "id": "ag-m08",
+          "text": "The plow attachment is bent; can the workshop fix it?",
+          "expected": "machinery",
+          "predicted": "machinery",
+          "probabilities": {
+            "crops": 0.0625,
+            "irrigation": 0.0683,
+            "machinery": 0.715,
+            "logistics": 0.0805,
+            "farm_finance": 0.0737
+          }
+        },
+        {
+          "id": "ag-m09",
+          "text": "Can someone check why the baler keeps jamming?",
+          "expected": "machinery",
+          "predicted": "machinery",
+          "probabilities": {
+            "crops": 0.1193,
+            "irrigation": 0.0826,
+            "machinery": 0.5302,
+            "logistics": 0.1517,
+            "farm_finance": 0.1162
+          }
+        },
+        {
+          "id": "ag-m10",
+          "text": "Which spare filter fits the farm loader?",
+          "expected": "machinery",
+          "predicted": "machinery",
+          "probabilities": {
+            "crops": 0.0696,
+            "irrigation": 0.0712,
+            "machinery": 0.6018,
+            "logistics": 0.1445,
+            "farm_finance": 0.1129
+          }
+        },
+        {
+          "id": "ag-l01",
+          "text": "When will the harvested potatoes be collected for storage?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "crops": 0.3364,
+            "irrigation": 0.1077,
+            "machinery": 0.0584,
+            "logistics": 0.3733,
+            "farm_finance": 0.1242
+          }
+        },
+        {
+          "id": "ag-l02",
+          "text": "Can we book a truck to deliver produce to the market?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "crops": 0.2287,
+            "irrigation": 0.0589,
+            "machinery": 0.0539,
+            "logistics": 0.5519,
+            "farm_finance": 0.1066
+          }
+        },
+        {
+          "id": "ag-l03",
+          "text": "Which warehouse has space for the next grain load?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "crops": 0.0744,
+            "irrigation": 0.0646,
+            "machinery": 0.0634,
+            "logistics": 0.6668,
+            "farm_finance": 0.1308
+          }
+        },
+        {
+          "id": "ag-l04",
+          "text": "The packing crates have not arrived; who tracks the shipment?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "crops": 0.0493,
+            "irrigation": 0.0515,
+            "machinery": 0.0497,
+            "logistics": 0.7797,
+            "farm_finance": 0.0697
+          }
+        },
+        {
+          "id": "ag-l05",
+          "text": "Can we move today's milk collection to a later time?",
+          "expected": "logistics",
+          "predicted": "crops",
+          "probabilities": {
+            "crops": 0.3121,
+            "irrigation": 0.1155,
+            "machinery": 0.108,
+            "logistics": 0.1967,
+            "farm_finance": 0.2678
+          }
+        },
+        {
+          "id": "ag-l06",
+          "text": "Where should the sorted fruit be stored before dispatch?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "crops": 0.089,
+            "irrigation": 0.0371,
+            "machinery": 0.0413,
+            "logistics": 0.7731,
+            "farm_finance": 0.0594
+          }
+        },
+        {
+          "id": "ag-l07",
+          "text": "Who coordinates delivery of seed bags to the field teams?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "crops": 0.3247,
+            "irrigation": 0.0831,
+            "machinery": 0.0715,
+            "logistics": 0.4063,
+            "farm_finance": 0.1144
+          }
+        },
+        {
+          "id": "ag-l08",
+          "text": "Can the cold-room inventory be updated after this shipment?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "crops": 0.0928,
+            "irrigation": 0.097,
+            "machinery": 0.1099,
+            "logistics": 0.4903,
+            "farm_finance": 0.21
+          }
+        },
+        {
+          "id": "ag-l09",
+          "text": "When is the next pickup for the harvested beans?",
+          "expected": "logistics",
+          "predicted": "crops",
+          "probabilities": {
+            "crops": 0.6053,
+            "irrigation": 0.0738,
+            "machinery": 0.04,
+            "logistics": 0.2093,
+            "farm_finance": 0.0716
+          }
+        },
+        {
+          "id": "ag-l10",
+          "text": "The delivery vehicle is delayed; can we revise the loading schedule?",
+          "expected": "logistics",
+          "predicted": "logistics",
+          "probabilities": {
+            "crops": 0.0514,
+            "irrigation": 0.0811,
+            "machinery": 0.0661,
+            "logistics": 0.7108,
+            "farm_finance": 0.0906
+          }
+        },
+        {
+          "id": "ag-f01",
+          "text": "Why was I billed twice for fertilizer?",
+          "expected": "farm_finance",
+          "predicted": "farm_finance",
+          "probabilities": {
+            "crops": 0.0754,
+            "irrigation": 0.0319,
+            "machinery": 0.0281,
+            "logistics": 0.0506,
+            "farm_finance": 0.814
+          }
+        },
+        {
+          "id": "ag-f02",
+          "text": "Can we review the cost of seed for the next season?",
+          "expected": "farm_finance",
+          "predicted": "farm_finance",
+          "probabilities": {
+            "crops": 0.1353,
+            "irrigation": 0.0402,
+            "machinery": 0.0409,
+            "logistics": 0.0945,
+            "farm_finance": 0.689
+          }
+        },
+        {
+          "id": "ag-f03",
+          "text": "When is the installment on the farm loan due?",
+          "expected": "farm_finance",
+          "predicted": "farm_finance",
+          "probabilities": {
+            "crops": 0.0615,
+            "irrigation": 0.0646,
+            "machinery": 0.0492,
+            "logistics": 0.0799,
+            "farm_finance": 0.7448
+          }
+        },
+        {
+          "id": "ag-f04",
+          "text": "How do I submit a claim under the crop insurance policy?",
+          "expected": "farm_finance",
+          "predicted": "crops",
+          "probabilities": {
+            "crops": 0.5665,
+            "irrigation": 0.073,
+            "machinery": 0.0705,
+            "logistics": 0.1164,
+            "farm_finance": 0.1736
+          }
+        },
+        {
+          "id": "ag-f05",
+          "text": "Can you send an invoice for last month's equipment rental?",
+          "expected": "farm_finance",
+          "predicted": "farm_finance",
+          "probabilities": {
+            "crops": 0.0826,
+            "irrigation": 0.0871,
+            "machinery": 0.2696,
+            "logistics": 0.134,
+            "farm_finance": 0.4267
+          }
+        },
+        {
+          "id": "ag-f06",
+          "text": "Has the buyer paid for the delivered harvest?",
+          "expected": "farm_finance",
+          "predicted": "farm_finance",
+          "probabilities": {
+            "crops": 0.1219,
+            "irrigation": 0.052,
+            "machinery": 0.0515,
+            "logistics": 0.2984,
+            "farm_finance": 0.4762
+          }
+        },
+        {
+          "id": "ag-f07",
+          "text": "What is the remaining balance on our input credit account?",
+          "expected": "farm_finance",
+          "predicted": "farm_finance",
+          "probabilities": {
+            "crops": 0.0537,
+            "irrigation": 0.0483,
+            "machinery": 0.038,
+            "logistics": 0.0895,
+            "farm_finance": 0.7705
+          }
+        },
+        {
+          "id": "ag-f08",
+          "text": "Can we compare this year's operating costs with the budget?",
+          "expected": "farm_finance",
+          "predicted": "farm_finance",
+          "probabilities": {
+            "crops": 0.0418,
+            "irrigation": 0.0364,
+            "machinery": 0.0445,
+            "logistics": 0.0562,
+            "farm_finance": 0.8211
+          }
+        },
+        {
+          "id": "ag-f09",
+          "text": "Where is the receipt for the pesticide purchase?",
+          "expected": "farm_finance",
+          "predicted": "farm_finance",
+          "probabilities": {
+            "crops": 0.1785,
+            "irrigation": 0.0741,
+            "machinery": 0.0643,
+            "logistics": 0.1583,
+            "farm_finance": 0.5248
+          }
+        },
+        {
+          "id": "ag-f10",
+          "text": "Why was the insurance premium taken from the farm account?",
+          "expected": "farm_finance",
+          "predicted": "farm_finance",
+          "probabilities": {
+            "crops": 0.0764,
+            "irrigation": 0.0799,
+            "machinery": 0.0651,
+            "logistics": 0.115,
+            "farm_finance": 0.6636
+          }
+        }
+      ]
+    },
+    "banking": {
+      "total": 50,
+      "correct": 41,
+      "accuracy": 0.82,
+      "macro_f1": 0.8222,
+      "per_label": {
+        "accounts": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6667
+        },
+        "payments": {
+          "support": 10,
+          "precision": 0.8182,
+          "recall": 0.9,
+          "f1": 0.8571
+        },
+        "cards": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        },
+        "loans": {
+          "support": 10,
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474
+        },
+        "security": {
+          "support": 10,
+          "precision": 0.5625,
+          "recall": 0.9,
+          "f1": 0.6923
+        }
+      },
+      "confusion_matrix": {
+        "accounts": {
+          "accounts": 5,
+          "payments": 0,
+          "cards": 0,
+          "loans": 0,
+          "security": 5
+        },
+        "payments": {
+          "accounts": 0,
+          "payments": 9,
+          "cards": 0,
+          "loans": 0,
+          "security": 1
+        },
+        "cards": {
+          "accounts": 0,
+          "payments": 0,
+          "cards": 9,
+          "loans": 0,
+          "security": 1
+        },
+        "loans": {
+          "accounts": 0,
+          "payments": 1,
+          "cards": 0,
+          "loans": 9,
+          "security": 0
+        },
+        "security": {
+          "accounts": 0,
+          "payments": 1,
+          "cards": 0,
+          "loans": 0,
+          "security": 9
+        }
+      },
+      "mistakes": [
+        {
+          "id": "ba-a03",
+          "text": "Can I close the joint account now that it is no longer needed?",
+          "expected": "accounts",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.3084,
+            "payments": 0.1495,
+            "cards": 0.1096,
+            "loans": 0.1111,
+            "security": 0.3214
+          }
+        },
+        {
+          "id": "ba-a07",
+          "text": "I cannot access the account summary after signing in; who can help?",
+          "expected": "accounts",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.3136,
+            "payments": 0.1279,
+            "cards": 0.1313,
+            "loans": 0.1006,
+            "security": 0.3266
+          }
+        },
+        {
+          "id": "ba-a08",
+          "text": "How do I change the mailing address on my savings account?",
+          "expected": "accounts",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.1792,
+            "payments": 0.2396,
+            "cards": 0.164,
+            "loans": 0.1284,
+            "security": 0.2888
+          }
+        },
+        {
+          "id": "ba-a09",
+          "text": "Can I get a confirmation letter showing my account is active?",
+          "expected": "accounts",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.2059,
+            "payments": 0.1893,
+            "cards": 0.1314,
+            "loans": 0.098,
+            "security": 0.3754
+          }
+        },
+        {
+          "id": "ba-a10",
+          "text": "What is the minimum balance for this checking account?",
+          "expected": "accounts",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.2959,
+            "payments": 0.151,
+            "cards": 0.1157,
+            "loans": 0.0978,
+            "security": 0.3396
+          }
+        },
+        {
+          "id": "ba-p06",
+          "text": "Where can I find the reference number for yesterday's wire?",
+          "expected": "payments",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.1014,
+            "payments": 0.2674,
+            "cards": 0.1492,
+            "loans": 0.1079,
+            "security": 0.3742
+          }
+        },
+        {
+          "id": "ba-c07",
+          "text": "Where can I change the PIN for my bank card?",
+          "expected": "cards",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.1359,
+            "payments": 0.1786,
+            "cards": 0.2865,
+            "loans": 0.0812,
+            "security": 0.3177
+          }
+        },
+        {
+          "id": "ba-l10",
+          "text": "Can I make an extra payment toward the principal?",
+          "expected": "loans",
+          "predicted": "payments",
+          "probabilities": {
+            "accounts": 0.0609,
+            "payments": 0.5509,
+            "cards": 0.085,
+            "loans": 0.1002,
+            "security": 0.203
+          }
+        },
+        {
+          "id": "ba-s06",
+          "text": "A payment appeared that I never made; can the fraud team review it?",
+          "expected": "security",
+          "predicted": "payments",
+          "probabilities": {
+            "accounts": 0.0221,
+            "payments": 0.826,
+            "cards": 0.0291,
+            "loans": 0.0221,
+            "security": 0.1008
+          }
+        }
+      ],
+      "sector": "banking",
+      "instructions": "Which bank support team should handle this customer message? Choose its primary purpose.",
+      "criteria": {
+        "accounts": "opening, closing, statements, balances or access to deposit accounts",
+        "payments": "transfers, direct deposits, bill payments or payment status",
+        "cards": "debit or credit card delivery, limits, replacement or use",
+        "loans": "loan applications, installments, payoff or borrowing terms",
+        "security": "suspected fraud, unauthorized access, phishing or account protection"
+      },
+      "elapsed_seconds": 0.342,
+      "cases": [
+        {
+          "id": "ba-a01",
+          "text": "How can I open a savings account?",
+          "expected": "accounts",
+          "predicted": "accounts",
+          "probabilities": {
+            "accounts": 0.4022,
+            "payments": 0.157,
+            "cards": 0.1145,
+            "loans": 0.1405,
+            "security": 0.1858
+          }
+        },
+        {
+          "id": "ba-a02",
+          "text": "Where do I find last month's account statement?",
+          "expected": "accounts",
+          "predicted": "accounts",
+          "probabilities": {
+            "accounts": 0.3528,
+            "payments": 0.168,
+            "cards": 0.1358,
+            "loans": 0.1259,
+            "security": 0.2174
+          }
+        },
+        {
+          "id": "ba-a03",
+          "text": "Can I close the joint account now that it is no longer needed?",
+          "expected": "accounts",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.3084,
+            "payments": 0.1495,
+            "cards": 0.1096,
+            "loans": 0.1111,
+            "security": 0.3214
+          }
+        },
+        {
+          "id": "ba-a04",
+          "text": "Why is the balance shown in my deposit account different today?",
+          "expected": "accounts",
+          "predicted": "accounts",
+          "probabilities": {
+            "accounts": 0.4128,
+            "payments": 0.1434,
+            "cards": 0.0949,
+            "loans": 0.0781,
+            "security": 0.2708
+          }
+        },
+        {
+          "id": "ba-a05",
+          "text": "What documents do I need to update the name on my account?",
+          "expected": "accounts",
+          "predicted": "accounts",
+          "probabilities": {
+            "accounts": 0.4228,
+            "payments": 0.1177,
+            "cards": 0.1167,
+            "loans": 0.089,
+            "security": 0.2538
+          }
+        },
+        {
+          "id": "ba-a06",
+          "text": "Can I add my spouse as a joint owner of the account?",
+          "expected": "accounts",
+          "predicted": "accounts",
+          "probabilities": {
+            "accounts": 0.283,
+            "payments": 0.2038,
+            "cards": 0.1361,
+            "loans": 0.1296,
+            "security": 0.2475
+          }
+        },
+        {
+          "id": "ba-a07",
+          "text": "I cannot access the account summary after signing in; who can help?",
+          "expected": "accounts",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.3136,
+            "payments": 0.1279,
+            "cards": 0.1313,
+            "loans": 0.1006,
+            "security": 0.3266
+          }
+        },
+        {
+          "id": "ba-a08",
+          "text": "How do I change the mailing address on my savings account?",
+          "expected": "accounts",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.1792,
+            "payments": 0.2396,
+            "cards": 0.164,
+            "loans": 0.1284,
+            "security": 0.2888
+          }
+        },
+        {
+          "id": "ba-a09",
+          "text": "Can I get a confirmation letter showing my account is active?",
+          "expected": "accounts",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.2059,
+            "payments": 0.1893,
+            "cards": 0.1314,
+            "loans": 0.098,
+            "security": 0.3754
+          }
+        },
+        {
+          "id": "ba-a10",
+          "text": "What is the minimum balance for this checking account?",
+          "expected": "accounts",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.2959,
+            "payments": 0.151,
+            "cards": 0.1157,
+            "loans": 0.0978,
+            "security": 0.3396
+          }
+        },
+        {
+          "id": "ba-p01",
+          "text": "When will my transfer to another bank arrive?",
+          "expected": "payments",
+          "predicted": "payments",
+          "probabilities": {
+            "accounts": 0.1415,
+            "payments": 0.3366,
+            "cards": 0.1602,
+            "loans": 0.1089,
+            "security": 0.2528
+          }
+        },
+        {
+          "id": "ba-p02",
+          "text": "Why did my electricity bill payment fail?",
+          "expected": "payments",
+          "predicted": "payments",
+          "probabilities": {
+            "accounts": 0.074,
+            "payments": 0.5771,
+            "cards": 0.1084,
+            "loans": 0.0774,
+            "security": 0.1631
+          }
+        },
+        {
+          "id": "ba-p03",
+          "text": "Can I cancel a scheduled transfer before it is sent?",
+          "expected": "payments",
+          "predicted": "payments",
+          "probabilities": {
+            "accounts": 0.0958,
+            "payments": 0.435,
+            "cards": 0.1709,
+            "loans": 0.0795,
+            "security": 0.2189
+          }
+        },
+        {
+          "id": "ba-p04",
+          "text": "My salary deposit has not appeared yet; can you trace it?",
+          "expected": "payments",
+          "predicted": "payments",
+          "probabilities": {
+            "accounts": 0.0382,
+            "payments": 0.7053,
+            "cards": 0.0622,
+            "loans": 0.049,
+            "security": 0.1453
+          }
+        },
+        {
+          "id": "ba-p05",
+          "text": "How do I set up a recurring rent payment?",
+          "expected": "payments",
+          "predicted": "payments",
+          "probabilities": {
+            "accounts": 0.1508,
+            "payments": 0.4626,
+            "cards": 0.1105,
+            "loans": 0.103,
+            "security": 0.1731
+          }
+        },
+        {
+          "id": "ba-p06",
+          "text": "Where can I find the reference number for yesterday's wire?",
+          "expected": "payments",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.1014,
+            "payments": 0.2674,
+            "cards": 0.1492,
+            "loans": 0.1079,
+            "security": 0.3742
+          }
+        },
+        {
+          "id": "ba-p07",
+          "text": "Can you explain why an outgoing transfer is still pending?",
+          "expected": "payments",
+          "predicted": "payments",
+          "probabilities": {
+            "accounts": 0.0754,
+            "payments": 0.5176,
+            "cards": 0.1129,
+            "loans": 0.0839,
+            "security": 0.2102
+          }
+        },
+        {
+          "id": "ba-p08",
+          "text": "Is there a limit on sending money to another account today?",
+          "expected": "payments",
+          "predicted": "payments",
+          "probabilities": {
+            "accounts": 0.1197,
+            "payments": 0.3404,
+            "cards": 0.1832,
+            "loans": 0.0781,
+            "security": 0.2786
+          }
+        },
+        {
+          "id": "ba-p09",
+          "text": "How do I confirm that my tax payment reached the recipient?",
+          "expected": "payments",
+          "predicted": "payments",
+          "probabilities": {
+            "accounts": 0.097,
+            "payments": 0.4333,
+            "cards": 0.1485,
+            "loans": 0.0856,
+            "security": 0.2356
+          }
+        },
+        {
+          "id": "ba-p10",
+          "text": "The automatic bill payment was skipped this month; who checks it?",
+          "expected": "payments",
+          "predicted": "payments",
+          "probabilities": {
+            "accounts": 0.1386,
+            "payments": 0.3295,
+            "cards": 0.1469,
+            "loans": 0.0998,
+            "security": 0.2852
+          }
+        },
+        {
+          "id": "ba-c01",
+          "text": "When will my replacement debit card arrive?",
+          "expected": "cards",
+          "predicted": "cards",
+          "probabilities": {
+            "accounts": 0.0289,
+            "payments": 0.0591,
+            "cards": 0.8515,
+            "loans": 0.0178,
+            "security": 0.0428
+          }
+        },
+        {
+          "id": "ba-c02",
+          "text": "Can I increase the daily spending limit on my credit card?",
+          "expected": "cards",
+          "predicted": "cards",
+          "probabilities": {
+            "accounts": 0.1044,
+            "payments": 0.1309,
+            "cards": 0.5589,
+            "loans": 0.0621,
+            "security": 0.1437
+          }
+        },
+        {
+          "id": "ba-c03",
+          "text": "My card was damaged in the wash; how can I order another?",
+          "expected": "cards",
+          "predicted": "cards",
+          "probabilities": {
+            "accounts": 0.0855,
+            "payments": 0.1353,
+            "cards": 0.5638,
+            "loans": 0.0682,
+            "security": 0.1472
+          }
+        },
+        {
+          "id": "ba-c04",
+          "text": "Why was my card declined at the grocery store?",
+          "expected": "cards",
+          "predicted": "cards",
+          "probabilities": {
+            "accounts": 0.0463,
+            "payments": 0.0854,
+            "cards": 0.6022,
+            "loans": 0.0534,
+            "security": 0.2127
+          }
+        },
+        {
+          "id": "ba-c05",
+          "text": "How do I activate the new card that came by mail?",
+          "expected": "cards",
+          "predicted": "cards",
+          "probabilities": {
+            "accounts": 0.1072,
+            "payments": 0.1321,
+            "cards": 0.5639,
+            "loans": 0.0719,
+            "security": 0.125
+          }
+        },
+        {
+          "id": "ba-c06",
+          "text": "Can I use my debit card while traveling abroad?",
+          "expected": "cards",
+          "predicted": "cards",
+          "probabilities": {
+            "accounts": 0.1181,
+            "payments": 0.1825,
+            "cards": 0.4454,
+            "loans": 0.0706,
+            "security": 0.1833
+          }
+        },
+        {
+          "id": "ba-c07",
+          "text": "Where can I change the PIN for my bank card?",
+          "expected": "cards",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.1359,
+            "payments": 0.1786,
+            "cards": 0.2865,
+            "loans": 0.0812,
+            "security": 0.3177
+          }
+        },
+        {
+          "id": "ba-c08",
+          "text": "The cash machine kept my card; how do I replace it?",
+          "expected": "cards",
+          "predicted": "cards",
+          "probabilities": {
+            "accounts": 0.0628,
+            "payments": 0.0957,
+            "cards": 0.6311,
+            "loans": 0.0559,
+            "security": 0.1545
+          }
+        },
+        {
+          "id": "ba-c09",
+          "text": "Can I get an additional card for an authorized user?",
+          "expected": "cards",
+          "predicted": "cards",
+          "probabilities": {
+            "accounts": 0.0931,
+            "payments": 0.1052,
+            "cards": 0.6156,
+            "loans": 0.0534,
+            "security": 0.1327
+          }
+        },
+        {
+          "id": "ba-c10",
+          "text": "What fee applies when I use this card at another bank's ATM?",
+          "expected": "cards",
+          "predicted": "cards",
+          "probabilities": {
+            "accounts": 0.0769,
+            "payments": 0.1092,
+            "cards": 0.557,
+            "loans": 0.0662,
+            "security": 0.1907
+          }
+        },
+        {
+          "id": "ba-l01",
+          "text": "What documents are required for a home loan application?",
+          "expected": "loans",
+          "predicted": "loans",
+          "probabilities": {
+            "accounts": 0.0835,
+            "payments": 0.0643,
+            "cards": 0.0607,
+            "loans": 0.6756,
+            "security": 0.116
+          }
+        },
+        {
+          "id": "ba-l02",
+          "text": "Can I pay off the rest of my car loan early?",
+          "expected": "loans",
+          "predicted": "loans",
+          "probabilities": {
+            "accounts": 0.1095,
+            "payments": 0.113,
+            "cards": 0.1066,
+            "loans": 0.5223,
+            "security": 0.1486
+          }
+        },
+        {
+          "id": "ba-l03",
+          "text": "Why did my monthly loan installment increase?",
+          "expected": "loans",
+          "predicted": "loans",
+          "probabilities": {
+            "accounts": 0.0327,
+            "payments": 0.056,
+            "cards": 0.0352,
+            "loans": 0.8363,
+            "security": 0.0398
+          }
+        },
+        {
+          "id": "ba-l04",
+          "text": "How much can I borrow under the personal loan program?",
+          "expected": "loans",
+          "predicted": "loans",
+          "probabilities": {
+            "accounts": 0.0855,
+            "payments": 0.0796,
+            "cards": 0.0709,
+            "loans": 0.6583,
+            "security": 0.1057
+          }
+        },
+        {
+          "id": "ba-l05",
+          "text": "Where do I see the remaining balance on my mortgage?",
+          "expected": "loans",
+          "predicted": "loans",
+          "probabilities": {
+            "accounts": 0.2051,
+            "payments": 0.184,
+            "cards": 0.1186,
+            "loans": 0.2533,
+            "security": 0.2391
+          }
+        },
+        {
+          "id": "ba-l06",
+          "text": "Can the due date for my loan payment be changed?",
+          "expected": "loans",
+          "predicted": "loans",
+          "probabilities": {
+            "accounts": 0.0949,
+            "payments": 0.1983,
+            "cards": 0.0791,
+            "loans": 0.5196,
+            "security": 0.108
+          }
+        },
+        {
+          "id": "ba-l07",
+          "text": "What interest rate applies to my proposed loan?",
+          "expected": "loans",
+          "predicted": "loans",
+          "probabilities": {
+            "accounts": 0.1082,
+            "payments": 0.0822,
+            "cards": 0.0826,
+            "loans": 0.6058,
+            "security": 0.1212
+          }
+        },
+        {
+          "id": "ba-l08",
+          "text": "Has my small-business loan application been approved?",
+          "expected": "loans",
+          "predicted": "loans",
+          "probabilities": {
+            "accounts": 0.0439,
+            "payments": 0.0578,
+            "cards": 0.0463,
+            "loans": 0.7484,
+            "security": 0.1036
+          }
+        },
+        {
+          "id": "ba-l09",
+          "text": "How do I request a payoff statement for my vehicle loan?",
+          "expected": "loans",
+          "predicted": "loans",
+          "probabilities": {
+            "accounts": 0.2003,
+            "payments": 0.1389,
+            "cards": 0.1395,
+            "loans": 0.3701,
+            "security": 0.1511
+          }
+        },
+        {
+          "id": "ba-l10",
+          "text": "Can I make an extra payment toward the principal?",
+          "expected": "loans",
+          "predicted": "payments",
+          "probabilities": {
+            "accounts": 0.0609,
+            "payments": 0.5509,
+            "cards": 0.085,
+            "loans": 0.1002,
+            "security": 0.203
+          }
+        },
+        {
+          "id": "ba-s01",
+          "text": "I did not authorize the transaction on my account; how do I report it?",
+          "expected": "security",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.1514,
+            "payments": 0.1436,
+            "cards": 0.1521,
+            "loans": 0.0967,
+            "security": 0.4562
+          }
+        },
+        {
+          "id": "ba-s02",
+          "text": "Someone called asking for my login code; could this be a scam?",
+          "expected": "security",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.0962,
+            "payments": 0.0988,
+            "cards": 0.0813,
+            "loans": 0.0693,
+            "security": 0.6545
+          }
+        },
+        {
+          "id": "ba-s03",
+          "text": "How do I freeze access after my phone was stolen?",
+          "expected": "security",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.1316,
+            "payments": 0.151,
+            "cards": 0.1457,
+            "loans": 0.1087,
+            "security": 0.463
+          }
+        },
+        {
+          "id": "ba-s04",
+          "text": "I received a suspicious email pretending to be the bank; where do I send it?",
+          "expected": "security",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.1482,
+            "payments": 0.1602,
+            "cards": 0.1306,
+            "loans": 0.1195,
+            "security": 0.4416
+          }
+        },
+        {
+          "id": "ba-s05",
+          "text": "Can you investigate a login from a device I do not recognize?",
+          "expected": "security",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.0545,
+            "payments": 0.0464,
+            "cards": 0.0598,
+            "loans": 0.0444,
+            "security": 0.795
+          }
+        },
+        {
+          "id": "ba-s06",
+          "text": "A payment appeared that I never made; can the fraud team review it?",
+          "expected": "security",
+          "predicted": "payments",
+          "probabilities": {
+            "accounts": 0.0221,
+            "payments": 0.826,
+            "cards": 0.0291,
+            "loans": 0.0221,
+            "security": 0.1008
+          }
+        },
+        {
+          "id": "ba-s07",
+          "text": "How do I lock my account after sharing my password by mistake?",
+          "expected": "security",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.1554,
+            "payments": 0.1109,
+            "cards": 0.1273,
+            "loans": 0.0888,
+            "security": 0.5175
+          }
+        },
+        {
+          "id": "ba-s08",
+          "text": "The website asked for my PIN in a message; is it fraudulent?",
+          "expected": "security",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.0867,
+            "payments": 0.105,
+            "cards": 0.0856,
+            "loans": 0.0633,
+            "security": 0.6594
+          }
+        },
+        {
+          "id": "ba-s09",
+          "text": "Can you remove an unknown device from my online banking profile?",
+          "expected": "security",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.0894,
+            "payments": 0.0653,
+            "cards": 0.1035,
+            "loans": 0.0527,
+            "security": 0.689
+          }
+        },
+        {
+          "id": "ba-s10",
+          "text": "I think my identity was used to open an account without permission; who handles it?",
+          "expected": "security",
+          "predicted": "security",
+          "probabilities": {
+            "accounts": 0.2773,
+            "payments": 0.1077,
+            "cards": 0.099,
+            "loans": 0.0914,
+            "security": 0.4246
+          }
+        }
+      ]
+    }
+  }
+}

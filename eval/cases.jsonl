@@ -1,0 +1,50 @@
+{"id":"p01","label":"positive","text":"I love this product and use it every day."}
+{"id":"p02","label":"positive","text":"Checkout was quick and completely painless."}
+{"id":"p03","label":"positive","text":"Support solved my problem in minutes. I'm grateful."}
+{"id":"p04","label":"positive","text":"The battery lasts much longer than I expected."}
+{"id":"p05","label":"positive","text":"Dinner was delicious, and the staff were lovely."}
+{"id":"p06","label":"positive","text":"The app feels fast and easy to navigate."}
+{"id":"p07","label":"positive","text":"My order arrived early and in perfect condition."}
+{"id":"p08","label":"positive","text":"Booking the appointment was simple and convenient."}
+{"id":"p09","label":"positive","text":"The instructions were clear and helped me finish the setup."}
+{"id":"p10","label":"positive","text":"This is excellent value for the price."}
+{"id":"p11","label":"positive","text":"The latest update fixed the bug and made everything smoother."}
+{"id":"p12","label":"positive","text":"I had a wonderful time at the event."}
+{"id":"p13","label":"positive","text":"The build quality is impressive and feels durable."}
+{"id":"p14","label":"positive","text":"The service exceeded my expectations."}
+{"id":"p15","label":"positive","text":"Performance has been consistently great."}
+{"id":"p16","label":"positive","text":"The refund was handled promptly and fairly."}
+{"id":"p17","label":"positive","text":"I expected to dislike it, but I ended up loving it."}
+{"id":"u01","label":"neutral","text":"The store opens at nine in the morning."}
+{"id":"u02","label":"neutral","text":"The package was shipped on Tuesday."}
+{"id":"u03","label":"neutral","text":"The meeting is scheduled for next week."}
+{"id":"u04","label":"neutral","text":"The product is available in blue and black."}
+{"id":"u05","label":"neutral","text":"I installed version 3.2 of the app."}
+{"id":"u06","label":"neutral","text":"The order contains two books and one notebook."}
+{"id":"u07","label":"neutral","text":"A support ticket was opened yesterday."}
+{"id":"u08","label":"neutral","text":"The invoice lists three items and a delivery charge."}
+{"id":"u09","label":"neutral","text":"The train departs from platform four."}
+{"id":"u10","label":"neutral","text":"This cup holds 300 milliliters of coffee."}
+{"id":"u11","label":"neutral","text":"The battery capacity is listed as 5000 milliamp-hours."}
+{"id":"u12","label":"neutral","text":"The feature is included in the standard plan."}
+{"id":"u13","label":"neutral","text":"The price changed from ten dollars to twelve dollars."}
+{"id":"u14","label":"neutral","text":"The forecast says it will rain this afternoon."}
+{"id":"u15","label":"neutral","text":"The document contains a list of requirements."}
+{"id":"u16","label":"neutral","text":"It works, though I do not feel strongly about it either way."}
+{"id":"n01","label":"negative","text":"I hate this product and regret buying it."}
+{"id":"n02","label":"negative","text":"Checkout failed three times and wasted my time."}
+{"id":"n03","label":"negative","text":"Support ignored my messages for a week."}
+{"id":"n04","label":"negative","text":"The battery dies after only an hour."}
+{"id":"n05","label":"negative","text":"Dinner was cold and tasted awful."}
+{"id":"n06","label":"negative","text":"The app crashes every time I open it."}
+{"id":"n07","label":"negative","text":"My order arrived late and damaged."}
+{"id":"n08","label":"negative","text":"Booking the appointment was confusing and frustrating."}
+{"id":"n09","label":"negative","text":"The instructions were useless and made setup harder."}
+{"id":"n10","label":"negative","text":"This is terrible value for the price."}
+{"id":"n11","label":"negative","text":"The latest update introduced several annoying bugs."}
+{"id":"n12","label":"negative","text":"I had a miserable time at the event."}
+{"id":"n13","label":"negative","text":"The build quality is poor and the case broke immediately."}
+{"id":"n14","label":"negative","text":"The service fell far below my expectations."}
+{"id":"n15","label":"negative","text":"Performance has been consistently disappointing."}
+{"id":"n16","label":"negative","text":"The refund request was denied without explanation."}
+{"id":"n17","label":"negative","text":"I wanted to love it, but it keeps failing."}

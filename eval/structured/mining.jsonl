@@ -1,0 +1,50 @@
+{"id":"mw01","text":"Conveyor C1 is running normally. Please send a replacement belt for planned maintenance.","expected":{"asset":"conveyor","downtime":0,"replacement_requested":true}}
+{"id":"mw02","text":"The ore conveyor still runs but slips under load. No new part requested yet.","expected":{"asset":"conveyor","downtime":1,"replacement_requested":false}}
+{"id":"mw03","text":"Conveyor 4 has stopped completely; we need a replacement motor.","expected":{"asset":"conveyor","downtime":2,"replacement_requested":true}}
+{"id":"mw04","text":"The transfer conveyor is operating as usual. Please inspect it, but do not order parts.","expected":{"asset":"conveyor","downtime":0,"replacement_requested":false}}
+{"id":"mw05","text":"Our conveyor is moving material slowly with a worn roller. Request a replacement roller.","expected":{"asset":"conveyor","downtime":1,"replacement_requested":true}}
+{"id":"mw06","text":"Conveyor B is shut down and cannot move ore. Please diagnose it before deciding on parts.","expected":{"asset":"conveyor","downtime":2,"replacement_requested":false}}
+{"id":"mw07","text":"The belt conveyor is working normally, but please order a spare idler for the next service.","expected":{"asset":"conveyor","downtime":0,"replacement_requested":true}}
+{"id":"mw08","text":"Conveyor 7 remains in operation though it vibrates. Inspection only; no replacement requested.","expected":{"asset":"conveyor","downtime":1,"replacement_requested":false}}
+{"id":"mw09","text":"The conveyor cannot start after the shutdown. Send a new drive belt.","expected":{"asset":"conveyor","downtime":2,"replacement_requested":true}}
+{"id":"mw10","text":"The screening conveyor is running without faults. No spare component is needed.","expected":{"asset":"conveyor","downtime":0,"replacement_requested":false}}
+{"id":"mw11","text":"Conveyor C3 still runs, but its speed keeps dropping. Please replace the speed sensor.","expected":{"asset":"conveyor","downtime":1,"replacement_requested":true}}
+{"id":"mw12","text":"The mine conveyor is fully stopped. A technician should inspect it; do not order parts yet.","expected":{"asset":"conveyor","downtime":2,"replacement_requested":false}}
+{"id":"mw13","text":"Material is flowing normally on the conveyor. Order a spare roller for later.","expected":{"asset":"conveyor","downtime":0,"replacement_requested":true}}
+{"id":"mw14","text":"The conveyor is still moving ore despite intermittent noise. No replacement part requested.","expected":{"asset":"conveyor","downtime":1,"replacement_requested":false}}
+{"id":"mw15","text":"Conveyor 9 is down and locked out. We need a replacement gearbox.","expected":{"asset":"conveyor","downtime":2,"replacement_requested":true}}
+{"id":"mw16","text":"The loading conveyor has normal output. Please just record the inspection; no parts.","expected":{"asset":"conveyor","downtime":0,"replacement_requested":false}}
+{"id":"mw17","text":"The conveyor still works at reduced speed. Request a replacement bearing.","expected":{"asset":"conveyor","downtime":1,"replacement_requested":true}}
+{"id":"mw18","text":"Haul truck 12 is operating normally. Order a replacement tire for the scheduled service.","expected":{"asset":"haul_truck","downtime":0,"replacement_requested":true}}
+{"id":"mw19","text":"The ore truck still drives but loses power uphill. Please inspect it without ordering parts.","expected":{"asset":"haul_truck","downtime":1,"replacement_requested":false}}
+{"id":"mw20","text":"Haul truck 5 cannot start. Please provide a replacement starter motor.","expected":{"asset":"haul_truck","downtime":2,"replacement_requested":true}}
+{"id":"mw21","text":"The haulage truck is running normally. No new component is requested.","expected":{"asset":"haul_truck","downtime":0,"replacement_requested":false}}
+{"id":"mw22","text":"Truck 8 continues hauling with weak brakes. Request replacement brake pads.","expected":{"asset":"haul_truck","downtime":1,"replacement_requested":true}}
+{"id":"mw23","text":"The haul truck is stopped in the yard. Diagnose the fault first; no spare part requested.","expected":{"asset":"haul_truck","downtime":2,"replacement_requested":false}}
+{"id":"mw24","text":"Haul truck 3 is working at normal capacity. Send a spare air filter for future service.","expected":{"asset":"haul_truck","downtime":0,"replacement_requested":true}}
+{"id":"mw25","text":"The dump truck is still in use, though the engine runs roughly. Inspection only, no parts yet.","expected":{"asset":"haul_truck","downtime":1,"replacement_requested":false}}
+{"id":"mw26","text":"Truck 14 is out of operation after a wheel failure. We need a replacement wheel assembly.","expected":{"asset":"haul_truck","downtime":2,"replacement_requested":true}}
+{"id":"mw27","text":"The mine truck is running as usual. Please update the log; do not order anything.","expected":{"asset":"haul_truck","downtime":0,"replacement_requested":false}}
+{"id":"mw28","text":"Haul truck 6 can still move, but the steering is stiff. Request a new steering hose.","expected":{"asset":"haul_truck","downtime":1,"replacement_requested":true}}
+{"id":"mw29","text":"The truck is shut down with an electrical fault. Please test it before requesting components.","expected":{"asset":"haul_truck","downtime":2,"replacement_requested":false}}
+{"id":"mw30","text":"Haul truck 2 has no operational issue. Order a spare mirror for the next service.","expected":{"asset":"haul_truck","downtime":0,"replacement_requested":true}}
+{"id":"mw31","text":"The haulage truck remains drivable but leaks coolant. No replacement part is requested yet.","expected":{"asset":"haul_truck","downtime":1,"replacement_requested":false}}
+{"id":"mw32","text":"Truck 11 cannot haul because its transmission failed. Send a replacement transmission unit.","expected":{"asset":"haul_truck","downtime":2,"replacement_requested":true}}
+{"id":"mw33","text":"The ore truck is functioning normally after inspection. Nothing needs replacing.","expected":{"asset":"haul_truck","downtime":0,"replacement_requested":false}}
+{"id":"mw34","text":"Haul truck 9 still operates with intermittent vibration. Please order a replacement mount.","expected":{"asset":"haul_truck","downtime":1,"replacement_requested":true}}
+{"id":"mw35","text":"Pump P1 is running normally. Please request a replacement seal for the next maintenance window.","expected":{"asset":"pump","downtime":0,"replacement_requested":true}}
+{"id":"mw36","text":"The dewatering pump still moves water but at reduced flow. Inspect it without ordering parts.","expected":{"asset":"pump","downtime":1,"replacement_requested":false}}
+{"id":"mw37","text":"Pump 4 has stopped and there is no flow. Send a replacement impeller.","expected":{"asset":"pump","downtime":2,"replacement_requested":true}}
+{"id":"mw38","text":"The pit pump operates at normal output. No component replacement is requested.","expected":{"asset":"pump","downtime":0,"replacement_requested":false}}
+{"id":"mw39","text":"The water pump still runs but makes a grinding sound. Please replace the bearing.","expected":{"asset":"pump","downtime":1,"replacement_requested":true}}
+{"id":"mw40","text":"Pump P7 is shut down. Please diagnose it before deciding whether a part is needed.","expected":{"asset":"pump","downtime":2,"replacement_requested":false}}
+{"id":"mw41","text":"The slurry pump is working normally. Order a spare coupling for future maintenance.","expected":{"asset":"pump","downtime":0,"replacement_requested":true}}
+{"id":"mw42","text":"The drainage pump continues running with lower pressure. Inspection only; no replacement requested.","expected":{"asset":"pump","downtime":1,"replacement_requested":false}}
+{"id":"mw43","text":"Pump 8 cannot restart. Please supply a replacement control switch.","expected":{"asset":"pump","downtime":2,"replacement_requested":true}}
+{"id":"mw44","text":"The pump is circulating water at normal rate. Please log the reading, with no parts required.","expected":{"asset":"pump","downtime":0,"replacement_requested":false}}
+{"id":"mw45","text":"The tailings pump is still operating but its output fluctuates. Request a new valve.","expected":{"asset":"pump","downtime":1,"replacement_requested":true}}
+{"id":"mw46","text":"Pump P3 has failed completely. Diagnose the fault; do not order a component yet.","expected":{"asset":"pump","downtime":2,"replacement_requested":false}}
+{"id":"mw47","text":"The transfer pump has full output. Send a spare gasket for the next overhaul.","expected":{"asset":"pump","downtime":0,"replacement_requested":true}}
+{"id":"mw48","text":"The pump still works with noticeable vibration. No replacement part requested now.","expected":{"asset":"pump","downtime":1,"replacement_requested":false}}
+{"id":"mw49","text":"Pump 10 is stopped and cannot move water. We need a replacement motor.","expected":{"asset":"pump","downtime":2,"replacement_requested":true}}
+{"id":"mw50","text":"The dewatering pump is running normally. Please update the log only; no parts order.","expected":{"asset":"pump","downtime":0,"replacement_requested":false}}

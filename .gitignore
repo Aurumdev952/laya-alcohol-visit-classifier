@@ -1,0 +1,10 @@
+.venv/
+.hf-cache/
+.agents/
+.codex/
+*.egg-info/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+runs/
+data/clinical/

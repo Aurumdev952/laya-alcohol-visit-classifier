@@ -1,0 +1,644 @@
+{
+  "total": 50,
+  "correct": 46,
+  "accuracy": 0.92,
+  "macro_f1": 0.9185,
+  "per_label": {
+    "positive": {
+      "support": 17,
+      "precision": 0.8421,
+      "recall": 0.9412,
+      "f1": 0.8889
+    },
+    "neutral": {
+      "support": 16,
+      "precision": 0.9286,
+      "recall": 0.8125,
+      "f1": 0.8667
+    },
+    "negative": {
+      "support": 17,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "confusion_matrix": {
+    "positive": {
+      "positive": 16,
+      "neutral": 1,
+      "negative": 0
+    },
+    "neutral": {
+      "positive": 3,
+      "neutral": 13,
+      "negative": 0
+    },
+    "negative": {
+      "positive": 0,
+      "neutral": 0,
+      "negative": 17
+    }
+  },
+  "mistakes": [
+    {
+      "id": "p04",
+      "text": "The battery lasts much longer than I expected.",
+      "expected": "positive",
+      "predicted": "neutral",
+      "probabilities": {
+        "positive": 0.2881,
+        "neutral": 0.6238,
+        "negative": 0.0881
+      }
+    },
+    {
+      "id": "u05",
+      "text": "I installed version 3.2 of the app.",
+      "expected": "neutral",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.6237,
+        "neutral": 0.3262,
+        "negative": 0.0501
+      }
+    },
+    {
+      "id": "u13",
+      "text": "The price changed from ten dollars to twelve dollars.",
+      "expected": "neutral",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.5038,
+        "neutral": 0.4,
+        "negative": 0.0962
+      }
+    },
+    {
+      "id": "u16",
+      "text": "It works, though I do not feel strongly about it either way.",
+      "expected": "neutral",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.7286,
+        "neutral": 0.2391,
+        "negative": 0.0323
+      }
+    }
+  ],
+  "model": "convaiinnovations/laya",
+  "gpu": "NVIDIA GeForce RTX 5090 Laptop GPU",
+  "elapsed_seconds": 0.96,
+  "cases": [
+    {
+      "id": "p01",
+      "text": "I love this product and use it every day.",
+      "expected": "positive",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.9518,
+        "neutral": 0.0373,
+        "negative": 0.0109
+      }
+    },
+    {
+      "id": "p02",
+      "text": "Checkout was quick and completely painless.",
+      "expected": "positive",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.8738,
+        "neutral": 0.0901,
+        "negative": 0.0361
+      }
+    },
+    {
+      "id": "p03",
+      "text": "Support solved my problem in minutes. I'm grateful.",
+      "expected": "positive",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.8081,
+        "neutral": 0.1491,
+        "negative": 0.0428
+      }
+    },
+    {
+      "id": "p04",
+      "text": "The battery lasts much longer than I expected.",
+      "expected": "positive",
+      "predicted": "neutral",
+      "probabilities": {
+        "positive": 0.2881,
+        "neutral": 0.6238,
+        "negative": 0.0881
+      }
+    },
+    {
+      "id": "p05",
+      "text": "Dinner was delicious, and the staff were lovely.",
+      "expected": "positive",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.8848,
+        "neutral": 0.0978,
+        "negative": 0.0173
+      }
+    },
+    {
+      "id": "p06",
+      "text": "The app feels fast and easy to navigate.",
+      "expected": "positive",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.9508,
+        "neutral": 0.0344,
+        "negative": 0.0148
+      }
+    },
+    {
+      "id": "p07",
+      "text": "My order arrived early and in perfect condition.",
+      "expected": "positive",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.9644,
+        "neutral": 0.022,
+        "negative": 0.0136
+      }
+    },
+    {
+      "id": "p08",
+      "text": "Booking the appointment was simple and convenient.",
+      "expected": "positive",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.7719,
+        "neutral": 0.1941,
+        "negative": 0.0339
+      }
+    },
+    {
+      "id": "p09",
+      "text": "The instructions were clear and helped me finish the setup.",
+      "expected": "positive",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.8476,
+        "neutral": 0.1215,
+        "negative": 0.0309
+      }
+    },
+    {
+      "id": "p10",
+      "text": "This is excellent value for the price.",
+      "expected": "positive",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.8745,
+        "neutral": 0.1056,
+        "negative": 0.0199
+      }
+    },
+    {
+      "id": "p11",
+      "text": "The latest update fixed the bug and made everything smoother.",
+      "expected": "positive",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.9564,
+        "neutral": 0.0266,
+        "negative": 0.017
+      }
+    },
+    {
+      "id": "p12",
+      "text": "I had a wonderful time at the event.",
+      "expected": "positive",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.8524,
+        "neutral": 0.1229,
+        "negative": 0.0247
+      }
+    },
+    {
+      "id": "p13",
+      "text": "The build quality is impressive and feels durable.",
+      "expected": "positive",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.9305,
+        "neutral": 0.0519,
+        "negative": 0.0176
+      }
+    },
+    {
+      "id": "p14",
+      "text": "The service exceeded my expectations.",
+      "expected": "positive",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.9446,
+        "neutral": 0.0437,
+        "negative": 0.0117
+      }
+    },
+    {
+      "id": "p15",
+      "text": "Performance has been consistently great.",
+      "expected": "positive",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.8052,
+        "neutral": 0.1662,
+        "negative": 0.0286
+      }
+    },
+    {
+      "id": "p16",
+      "text": "The refund was handled promptly and fairly.",
+      "expected": "positive",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.9064,
+        "neutral": 0.0714,
+        "negative": 0.0222
+      }
+    },
+    {
+      "id": "p17",
+      "text": "I expected to dislike it, but I ended up loving it.",
+      "expected": "positive",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.9459,
+        "neutral": 0.043,
+        "negative": 0.0111
+      }
+    },
+    {
+      "id": "u01",
+      "text": "The store opens at nine in the morning.",
+      "expected": "neutral",
+      "predicted": "neutral",
+      "probabilities": {
+        "positive": 0.0795,
+        "neutral": 0.8811,
+        "negative": 0.0394
+      }
+    },
+    {
+      "id": "u02",
+      "text": "The package was shipped on Tuesday.",
+      "expected": "neutral",
+      "predicted": "neutral",
+      "probabilities": {
+        "positive": 0.0586,
+        "neutral": 0.8523,
+        "negative": 0.089
+      }
+    },
+    {
+      "id": "u03",
+      "text": "The meeting is scheduled for next week.",
+      "expected": "neutral",
+      "predicted": "neutral",
+      "probabilities": {
+        "positive": 0.0468,
+        "neutral": 0.8911,
+        "negative": 0.0621
+      }
+    },
+    {
+      "id": "u04",
+      "text": "The product is available in blue and black.",
+      "expected": "neutral",
+      "predicted": "neutral",
+      "probabilities": {
+        "positive": 0.0852,
+        "neutral": 0.8763,
+        "negative": 0.0385
+      }
+    },
+    {
+      "id": "u05",
+      "text": "I installed version 3.2 of the app.",
+      "expected": "neutral",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.6237,
+        "neutral": 0.3262,
+        "negative": 0.0501
+      }
+    },
+    {
+      "id": "u06",
+      "text": "The order contains two books and one notebook.",
+      "expected": "neutral",
+      "predicted": "neutral",
+      "probabilities": {
+        "positive": 0.0723,
+        "neutral": 0.8564,
+        "negative": 0.0713
+      }
+    },
+    {
+      "id": "u07",
+      "text": "A support ticket was opened yesterday.",
+      "expected": "neutral",
+      "predicted": "neutral",
+      "probabilities": {
+        "positive": 0.0621,
+        "neutral": 0.8821,
+        "negative": 0.0558
+      }
+    },
+    {
+      "id": "u08",
+      "text": "The invoice lists three items and a delivery charge.",
+      "expected": "neutral",
+      "predicted": "neutral",
+      "probabilities": {
+        "positive": 0.0498,
+        "neutral": 0.8686,
+        "negative": 0.0815
+      }
+    },
+    {
+      "id": "u09",
+      "text": "The train departs from platform four.",
+      "expected": "neutral",
+      "predicted": "neutral",
+      "probabilities": {
+        "positive": 0.0555,
+        "neutral": 0.8701,
+        "negative": 0.0744
+      }
+    },
+    {
+      "id": "u10",
+      "text": "This cup holds 300 milliliters of coffee.",
+      "expected": "neutral",
+      "predicted": "neutral",
+      "probabilities": {
+        "positive": 0.1622,
+        "neutral": 0.7592,
+        "negative": 0.0786
+      }
+    },
+    {
+      "id": "u11",
+      "text": "The battery capacity is listed as 5000 milliamp-hours.",
+      "expected": "neutral",
+      "predicted": "neutral",
+      "probabilities": {
+        "positive": 0.0774,
+        "neutral": 0.8207,
+        "negative": 0.1019
+      }
+    },
+    {
+      "id": "u12",
+      "text": "The feature is included in the standard plan.",
+      "expected": "neutral",
+      "predicted": "neutral",
+      "probabilities": {
+        "positive": 0.2531,
+        "neutral": 0.6871,
+        "negative": 0.0598
+      }
+    },
+    {
+      "id": "u13",
+      "text": "The price changed from ten dollars to twelve dollars.",
+      "expected": "neutral",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.5038,
+        "neutral": 0.4,
+        "negative": 0.0962
+      }
+    },
+    {
+      "id": "u14",
+      "text": "The forecast says it will rain this afternoon.",
+      "expected": "neutral",
+      "predicted": "neutral",
+      "probabilities": {
+        "positive": 0.0287,
+        "neutral": 0.8087,
+        "negative": 0.1625
+      }
+    },
+    {
+      "id": "u15",
+      "text": "The document contains a list of requirements.",
+      "expected": "neutral",
+      "predicted": "neutral",
+      "probabilities": {
+        "positive": 0.0892,
+        "neutral": 0.8354,
+        "negative": 0.0754
+      }
+    },
+    {
+      "id": "u16",
+      "text": "It works, though I do not feel strongly about it either way.",
+      "expected": "neutral",
+      "predicted": "positive",
+      "probabilities": {
+        "positive": 0.7286,
+        "neutral": 0.2391,
+        "negative": 0.0323
+      }
+    },
+    {
+      "id": "n01",
+      "text": "I hate this product and regret buying it.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.0133,
+        "neutral": 0.0462,
+        "negative": 0.9405
+      }
+    },
+    {
+      "id": "n02",
+      "text": "Checkout failed three times and wasted my time.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.0075,
+        "neutral": 0.0406,
+        "negative": 0.9519
+      }
+    },
+    {
+      "id": "n03",
+      "text": "Support ignored my messages for a week.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.0141,
+        "neutral": 0.1442,
+        "negative": 0.8417
+      }
+    },
+    {
+      "id": "n04",
+      "text": "The battery dies after only an hour.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.0071,
+        "neutral": 0.0603,
+        "negative": 0.9326
+      }
+    },
+    {
+      "id": "n05",
+      "text": "Dinner was cold and tasted awful.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.0091,
+        "neutral": 0.042,
+        "negative": 0.9489
+      }
+    },
+    {
+      "id": "n06",
+      "text": "The app crashes every time I open it.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.009,
+        "neutral": 0.0455,
+        "negative": 0.9455
+      }
+    },
+    {
+      "id": "n07",
+      "text": "My order arrived late and damaged.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.008,
+        "neutral": 0.0366,
+        "negative": 0.9554
+      }
+    },
+    {
+      "id": "n08",
+      "text": "Booking the appointment was confusing and frustrating.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.0144,
+        "neutral": 0.1483,
+        "negative": 0.8373
+      }
+    },
+    {
+      "id": "n09",
+      "text": "The instructions were useless and made setup harder.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.014,
+        "neutral": 0.038,
+        "negative": 0.9481
+      }
+    },
+    {
+      "id": "n10",
+      "text": "This is terrible value for the price.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.0169,
+        "neutral": 0.1565,
+        "negative": 0.8266
+      }
+    },
+    {
+      "id": "n11",
+      "text": "The latest update introduced several annoying bugs.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.0165,
+        "neutral": 0.1328,
+        "negative": 0.8507
+      }
+    },
+    {
+      "id": "n12",
+      "text": "I had a miserable time at the event.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.0139,
+        "neutral": 0.0777,
+        "negative": 0.9084
+      }
+    },
+    {
+      "id": "n13",
+      "text": "The build quality is poor and the case broke immediately.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.0087,
+        "neutral": 0.0239,
+        "negative": 0.9674
+      }
+    },
+    {
+      "id": "n14",
+      "text": "The service fell far below my expectations.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.0136,
+        "neutral": 0.0454,
+        "negative": 0.941
+      }
+    },
+    {
+      "id": "n15",
+      "text": "Performance has been consistently disappointing.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.0131,
+        "neutral": 0.0408,
+        "negative": 0.946
+      }
+    },
+    {
+      "id": "n16",
+      "text": "The refund request was denied without explanation.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.0339,
+        "neutral": 0.1743,
+        "negative": 0.7918
+      }
+    },
+    {
+      "id": "n17",
+      "text": "I wanted to love it, but it keeps failing.",
+      "expected": "negative",
+      "predicted": "negative",
+      "probabilities": {
+        "positive": 0.0511,
+        "neutral": 0.2724,
+        "negative": 0.6765
+      }
+    }
+  ]
+}

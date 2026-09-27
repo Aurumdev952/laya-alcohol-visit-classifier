@@ -1,0 +1,50 @@
+{"id":"hc-a01","label":"appointments","text":"Can I book a follow-up visit for next Tuesday?"}
+{"id":"hc-a02","label":"appointments","text":"What is the earliest available slot with my specialist?"}
+{"id":"hc-a03","label":"appointments","text":"I need to move tomorrow's appointment to a later date; can you help?"}
+{"id":"hc-a04","label":"appointments","text":"Could you cancel my Friday clinic visit?"}
+{"id":"hc-a05","label":"appointments","text":"Where should I check in for my scheduled imaging visit?"}
+{"id":"hc-a06","label":"appointments","text":"Can my consultation be changed from in-person to video?"}
+{"id":"hc-a07","label":"appointments","text":"How long is the wait for a routine appointment?"}
+{"id":"hc-a08","label":"appointments","text":"I missed my visit this morning; may I rebook it?"}
+{"id":"hc-a09","label":"appointments","text":"Will the clinic remind me of the time of my next appointment?"}
+{"id":"hc-a10","label":"appointments","text":"Can two family members be scheduled back to back?"}
+{"id":"hc-b01","label":"billing_insurance","text":"Why did I receive a charge after paying my copay?"}
+{"id":"hc-b02","label":"billing_insurance","text":"Does my insurance cover the visit I had last month?"}
+{"id":"hc-b03","label":"billing_insurance","text":"Can you send an itemized statement for my hospital bill?"}
+{"id":"hc-b04","label":"billing_insurance","text":"My insurer says the claim was denied; who can review the coding?"}
+{"id":"hc-b05","label":"billing_insurance","text":"Is there a payment plan for this balance?"}
+{"id":"hc-b06","label":"billing_insurance","text":"Why was the same consultation charged twice?"}
+{"id":"hc-b07","label":"billing_insurance","text":"Where can I update my insurance policy information?"}
+{"id":"hc-b08","label":"billing_insurance","text":"Can you explain the deductible shown on my invoice?"}
+{"id":"hc-b09","label":"billing_insurance","text":"When will my refund for the overpayment be issued?"}
+{"id":"hc-b10","label":"billing_insurance","text":"How do I dispute a billing error on my account?"}
+{"id":"hc-r01","label":"records","text":"How can I get a copy of my laboratory report?"}
+{"id":"hc-r02","label":"records","text":"The date of birth in my medical chart is wrong; can it be corrected?"}
+{"id":"hc-r03","label":"records","text":"Can you send my visit summary to my new doctor?"}
+{"id":"hc-r04","label":"records","text":"Where do I download the imaging report from my portal?"}
+{"id":"hc-r05","label":"records","text":"How do I request records from my surgery two years ago?"}
+{"id":"hc-r06","label":"records","text":"My test result is missing from the record; can someone locate it?"}
+{"id":"hc-r07","label":"records","text":"Can I obtain a printed copy of my vaccination history?"}
+{"id":"hc-r08","label":"records","text":"What form authorizes release of my chart to another clinic?"}
+{"id":"hc-r09","label":"records","text":"I cannot see the discharge note in my portal; where is it?"}
+{"id":"hc-r10","label":"records","text":"Can you correct the spelling of my name in the patient record?"}
+{"id":"hc-p01","label":"prescriptions","text":"Can my regular medication be refilled before I run out?"}
+{"id":"hc-p02","label":"prescriptions","text":"Please send the prescription to the pharmacy near my new address."}
+{"id":"hc-p03","label":"prescriptions","text":"Why has my refill request not reached the pharmacy?"}
+{"id":"hc-p04","label":"prescriptions","text":"Can I renew the inhaler order that expired last week?"}
+{"id":"hc-p05","label":"prescriptions","text":"The pharmacy says the prescription lacks a signature; who can resend it?"}
+{"id":"hc-p06","label":"prescriptions","text":"How can I request another supply of my current tablets?"}
+{"id":"hc-p07","label":"prescriptions","text":"Can you transfer my medication order to a different pharmacy?"}
+{"id":"hc-p08","label":"prescriptions","text":"My usual prescription is no longer listed for renewal; can you check?"}
+{"id":"hc-p09","label":"prescriptions","text":"Could the care team issue the next refill for my existing medicine?"}
+{"id":"hc-p10","label":"prescriptions","text":"I picked up only part of my prescribed supply; can the remaining order be sent?"}
+{"id":"hc-c01","label":"care_team","text":"My symptoms have changed since the visit; can the clinician review my message?"}
+{"id":"hc-c02","label":"care_team","text":"I do not understand the treatment plan the doctor gave me; who can explain it?"}
+{"id":"hc-c03","label":"care_team","text":"Should I tell my care team that the pain returned after therapy?"}
+{"id":"hc-c04","label":"care_team","text":"Can a nurse discuss how I am recovering after the procedure?"}
+{"id":"hc-c05","label":"care_team","text":"I have a question about the side effects I noticed; may I speak with my clinician?"}
+{"id":"hc-c06","label":"care_team","text":"The instructions after my visit are unclear; can someone from the care team call me?"}
+{"id":"hc-c07","label":"care_team","text":"Can the doctor explain what my recent findings mean for my care?"}
+{"id":"hc-c08","label":"care_team","text":"I am still feeling unwell after the treatment; how do I contact the nurse?"}
+{"id":"hc-c09","label":"care_team","text":"Who can answer a clinical question about my recovery plan?"}
+{"id":"hc-c10","label":"care_team","text":"Can my clinician review whether the current plan is helping?"}

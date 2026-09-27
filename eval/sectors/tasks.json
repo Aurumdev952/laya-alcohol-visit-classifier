@@ -1,0 +1,52 @@
+{
+  "education": {
+    "instructions": "Which school team should handle this message? Choose its primary purpose.",
+    "criteria": {
+      "admissions": "applications, eligibility, acceptance, enrollment or transfer into the school",
+      "coursework": "classes, assignments, grades, exams, curriculum or academic progress",
+      "fees_aid": "tuition charges, payments, scholarships or financial aid",
+      "technology": "school accounts, login, learning platform, software or device access",
+      "student_support": "counseling, accessibility, housing or general student wellbeing"
+    }
+  },
+  "healthcare": {
+    "instructions": "Which healthcare service team should route this patient message to? This is message routing, not medical triage or diagnosis.",
+    "criteria": {
+      "appointments": "booking, changing or canceling visits and scheduling logistics",
+      "billing_insurance": "charges, invoices, insurance coverage or claim processing",
+      "records": "copies of medical records, test reports, chart corrections or record access",
+      "prescriptions": "refills, pharmacy transfers or medication order processing",
+      "care_team": "questions about symptoms, treatment, recovery or a clinician's care instructions"
+    }
+  },
+  "mining": {
+    "instructions": "Which mine operations team should handle this report? Choose its primary purpose.",
+    "criteria": {
+      "safety": "worker hazards, incidents, protective controls or unsafe conditions",
+      "equipment": "repair, servicing, failure or maintenance of mine machinery",
+      "geology": "ore samples, drilling results, grade estimates or deposit interpretation",
+      "logistics": "ore hauling, supplies, transport, stockpiles or dispatch",
+      "environment": "water, dust, emissions, waste, rehabilitation or environmental monitoring"
+    }
+  },
+  "agriculture": {
+    "instructions": "Which farm operations team should handle this message? Choose its primary purpose.",
+    "criteria": {
+      "crops": "plant growth, pests, disease, soil nutrients or field agronomy",
+      "irrigation": "watering schedules, pumps, water pressure or irrigation lines",
+      "machinery": "repair, maintenance or operation of tractors and farm equipment",
+      "logistics": "harvest transport, storage, packing, delivery or inventory movement",
+      "farm_finance": "input costs, invoices, farm credit, insurance or payments"
+    }
+  },
+  "banking": {
+    "instructions": "Which bank support team should handle this customer message? Choose its primary purpose.",
+    "criteria": {
+      "accounts": "opening, closing, statements, balances or access to deposit accounts",
+      "payments": "transfers, direct deposits, bill payments or payment status",
+      "cards": "debit or credit card delivery, limits, replacement or use",
+      "loans": "loan applications, installments, payoff or borrowing terms",
+      "security": "suspected fraud, unauthorized access, phishing or account protection"
+    }
+  }
+}

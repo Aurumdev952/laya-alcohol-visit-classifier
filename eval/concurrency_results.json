@@ -1,0 +1,101 @@
+{
+  "model": "convaiinnovations/laya",
+  "gpu": "NVIDIA GeForce RTX 5090 Laptop GPU",
+  "endpoint": "http://127.0.0.1:8001/sentiment",
+  "workload": {
+    "texts": 50,
+    "requests_per_level": 200,
+    "warmup_requests": 20
+  },
+  "p95_target_ms": 200.0,
+  "practical_concurrency_at_target": 4,
+  "highest_tested_error_free": 64,
+  "peak_throughput_level": 1,
+  "peak_throughput_rps": 61.1,
+  "levels": [
+    {
+      "concurrency": 1,
+      "requests": 200,
+      "successes": 200,
+      "errors": {},
+      "elapsed_seconds": 3.273,
+      "throughput_rps": 61.1,
+      "p50_ms": 15.94,
+      "p95_ms": 18.59,
+      "p99_ms": 22.71,
+      "max_ms": 24.78
+    },
+    {
+      "concurrency": 2,
+      "requests": 200,
+      "successes": 200,
+      "errors": {},
+      "elapsed_seconds": 3.704,
+      "throughput_rps": 53.99,
+      "p50_ms": 36.63,
+      "p95_ms": 43.67,
+      "p99_ms": 48.12,
+      "max_ms": 49.13
+    },
+    {
+      "concurrency": 4,
+      "requests": 200,
+      "successes": 200,
+      "errors": {},
+      "elapsed_seconds": 4.205,
+      "throughput_rps": 47.56,
+      "p50_ms": 79.52,
+      "p95_ms": 116.95,
+      "p99_ms": 141.11,
+      "max_ms": 145.29
+    },
+    {
+      "concurrency": 8,
+      "requests": 200,
+      "successes": 200,
+      "errors": {},
+      "elapsed_seconds": 4.953,
+      "throughput_rps": 40.38,
+      "p50_ms": 201.44,
+      "p95_ms": 289.29,
+      "p99_ms": 295.89,
+      "max_ms": 351.66
+    },
+    {
+      "concurrency": 16,
+      "requests": 200,
+      "successes": 200,
+      "errors": {},
+      "elapsed_seconds": 4.657,
+      "throughput_rps": 42.95,
+      "p50_ms": 363.95,
+      "p95_ms": 452.5,
+      "p99_ms": 503.31,
+      "max_ms": 508.99
+    },
+    {
+      "concurrency": 32,
+      "requests": 200,
+      "successes": 200,
+      "errors": {},
+      "elapsed_seconds": 5.042,
+      "throughput_rps": 39.66,
+      "p50_ms": 773.14,
+      "p95_ms": 895.89,
+      "p99_ms": 928.84,
+      "max_ms": 935.51
+    },
+    {
+      "concurrency": 64,
+      "requests": 200,
+      "successes": 200,
+      "errors": {},
+      "elapsed_seconds": 4.695,
+      "throughput_rps": 42.6,
+      "p50_ms": 1297.16,
+      "p95_ms": 1798.76,
+      "p99_ms": 1809.02,
+      "max_ms": 1811.36
+    }
+  ]
+}

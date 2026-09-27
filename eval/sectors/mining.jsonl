@@ -1,0 +1,50 @@
+{"id":"mi-s01","label":"safety","text":"Can someone inspect the loose rock above the walkway before the next shift?"}
+{"id":"mi-s02","label":"safety","text":"Where should I report a near miss involving a reversing truck?"}
+{"id":"mi-s03","label":"safety","text":"The ventilation alarm sounded underground; who handles the hazard report?"}
+{"id":"mi-s04","label":"safety","text":"Can we replace the missing guardrail beside the work platform?"}
+{"id":"mi-s05","label":"safety","text":"I saw workers entering the area without required protective gear; whom do I notify?"}
+{"id":"mi-s06","label":"safety","text":"Who reviews the slip incident that occurred at the wash plant?"}
+{"id":"mi-s07","label":"safety","text":"The escape route is blocked by stored pallets; can this be made safe?"}
+{"id":"mi-s08","label":"safety","text":"A cable crosses the pedestrian path and could trip someone; where do I report it?"}
+{"id":"mi-s09","label":"safety","text":"Can the team reassess the controls before crews enter the confined space?"}
+{"id":"mi-s10","label":"safety","text":"Who can investigate the unreported injury on yesterday's shift?"}
+{"id":"mi-e01","label":"equipment","text":"The excavator hydraulic arm is leaking; can maintenance inspect it?"}
+{"id":"mi-e02","label":"equipment","text":"When is the crusher due for its next service?"}
+{"id":"mi-e03","label":"equipment","text":"The conveyor motor stops after ten minutes; who can repair it?"}
+{"id":"mi-e04","label":"equipment","text":"Can someone replace the worn tires on haul truck 12?"}
+{"id":"mi-e05","label":"equipment","text":"The drill rig will not start after fueling; can a technician check it?"}
+{"id":"mi-e06","label":"equipment","text":"Where do I log a fault on the loader's transmission?"}
+{"id":"mi-e07","label":"equipment","text":"Can the pump bearings be inspected during the shutdown?"}
+{"id":"mi-e08","label":"equipment","text":"The generator output is unstable; who handles the repair ticket?"}
+{"id":"mi-e09","label":"equipment","text":"Which crew services the screening machine this weekend?"}
+{"id":"mi-e10","label":"equipment","text":"Can we order a replacement belt for the damaged conveyor?"}
+{"id":"mi-g01","label":"geology","text":"Can the assay team verify the grade reported for core sample 84?"}
+{"id":"mi-g02","label":"geology","text":"Where are the latest drill-hole logs for the eastern zone?"}
+{"id":"mi-g03","label":"geology","text":"Does the new core show the same mineralized layer as last week's hole?"}
+{"id":"mi-g04","label":"geology","text":"Can a geologist map the fault seen on the pit wall?"}
+{"id":"mi-g05","label":"geology","text":"Who can interpret the assay discrepancy between duplicate samples?"}
+{"id":"mi-g06","label":"geology","text":"What is the updated ore grade estimate for this block?"}
+{"id":"mi-g07","label":"geology","text":"Can we review the planned exploration holes near the northern boundary?"}
+{"id":"mi-g08","label":"geology","text":"Where should the newly collected rock samples be catalogued?"}
+{"id":"mi-g09","label":"geology","text":"The vein orientation looks different in the latest survey; who assesses it?"}
+{"id":"mi-g10","label":"geology","text":"Can the resource model be updated with the new core results?"}
+{"id":"mi-l01","label":"logistics","text":"When will the ore trucks be dispatched to the processing plant?"}
+{"id":"mi-l02","label":"logistics","text":"Can we move the spare parts shipment to the night shift?"}
+{"id":"mi-l03","label":"logistics","text":"Which stockpile should receive today's low-grade material?"}
+{"id":"mi-l04","label":"logistics","text":"The access road is congested; can dispatch stagger the haulage schedule?"}
+{"id":"mi-l05","label":"logistics","text":"Where is the delayed fuel delivery for the remote camp?"}
+{"id":"mi-l06","label":"logistics","text":"Can a truck collect the ore bins before the next shift?"}
+{"id":"mi-l07","label":"logistics","text":"Who tracks the inventory of blasting supplies arriving tomorrow?"}
+{"id":"mi-l08","label":"logistics","text":"What is the revised transport schedule for concentrate shipments?"}
+{"id":"mi-l09","label":"logistics","text":"Can we allocate another haul truck to the western stockpile?"}
+{"id":"mi-l10","label":"logistics","text":"The warehouse has not received the ordered filters; who follows up?"}
+{"id":"mi-n01","label":"environment","text":"Can the water team investigate the cloudy discharge from the settling pond?"}
+{"id":"mi-n02","label":"environment","text":"Where do we submit this month's dust monitoring results?"}
+{"id":"mi-n03","label":"environment","text":"Can the disturbed hillside be included in the rehabilitation plan?"}
+{"id":"mi-n04","label":"environment","text":"Who checks the waste rock runoff after heavy rain?"}
+{"id":"mi-n05","label":"environment","text":"The air sampler recorded a high reading near the boundary; who reviews it?"}
+{"id":"mi-n06","label":"environment","text":"Can we inspect the tailings water level and record the result?"}
+{"id":"mi-n07","label":"environment","text":"Where are the latest groundwater monitoring measurements?"}
+{"id":"mi-n08","label":"environment","text":"Who handles the complaint about dust leaving the mine site?"}
+{"id":"mi-n09","label":"environment","text":"Can the team assess vegetation recovery on the closed section?"}
+{"id":"mi-n10","label":"environment","text":"The oil storage area may be leaking into soil; who handles environmental sampling?"}

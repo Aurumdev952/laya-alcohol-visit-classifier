@@ -1,0 +1,50 @@
+{"id":"ba-a01","label":"accounts","text":"How can I open a savings account?"}
+{"id":"ba-a02","label":"accounts","text":"Where do I find last month's account statement?"}
+{"id":"ba-a03","label":"accounts","text":"Can I close the joint account now that it is no longer needed?"}
+{"id":"ba-a04","label":"accounts","text":"Why is the balance shown in my deposit account different today?"}
+{"id":"ba-a05","label":"accounts","text":"What documents do I need to update the name on my account?"}
+{"id":"ba-a06","label":"accounts","text":"Can I add my spouse as a joint owner of the account?"}
+{"id":"ba-a07","label":"accounts","text":"I cannot access the account summary after signing in; who can help?"}
+{"id":"ba-a08","label":"accounts","text":"How do I change the mailing address on my savings account?"}
+{"id":"ba-a09","label":"accounts","text":"Can I get a confirmation letter showing my account is active?"}
+{"id":"ba-a10","label":"accounts","text":"What is the minimum balance for this checking account?"}
+{"id":"ba-p01","label":"payments","text":"When will my transfer to another bank arrive?"}
+{"id":"ba-p02","label":"payments","text":"Why did my electricity bill payment fail?"}
+{"id":"ba-p03","label":"payments","text":"Can I cancel a scheduled transfer before it is sent?"}
+{"id":"ba-p04","label":"payments","text":"My salary deposit has not appeared yet; can you trace it?"}
+{"id":"ba-p05","label":"payments","text":"How do I set up a recurring rent payment?"}
+{"id":"ba-p06","label":"payments","text":"Where can I find the reference number for yesterday's wire?"}
+{"id":"ba-p07","label":"payments","text":"Can you explain why an outgoing transfer is still pending?"}
+{"id":"ba-p08","label":"payments","text":"Is there a limit on sending money to another account today?"}
+{"id":"ba-p09","label":"payments","text":"How do I confirm that my tax payment reached the recipient?"}
+{"id":"ba-p10","label":"payments","text":"The automatic bill payment was skipped this month; who checks it?"}
+{"id":"ba-c01","label":"cards","text":"When will my replacement debit card arrive?"}
+{"id":"ba-c02","label":"cards","text":"Can I increase the daily spending limit on my credit card?"}
+{"id":"ba-c03","label":"cards","text":"My card was damaged in the wash; how can I order another?"}
+{"id":"ba-c04","label":"cards","text":"Why was my card declined at the grocery store?"}
+{"id":"ba-c05","label":"cards","text":"How do I activate the new card that came by mail?"}
+{"id":"ba-c06","label":"cards","text":"Can I use my debit card while traveling abroad?"}
+{"id":"ba-c07","label":"cards","text":"Where can I change the PIN for my bank card?"}
+{"id":"ba-c08","label":"cards","text":"The cash machine kept my card; how do I replace it?"}
+{"id":"ba-c09","label":"cards","text":"Can I get an additional card for an authorized user?"}
+{"id":"ba-c10","label":"cards","text":"What fee applies when I use this card at another bank's ATM?"}
+{"id":"ba-l01","label":"loans","text":"What documents are required for a home loan application?"}
+{"id":"ba-l02","label":"loans","text":"Can I pay off the rest of my car loan early?"}
+{"id":"ba-l03","label":"loans","text":"Why did my monthly loan installment increase?"}
+{"id":"ba-l04","label":"loans","text":"How much can I borrow under the personal loan program?"}
+{"id":"ba-l05","label":"loans","text":"Where do I see the remaining balance on my mortgage?"}
+{"id":"ba-l06","label":"loans","text":"Can the due date for my loan payment be changed?"}
+{"id":"ba-l07","label":"loans","text":"What interest rate applies to my proposed loan?"}
+{"id":"ba-l08","label":"loans","text":"Has my small-business loan application been approved?"}
+{"id":"ba-l09","label":"loans","text":"How do I request a payoff statement for my vehicle loan?"}
+{"id":"ba-l10","label":"loans","text":"Can I make an extra payment toward the principal?"}
+{"id":"ba-s01","label":"security","text":"I did not authorize the transaction on my account; how do I report it?"}
+{"id":"ba-s02","label":"security","text":"Someone called asking for my login code; could this be a scam?"}
+{"id":"ba-s03","label":"security","text":"How do I freeze access after my phone was stolen?"}
+{"id":"ba-s04","label":"security","text":"I received a suspicious email pretending to be the bank; where do I send it?"}
+{"id":"ba-s05","label":"security","text":"Can you investigate a login from a device I do not recognize?"}
+{"id":"ba-s06","label":"security","text":"A payment appeared that I never made; can the fraud team review it?"}
+{"id":"ba-s07","label":"security","text":"How do I lock my account after sharing my password by mistake?"}
+{"id":"ba-s08","label":"security","text":"The website asked for my PIN in a message; is it fraudulent?"}
+{"id":"ba-s09","label":"security","text":"Can you remove an unknown device from my online banking profile?"}
+{"id":"ba-s10","label":"security","text":"I think my identity was used to open an account without permission; who handles it?"}

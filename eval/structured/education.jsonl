@@ -1,0 +1,50 @@
+{"id":"st01","text":"I am a first-year student attending on campus. Can I apply for a scholarship?","expected":{"study_year":1,"mode":"campus","aid_requested":true}}
+{"id":"st02","text":"This is my first year and all my classes are online. I only need the timetable, not financial aid.","expected":{"study_year":1,"mode":"online","aid_requested":false}}
+{"id":"st03","text":"In year one I study partly online and partly at school. Where do I request a bursary?","expected":{"study_year":1,"mode":"hybrid","aid_requested":true}}
+{"id":"st04","text":"I just started my first year on campus. Could you tell me the library hours? I do not need a grant.","expected":{"study_year":1,"mode":"campus","aid_requested":false}}
+{"id":"st05","text":"As a first-year remote student, I need help applying for financial aid.","expected":{"study_year":1,"mode":"online","aid_requested":true}}
+{"id":"st06","text":"My first-year schedule combines home and classroom sessions. I am asking about attendance, not funding.","expected":{"study_year":1,"mode":"hybrid","aid_requested":false}}
+{"id":"st07","text":"I attend campus full-time in my first year. Is there a scholarship for my program?","expected":{"study_year":1,"mode":"campus","aid_requested":true}}
+{"id":"st08","text":"I am in year one and take every class from home. Please send the exam calendar; no bursary needed.","expected":{"study_year":1,"mode":"online","aid_requested":false}}
+{"id":"st09","text":"During my first year I split time between online lessons and campus labs. Can I get a grant?","expected":{"study_year":1,"mode":"hybrid","aid_requested":true}}
+{"id":"st10","text":"First-year student here, studying in person. I need directions to the lecture hall, not aid.","expected":{"study_year":1,"mode":"campus","aid_requested":false}}
+{"id":"st11","text":"My first year is fully virtual. How can I apply for a tuition scholarship?","expected":{"study_year":1,"mode":"online","aid_requested":true}}
+{"id":"st12","text":"I am starting year one with both remote and classroom sessions. Can you confirm my timetable?","expected":{"study_year":1,"mode":"hybrid","aid_requested":false}}
+{"id":"st13","text":"In my first year I go to campus for all lessons. Please help me request a bursary.","expected":{"study_year":1,"mode":"campus","aid_requested":true}}
+{"id":"st14","text":"I am a first-year online learner. Where are the recordings? This is not an aid request.","expected":{"study_year":1,"mode":"online","aid_requested":false}}
+{"id":"st15","text":"My year-one course mixes online seminars with in-person workshops. Could I receive a grant?","expected":{"study_year":1,"mode":"hybrid","aid_requested":true}}
+{"id":"st16","text":"I am in my first year, attending only at the campus site. Can you explain the course map?","expected":{"study_year":1,"mode":"campus","aid_requested":false}}
+{"id":"st17","text":"As a first-year distance student, I want to apply for financial assistance.","expected":{"study_year":1,"mode":"online","aid_requested":true}}
+{"id":"st18","text":"I am in my second year and attend campus lectures. Can I renew my scholarship?","expected":{"study_year":2,"mode":"campus","aid_requested":true}}
+{"id":"st19","text":"My second-year classes are all online. I need the new course link, not a grant.","expected":{"study_year":2,"mode":"online","aid_requested":false}}
+{"id":"st20","text":"Year two has both virtual and classroom teaching for me. How do I request a bursary?","expected":{"study_year":2,"mode":"hybrid","aid_requested":true}}
+{"id":"st21","text":"I am a second-year student on campus. Could you update my class schedule? No financial aid request.","expected":{"study_year":2,"mode":"campus","aid_requested":false}}
+{"id":"st22","text":"I study remotely in my second year. Is a tuition grant available to me?","expected":{"study_year":2,"mode":"online","aid_requested":true}}
+{"id":"st23","text":"I am in year two with some online days and some campus days. Please confirm the room number.","expected":{"study_year":2,"mode":"hybrid","aid_requested":false}}
+{"id":"st24","text":"As a second-year in-person student, I would like to apply for a scholarship.","expected":{"study_year":2,"mode":"campus","aid_requested":true}}
+{"id":"st25","text":"I am taking second-year classes exclusively from home. Where is the reading list? No bursary needed.","expected":{"study_year":2,"mode":"online","aid_requested":false}}
+{"id":"st26","text":"My year-two plan alternates remote sessions with campus labs. Can I request financial aid?","expected":{"study_year":2,"mode":"hybrid","aid_requested":true}}
+{"id":"st27","text":"In the second year I attend the school site every day. How can I meet my adviser?","expected":{"study_year":2,"mode":"campus","aid_requested":false}}
+{"id":"st28","text":"Second-year online learner here. Please send the form for renewing my grant.","expected":{"study_year":2,"mode":"online","aid_requested":true}}
+{"id":"st29","text":"I am in year two, combining web classes and campus tutorials. I only need access to course notes.","expected":{"study_year":2,"mode":"hybrid","aid_requested":false}}
+{"id":"st30","text":"I attend the second year in person. Can I apply for a need-based bursary?","expected":{"study_year":2,"mode":"campus","aid_requested":true}}
+{"id":"st31","text":"My second-year program is entirely remote. Please fix my portal login; I am not seeking aid.","expected":{"study_year":2,"mode":"online","aid_requested":false}}
+{"id":"st32","text":"Second-year studies are split between home and campus. How do I apply for a scholarship?","expected":{"study_year":2,"mode":"hybrid","aid_requested":true}}
+{"id":"st33","text":"I am in year two on campus full time. Can you tell me when exams begin?","expected":{"study_year":2,"mode":"campus","aid_requested":false}}
+{"id":"st34","text":"I am a second-year online student asking for a tuition grant.","expected":{"study_year":2,"mode":"online","aid_requested":true}}
+{"id":"st35","text":"I am in my third year and all seminars are on campus. Can I apply for a final-year scholarship?","expected":{"study_year":3,"mode":"campus","aid_requested":true}}
+{"id":"st36","text":"My third-year classes are fully virtual. I only need the graduation checklist, not aid.","expected":{"study_year":3,"mode":"online","aid_requested":false}}
+{"id":"st37","text":"Year three includes online lectures and in-person labs. Where do I request a bursary?","expected":{"study_year":3,"mode":"hybrid","aid_requested":true}}
+{"id":"st38","text":"I am a third-year campus student. Please send the dissertation timetable; no grant needed.","expected":{"study_year":3,"mode":"campus","aid_requested":false}}
+{"id":"st39","text":"In my final third year I study remotely. Can I get financial assistance with tuition?","expected":{"study_year":3,"mode":"online","aid_requested":true}}
+{"id":"st40","text":"I am in year three with a mix of virtual and classroom sessions. Can you confirm the exam venue?","expected":{"study_year":3,"mode":"hybrid","aid_requested":false}}
+{"id":"st41","text":"Third-year student attending in person here. Please help me renew my scholarship.","expected":{"study_year":3,"mode":"campus","aid_requested":true}}
+{"id":"st42","text":"All of my third-year study is online. Where do I upload my thesis? This is not an aid request.","expected":{"study_year":3,"mode":"online","aid_requested":false}}
+{"id":"st43","text":"My third year mixes campus workshops with online lessons. Is a grant available?","expected":{"study_year":3,"mode":"hybrid","aid_requested":true}}
+{"id":"st44","text":"I am in the final year, taking every class on campus. I need a classroom change, not funding.","expected":{"study_year":3,"mode":"campus","aid_requested":false}}
+{"id":"st45","text":"As a third-year distance learner, I want to submit a bursary application.","expected":{"study_year":3,"mode":"online","aid_requested":true}}
+{"id":"st46","text":"Year-three lessons alternate between home and school. Can you send the meeting link? No scholarship request.","expected":{"study_year":3,"mode":"hybrid","aid_requested":false}}
+{"id":"st47","text":"I study on campus in my third year. Could I apply for a completion grant?","expected":{"study_year":3,"mode":"campus","aid_requested":true}}
+{"id":"st48","text":"I am in year three entirely online. Please share the project rubric; I do not want aid.","expected":{"study_year":3,"mode":"online","aid_requested":false}}
+{"id":"st49","text":"My final-year course blends remote and campus classes. How can I renew a scholarship?","expected":{"study_year":3,"mode":"hybrid","aid_requested":true}}
+{"id":"st50","text":"I am a third-year student in a blended program. I need the room schedule, not a grant.","expected":{"study_year":3,"mode":"hybrid","aid_requested":false}}
