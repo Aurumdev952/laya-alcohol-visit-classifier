@@ -1,0 +1,156 @@
+{
+  "version": 2,
+  "source": "fully_synthetic",
+  "seed": 20260928,
+  "counts": {
+    "train": {
+      "total": 21000,
+      "labels": {
+        "indirect": 7000,
+        "negative": 7000,
+        "direct": 7000
+      }
+    },
+    "validation": {
+      "total": 3000,
+      "labels": {
+        "direct": 1000,
+        "negative": 1000,
+        "indirect": 1000
+      }
+    },
+    "calibration": {
+      "total": 3000,
+      "labels": {
+        "direct": 1000,
+        "indirect": 1000,
+        "negative": 1000
+      }
+    },
+    "test": {
+      "total": 3000,
+      "labels": {
+        "direct": 1000,
+        "indirect": 1000,
+        "negative": 1000
+      }
+    }
+  },
+  "coverage": {
+    "train": {
+      "groups": 7000,
+      "families": {
+        "shin": 1233,
+        "elbow": 1236,
+        "face": 1236,
+        "developmental": 1233,
+        "hip": 1236,
+        "forearm": 1233,
+        "finger": 1233,
+        "hand": 1236,
+        "ribs": 1236,
+        "shoulder": 1236,
+        "scalp": 1236,
+        "back": 1236,
+        "knee": 1236,
+        "neck": 1236,
+        "wrist": 1236,
+        "foot": 1236,
+        "ankle": 1236
+      },
+      "styles": {
+        "1": 4011,
+        "4": 4233,
+        "0": 4326,
+        "2": 4188,
+        "3": 4242
+      }
+    },
+    "validation": {
+      "groups": 1000,
+      "families": {
+        "shoulder": 177,
+        "neck": 177,
+        "knee": 177,
+        "face": 177,
+        "forearm": 174,
+        "hand": 177,
+        "elbow": 177,
+        "back": 177,
+        "scalp": 177,
+        "ribs": 177,
+        "ankle": 177,
+        "hip": 177,
+        "foot": 177,
+        "finger": 177,
+        "wrist": 177,
+        "developmental": 174,
+        "shin": 174
+      },
+      "styles": {
+        "5": 3000
+      }
+    },
+    "calibration": {
+      "groups": 1000,
+      "families": {
+        "wrist": 177,
+        "ribs": 177,
+        "face": 177,
+        "foot": 177,
+        "forearm": 174,
+        "hand": 177,
+        "finger": 177,
+        "ankle": 177,
+        "developmental": 174,
+        "shin": 174,
+        "shoulder": 177,
+        "elbow": 177,
+        "back": 177,
+        "knee": 177,
+        "neck": 177,
+        "scalp": 177,
+        "hip": 177
+      },
+      "styles": {
+        "6": 3000
+      }
+    },
+    "test": {
+      "groups": 1000,
+      "families": {
+        "jaw": 501,
+        "thigh": 501,
+        "hip": 87,
+        "elbow": 87,
+        "ribs": 90,
+        "shin": 87,
+        "ankle": 90,
+        "wrist": 90,
+        "neurodevelopment": 498,
+        "scalp": 90,
+        "shoulder": 90,
+        "developmental": 87,
+        "back": 87,
+        "face": 90,
+        "forearm": 87,
+        "knee": 90,
+        "neck": 87,
+        "foot": 87,
+        "finger": 87,
+        "hand": 87
+      },
+      "styles": {
+        "8": 1467,
+        "7": 1533
+      }
+    }
+  },
+  "sha256": {
+    "train": "49e722273b53406412d2e521b867e18ebb8773a750cc63361c4c0386727713f2",
+    "validation": "aaa223d4ac77ab846bf511ada3ca93f904c25fbc786b9fc151d64b8dc7676685",
+    "calibration": "243ecdf67822e048a7d962c07433cd449bc4bb5bd15e3fa64190d28abad2771c",
+    "test": "b7e5d553c7d5d5ba43156c87b2324e4bc4e3c2d1454c565cc9fbdb0b43e3131d"
+  },
+  "caveat": "Synthetic development data; no clinical performance claim."
+}

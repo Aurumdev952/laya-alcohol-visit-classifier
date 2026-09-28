@@ -1,6 +1,6 @@
 # Laya hospital visit alcohol classifier
 
-Fine-tune [Laya](https://github.com/NandhaKishorM/laya) to classify a hospital visit from all of its encounter notes as **direct alcohol positive**, **indirect alcohol positive** (another person's drinking caused the presentation), or **negative**. This repository includes a 30,000-visit synthetic dataset, training and calibration scripts, held-out benchmarks, and a separate Laya sentiment/decision API.
+Fine-tune [Laya](https://github.com/NandhaKishorM/laya) to classify a hospital visit from all of its encounter notes as **direct alcohol positive**, **indirect alcohol positive** (another person's drinking caused the presentation), or **negative**. This repository includes synthetic datasets, training and calibration scripts, benchmarks, and a separate Laya sentiment/decision API.
 
 The included checkpoint must be trained locally; model weights are not stored in Git. The published datasets are synthetic and do not establish clinical accuracy.
 
@@ -34,6 +34,7 @@ Run the included sentiment and decision API:
 ## Documentation
 
 - [Alcohol task, data format, training, and benchmark](alcohol_ft/README.md)
+- [V2 improvement experiments](docs/ALCOHOL_V2_RUNBOOK.md)
 - [Measured alcohol run and limitations](alcohol_ft/RUN_RESULTS.md)
 - [Sentiment and decision API](docs/SENTIMENT_API.md)
 

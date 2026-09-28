@@ -1,0 +1,8 @@
+{
+  "data_dir": "data/alcohol_synthetic_v2",
+  "model_id": "convaiinnovations/laya-typed-decisions",
+  "question_mode": "three_way",
+  "objective": "rlcd_ce",
+  "epochs": 4,
+  "seed": 42
+}

@@ -1,5 +1,7 @@
 # Alcohol attribution from hospital visit notes
 
+**V2 preparation:** The 30,000-case attribution dataset, validation-aware Laya trainer, decomposed-question experiment, clinical classifier baselines, and single-GPU run configurations are ready. GPU fine-tuning for v2 has not run. See [the v2 runbook](../docs/ALCOHOL_V2_RUNBOOK.md) and [experiment plan](../docs/ACCURACY_IMPROVEMENT_PLAN.md). The instructions and measured results below describe the completed v1 run.
+
 This is a visit-level, three-class Laya fine-tuning setup for English clinical notes. It follows the [Laya fine-tuning guide](https://laya-ai.com/guides/fine-tune-laya) and the [upstream 2×T4 RLCD notebook](https://github.com/NandhaKishorM/laya/blob/main/notebooks/laya_finetune_typed_decisions_2xT4_kaggle.ipynb), adapted for **one 24 GB RTX 5090**. The choice question in [task.py](task.py) is identical in training and inference. The training loop uses the upstream proper-scoring reward, four noisy logit samples, cross-entropy guidance, encoder and head checkpointing, and a separate calibration split. It exports a Laya-loadable checkpoint with the newly fitted choice temperature and removes inherited per-option temperatures so they cannot override the fit.
 
 ## Label policy

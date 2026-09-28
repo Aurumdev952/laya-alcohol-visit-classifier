@@ -1,0 +1,9 @@
+{
+  "data_dir": "data/alcohol_synthetic_v2",
+  "model_id": "convaiinnovations/laya",
+  "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+  "question_mode": "three_way",
+  "objective": "rlcd_ce",
+  "epochs": 4,
+  "seed": 42
+}

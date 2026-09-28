@@ -1,0 +1,32 @@
+{
+  "question_mode": "three_way",
+  "tokenizer": "runs/laya-alcohol-001/final/tokenizer",
+  "max_len": 1024,
+  "head_max_len": 256,
+  "splits": {
+    "train": {
+      "visits": 21000,
+      "questions": 21000,
+      "min_sequence_tokens": 234,
+      "max_sequence_tokens": 764
+    },
+    "validation": {
+      "visits": 3000,
+      "questions": 3000,
+      "min_sequence_tokens": 256,
+      "max_sequence_tokens": 758
+    },
+    "calibration": {
+      "visits": 3000,
+      "questions": 3000,
+      "min_sequence_tokens": 243,
+      "max_sequence_tokens": 748
+    },
+    "test": {
+      "visits": 3000,
+      "questions": 3000,
+      "min_sequence_tokens": 257,
+      "max_sequence_tokens": 756
+    }
+  }
+}

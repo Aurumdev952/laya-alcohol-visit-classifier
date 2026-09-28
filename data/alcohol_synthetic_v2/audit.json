@@ -1,0 +1,171 @@
+{
+  "counts": {
+    "train": {
+      "total": 21000,
+      "labels": {
+        "indirect": 7000,
+        "negative": 7000,
+        "direct": 7000
+      }
+    },
+    "validation": {
+      "total": 3000,
+      "labels": {
+        "direct": 1000,
+        "negative": 1000,
+        "indirect": 1000
+      }
+    },
+    "calibration": {
+      "total": 3000,
+      "labels": {
+        "direct": 1000,
+        "indirect": 1000,
+        "negative": 1000
+      }
+    },
+    "test": {
+      "total": 3000,
+      "labels": {
+        "direct": 1000,
+        "indirect": 1000,
+        "negative": 1000
+      }
+    }
+  },
+  "splits": {
+    "train": {
+      "groups": 7000,
+      "families": {
+        "shin": 1233,
+        "elbow": 1236,
+        "face": 1236,
+        "developmental": 1233,
+        "hip": 1236,
+        "forearm": 1233,
+        "finger": 1233,
+        "hand": 1236,
+        "ribs": 1236,
+        "shoulder": 1236,
+        "scalp": 1236,
+        "back": 1236,
+        "knee": 1236,
+        "neck": 1236,
+        "wrist": 1236,
+        "foot": 1236,
+        "ankle": 1236
+      },
+      "render_styles": {
+        "1": 4011,
+        "4": 4233,
+        "0": 4326,
+        "2": 4188,
+        "3": 4242
+      },
+      "negative_alcohol_word": 6137,
+      "mixed_direct_indirect": 778,
+      "token_length": {
+        "max": 595,
+        "p95": 519
+      }
+    },
+    "validation": {
+      "groups": 1000,
+      "families": {
+        "shoulder": 177,
+        "neck": 177,
+        "knee": 177,
+        "face": 177,
+        "forearm": 174,
+        "hand": 177,
+        "elbow": 177,
+        "back": 177,
+        "scalp": 177,
+        "ribs": 177,
+        "ankle": 177,
+        "hip": 177,
+        "foot": 177,
+        "finger": 177,
+        "wrist": 177,
+        "developmental": 174,
+        "shin": 174
+      },
+      "render_styles": {
+        "5": 3000
+      },
+      "negative_alcohol_word": 875,
+      "mixed_direct_indirect": 112,
+      "token_length": {
+        "max": 589,
+        "p95": 545
+      }
+    },
+    "calibration": {
+      "groups": 1000,
+      "families": {
+        "wrist": 177,
+        "ribs": 177,
+        "face": 177,
+        "foot": 177,
+        "forearm": 174,
+        "hand": 177,
+        "finger": 177,
+        "ankle": 177,
+        "developmental": 174,
+        "shin": 174,
+        "shoulder": 177,
+        "elbow": 177,
+        "back": 177,
+        "knee": 177,
+        "neck": 177,
+        "scalp": 177,
+        "hip": 177
+      },
+      "render_styles": {
+        "6": 3000
+      },
+      "negative_alcohol_word": 849,
+      "mixed_direct_indirect": 112,
+      "token_length": {
+        "max": 579,
+        "p95": 533
+      }
+    },
+    "test": {
+      "groups": 1000,
+      "families": {
+        "jaw": 501,
+        "thigh": 501,
+        "hip": 87,
+        "elbow": 87,
+        "ribs": 90,
+        "shin": 87,
+        "ankle": 90,
+        "wrist": 90,
+        "neurodevelopment": 498,
+        "scalp": 90,
+        "shoulder": 90,
+        "developmental": 87,
+        "back": 87,
+        "face": 90,
+        "forearm": 87,
+        "knee": 90,
+        "neck": 87,
+        "foot": 87,
+        "finger": 87,
+        "hand": 87
+      },
+      "render_styles": {
+        "8": 1467,
+        "7": 1533
+      },
+      "negative_alcohol_word": 877,
+      "mixed_direct_indirect": 112,
+      "token_length": {
+        "max": 587,
+        "p95": 548
+      }
+    }
+  },
+  "manifest_sha256_verified": true
+}

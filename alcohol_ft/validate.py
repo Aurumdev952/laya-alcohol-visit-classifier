@@ -12,7 +12,9 @@ def main():
     parser.add_argument("--data-dir", type=Path, default=Path("data/alcohol_synthetic"))
     parser.add_argument("--curated", type=Path)
     args = parser.parse_args()
-    paths = {split: args.data_dir / f"{split}.jsonl" for split in ("train", "calibration", "test")}
+    parts = ("train", "validation", "calibration", "test")
+    paths = {split: args.data_dir / f"{split}.jsonl" for split in parts
+             if (args.data_dir / f"{split}.jsonl").exists()}
     if args.curated:
         paths["curated"] = args.curated
     print(json.dumps(validate_splits(paths), indent=2))

@@ -7,7 +7,7 @@ import json
 from collections import Counter
 from pathlib import Path
 
-from alcohol_ft.task import LABELS, case_state
+from alcohol_ft.task import LABELS, case_state, combine_components
 
 
 def read_cases(path: Path) -> list[dict]:
@@ -24,6 +24,26 @@ def read_cases(path: Path) -> list[dict]:
             if not isinstance(row["encounters"], list):
                 raise ValueError("encounters must be a list")
             row["state"] = case_state(row["encounters"])
+            annotation = row.get("annotation")
+            if annotation is not None:
+                if not isinstance(annotation, dict):
+                    raise ValueError("annotation must be an object")
+                patient = annotation.get("patient_evidence")
+                other = annotation.get("other_person_causal")
+                if not isinstance(patient, bool) or not isinstance(other, bool):
+                    raise ValueError("component labels must be boolean")
+                if combine_components(patient, other) != row["label"]:
+                    raise ValueError("component labels disagree with visit label")
+                spans = annotation.get("evidence", [])
+                if not isinstance(spans, list):
+                    raise ValueError("evidence must be a list")
+                for evidence in spans:
+                    if not isinstance(evidence, dict):
+                        raise ValueError("evidence entries must be objects")
+                    index = evidence.get("encounter_index")
+                    span = evidence.get("text")
+                    if not isinstance(index, int) or not 1 <= index <= len(row["encounters"]) or not isinstance(span, str) or span not in row["encounters"][index - 1]["note"]:
+                        raise ValueError("evidence span is missing from referenced encounter")
         except (ValueError, KeyError, TypeError) as exc:
             raise ValueError(f"{path}:{line_no}: {exc}") from exc
         rows.append(row)
@@ -33,7 +53,7 @@ def read_cases(path: Path) -> list[dict]:
 
 
 def validate_splits(paths: dict[str, Path]) -> dict:
-    seen_case, seen_patient, seen_text = {}, {}, {}
+    seen_case, seen_patient, seen_text, seen_group = {}, {}, {}, {}
     summary = {}
     for split, path in paths.items():
         rows = read_cases(path)
@@ -51,6 +71,13 @@ def validate_splits(paths: dict[str, Path]) -> dict:
             if patient_id in seen_patient and seen_patient[patient_id] != split:
                 raise ValueError(f"patient_id leakage: {patient_id} in {seen_patient[patient_id]} and {split}")
             seen_patient[patient_id] = split
+            group_id = row.get("group_id")
+            if group_id is not None:
+                if not isinstance(group_id, str) or not group_id:
+                    raise ValueError("group_id must be nonempty text")
+                if group_id in seen_group and seen_group[group_id] != split:
+                    raise ValueError(f"group_id leakage: {group_id} in {seen_group[group_id]} and {split}")
+                seen_group[group_id] = split
         summary[split] = {"total": len(rows), "labels": dict(counts)}
     return summary
 

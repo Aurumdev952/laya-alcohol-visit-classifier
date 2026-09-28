@@ -1,0 +1,6 @@
+{
+  "data_dir": "data/alcohol_synthetic_v2",
+  "model_id": "answerdotai/ModernBERT-large",
+  "epochs": 4,
+  "seed": 42
+}
