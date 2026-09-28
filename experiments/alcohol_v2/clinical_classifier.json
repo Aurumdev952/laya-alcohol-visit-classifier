@@ -1,6 +1,7 @@
 {
   "data_dir": "data/alcohol_synthetic_v2",
   "model_id": "thomas-sounack/BioClinical-ModernBERT-large",
+  "model_revision": "c684f470c2ee60531d8c47c32187dba746c84201",
   "epochs": 4,
   "seed": 42
 }

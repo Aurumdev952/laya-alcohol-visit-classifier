@@ -1,6 +1,6 @@
 # Alcohol attribution v2: preparation and runbook
 
-The v2 experiment code is prepared; GPU fine-tuning has not been run. The completed v1 checkpoint and results remain in `runs/laya-alcohol-001` and `alcohol_ft/RUN_RESULTS.md`.
+The v2 experiment code and data are prepared. The first v2 GPU fine-tune completed on September 28, 2026; its measured results are in [the run results](ALCOHOL_V2_RUN_RESULTS.md). The completed v1 checkpoint and results remain in `runs/laya-alcohol-001` and `alcohol_ft/RUN_RESULTS.md`.
 
 ## Prepared assets
 
@@ -80,11 +80,13 @@ The optional clinical-Laya candidate needs a compatible local initialization:
 ```bash
 .venv/bin/python -m alcohol_ft.clinical_laya
 .venv/bin/python -m alcohol_ft.clinical_laya \
-  --output runs/alcohol-v2/clinical-laya-init
+  --base-revision 55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851 \
+  --clinical-revision c684f470c2ee60531d8c47c32187dba746c84201 \
+  --output /tmp/clinical-laya-init-check
 .venv/bin/python experiments/alcohol_v2/run.py laya_clinical_graft --execute
 ```
 
-The first command checks model architecture and tokenizer metadata. The build command additionally checks every encoder tensor key and shape before writing a Laya checkpoint with clinical encoder weights and the original decision head. A mismatch is a research finding; do not bypass it by partially loading weights. The clinical, typed-decisions, and general ModernBERT checkpoints were not in the local cache during preparation. Download/probe them when network access is available.
+The first command checks model architecture and tokenizer metadata. The build command additionally checks every encoder tensor key and shape before writing a Laya checkpoint with clinical encoder weights and the original decision head. A mismatch is a research finding; do not bypass it by partially loading weights. The pinned clinical encoder passed these checks, and its initialization is in `runs/alcohol-v2/clinical-laya-init`.
 
 All presets use BF16 and gradient checkpointing. Laya starts with micro-batch 8 and accumulation 4; the classifier starts with 4 and 8. Profile peak memory and reduce micro-batch while raising accumulation for long cases if needed. Do not change the 1,024-token input budget without a length audit and a separate validation comparison.
 
@@ -102,13 +104,13 @@ The test command requires `--unlock-test` internally and refuses to overwrite an
 
 For an unlabeled visit JSON or JSONL file, run `python -m alcohol_ft.predict_v2 --model <run>/final --input <visits.jsonl>`. The command detects Laya versus a Transformers classifier from the saved checkpoint. The review threshold and the decomposed model's joint probabilities remain provisional until checked on real calibration data.
 
-## Known limits before training
+## Known limits
 
 - The v2 data uses authored patterns and neutral-note variation. It improves controlled attribution coverage, but a model can still learn synthetic style. Independently labeled, de-identified hospital visits with patient and time separation are required to assess clinical generalization.
-- The clinical-Laya graft has a compatibility script but has not been built; those weights are not cached locally.
+- The clinical-Laya graft is an experimental initialization; matching tensor shapes do not establish that it improves this task. It needs its own fine-tune and comparison.
 - Temperature scaling adjusts probability sharpness, not the winning class. Classification errors remain the primary target.
-- Training configs currently permit a null Hub revision. Each trainer records the resolved revision when available. Pin model revisions in the experiment configs before the production comparison if Hub access permits.
+- The experiment presets pin the Hub revisions used for comparisons. Local custom checkpoints use their saved initialization metadata.
 - `resume.pt` uses PyTorch serialization and must be loaded only from a trusted local run directory.
-- During preparation on September 28, 2026, `nvidia-smi` could not communicate with the driver and PyTorch reported no CUDA device. The v1-on-v2 inference baseline and all v2 GPU experiments remain pending until CUDA is restored.
+- The RTX 5090 completed the first v2 Laya fine-tune. The v1-on-v2 validation baseline was 0.8072 macro F1 with negative recall 0.607; the v2 checkpoint reached 1.000 macro F1 on synthetic validation and 0.9993 on the locked synthetic test. See the run results for authored-case failures.
 
-See [the full improvement plan](ACCURACY_IMPROVEMENT_PLAN.md) for data policy, acceptance gates, and the experiment matrix.
+See [the run results](ALCOHOL_V2_RUN_RESULTS.md) for measured scores and [the full improvement plan](ACCURACY_IMPROVEMENT_PLAN.md) for data policy, acceptance gates, and the experiment matrix.

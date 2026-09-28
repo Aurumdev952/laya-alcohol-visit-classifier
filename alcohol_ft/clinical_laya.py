@@ -12,20 +12,21 @@ import json
 from pathlib import Path
 
 
-def probe(base_id: str, clinical_id: str) -> tuple[dict, Path]:
+def probe(base_id: str, clinical_id: str, *, base_revision: str | None = None,
+          clinical_revision: str | None = None) -> tuple[dict, Path]:
     from huggingface_hub import snapshot_download
     from laya.agent import _fix_tokenizer_config
     from transformers import AutoConfig, AutoTokenizer
 
     local_base = Path(base_id)
     base = local_base if local_base.is_dir() else Path(snapshot_download(
-        base_id, allow_patterns=["model.safetensors", "rl_agent_config.json",
+        base_id, revision=base_revision, allow_patterns=["model.safetensors", "rl_agent_config.json",
                                  "encoder/*", "tokenizer/*"], max_workers=2))
     _fix_tokenizer_config(str(base))
     base_cfg = AutoConfig.from_pretrained(base / "encoder")
-    clinical_cfg = AutoConfig.from_pretrained(clinical_id)
+    clinical_cfg = AutoConfig.from_pretrained(clinical_id, revision=clinical_revision)
     base_tok = AutoTokenizer.from_pretrained(base / "tokenizer")
-    clinical_tok = AutoTokenizer.from_pretrained(clinical_id)
+    clinical_tok = AutoTokenizer.from_pretrained(clinical_id, revision=clinical_revision)
     checks = {
         "model_type": [base_cfg.model_type, clinical_cfg.model_type],
         "hidden_size": [base_cfg.hidden_size, clinical_cfg.hidden_size],
@@ -40,10 +41,12 @@ def probe(base_id: str, clinical_id: str) -> tuple[dict, Path]:
     return checks, base
 
 
-def build(base_id: str, clinical_id: str, output_dir: Path):
+def build(base_id: str, clinical_id: str, output_dir: Path, *,
+          base_revision: str | None = None, clinical_revision: str | None = None):
     if output_dir.exists() and any(output_dir.iterdir()):
         raise ValueError("output directory must be empty")
-    checks, base = probe(base_id, clinical_id)
+    checks, base = probe(base_id, clinical_id, base_revision=base_revision,
+                         clinical_revision=clinical_revision)
     if not checks["compatible_metadata"]:
         raise ValueError(f"clinical encoder metadata/tokenizer incompatible: {checks}")
     from laya.common import build_model
@@ -55,7 +58,8 @@ def build(base_id: str, clinical_id: str, output_dir: Path):
     cfg = json.loads((base / "rl_agent_config.json").read_text(encoding="utf-8"))
     model = build_model(cfg, encoder_dir=str(base / "encoder"))
     model.load_state_dict(load_file(str(base / "model.safetensors")), strict=True)
-    clinical = AutoModel.from_pretrained(clinical_id, attn_implementation="sdpa")
+    clinical = AutoModel.from_pretrained(clinical_id, revision=clinical_revision,
+                                         attn_implementation="sdpa")
     base_state = model.encoder.state_dict()
     clinical_state = clinical.state_dict()
     if base_state.keys() != clinical_state.keys():
@@ -68,6 +72,8 @@ def build(base_id: str, clinical_id: str, output_dir: Path):
     model.encoder.load_state_dict(clinical_state, strict=True)
     cfg["encoder"] = clinical_id
     cfg["initialization"] = {"decision_head": base_id, "encoder": clinical_id,
+                             "decision_head_revision": base_revision,
+                             "encoder_revision": clinical_revision,
                              "note": "experimental; requires downstream training and calibration"}
     cfg.pop("training", None)
     cfg.pop("temperature_by_options", None)
@@ -82,9 +88,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base", default="convaiinnovations/laya")
     parser.add_argument("--clinical", default="thomas-sounack/BioClinical-ModernBERT-large")
+    parser.add_argument("--base-revision")
+    parser.add_argument("--clinical-revision")
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
-    checks = build(args.base, args.clinical, args.output) if args.output else probe(args.base, args.clinical)[0]
+    options = {"base_revision": args.base_revision,
+               "clinical_revision": args.clinical_revision}
+    checks = build(args.base, args.clinical, args.output, **options) if args.output else probe(
+        args.base, args.clinical, **options)[0]
     print(json.dumps(checks, indent=2))
 
 

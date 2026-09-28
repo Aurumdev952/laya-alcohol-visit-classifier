@@ -1,6 +1,7 @@
 {
   "data_dir": "data/alcohol_synthetic_v2",
   "model_id": "answerdotai/ModernBERT-large",
+  "model_revision": "45bb4654a4d5aaff24dd11d4781fa46d39bf8c13",
   "epochs": 4,
   "seed": 42
 }

@@ -165,7 +165,8 @@ def main():
     parser.add_argument("--model", required=True)
     parser.add_argument("--family", choices=("laya", "classifier"), required=True)
     parser.add_argument("--data-dir", type=Path, default=Path("data/alcohol_synthetic_v2"))
-    parser.add_argument("--split", choices=("validation", "test"), required=True)
+    parser.add_argument("--split", choices=("validation", "test", "custom"), required=True)
+    parser.add_argument("--cases", type=Path, help="labeled JSONL for a custom diagnostic set")
     parser.add_argument("--unlock-test", action="store_true",
                         help="explicitly allow the once-per-finalist locked test")
     parser.add_argument("--batch-size", type=int, default=8)
@@ -173,9 +174,12 @@ def main():
     args = parser.parse_args()
     if args.split == "test" and not args.unlock_test:
         parser.error("test split is locked; pass --unlock-test only for finalized candidates")
+    if (args.split == "custom") != (args.cases is not None):
+        parser.error("--cases is required exactly when --split custom is used")
     if args.batch_size < 1 or args.output.exists():
         parser.error("batch size must be positive and output path must be new")
-    cases = read_cases(args.data_dir / f"{args.split}.jsonl")
+    cases_path = args.cases if args.cases is not None else args.data_dir / f"{args.split}.jsonl"
+    cases = read_cases(cases_path)
     start = time.perf_counter()
     if args.family == "laya":
         rows, mode = predict_laya(args.model, cases, args.batch_size)
@@ -183,6 +187,7 @@ def main():
         rows, mode = predict_classifier(args.model, cases, args.batch_size), "three_way"
     report = {"model": args.model, "model_family": args.family, "question_mode": mode,
               "data_dir": str(args.data_dir), "split": args.split,
+              "cases_path": str(cases_path),
               "elapsed_seconds": time.perf_counter() - start,
               "metrics": summarize(cases, rows), "predictions": rows}
     if mode == "decomposed":

@@ -12,6 +12,7 @@ import json
 import math
 import random
 import shutil
+import time
 from pathlib import Path
 
 from alcohol_ft.benchmark import metrics
@@ -242,7 +243,7 @@ def run(config_path: Path, output_dir: Path, *, resume: bool = False) -> None:
         optimizer.load_state_dict(state["optimizer"])
         scheduler.load_state_dict(state["scheduler"])
         torch.set_rng_state(state["torch_rng"].cpu())
-        torch.cuda.set_rng_state_all(state["cuda_rng"])
+        torch.cuda.set_rng_state_all([rng.cpu() for rng in state["cuda_rng"]])
         random.setstate(state["python_rng"])
         start_epoch, best_epoch, best_score, stalls = (state[k] for k in
                                                       ("epoch", "best_epoch", "best_score", "stalls"))
@@ -252,6 +253,7 @@ def run(config_path: Path, output_dir: Path, *, resume: bool = False) -> None:
         reports = json.loads(report_path.read_text(encoding="utf-8"))
     for epoch in range(start_epoch, cfg["epochs"]):
         model.train()
+        epoch_started = time.perf_counter()
         order = list(range(len(train_items)))
         random.Random(cfg["seed"] + epoch).shuffle(order)
         sigma = cfg["noise_start"] + (cfg["noise_end"] - cfg["noise_start"]) * epoch / max(1, cfg["epochs"] - 1)
@@ -267,6 +269,10 @@ def run(config_path: Path, output_dir: Path, *, resume: bool = False) -> None:
                 optimizer.step()
                 scheduler.step()
                 optimizer.zero_grad(set_to_none=True)
+            batches_done = offset // cfg["micro_batch"] + 1
+            if batches_done % 250 == 0:
+                print(f"epoch {epoch+1}: {batches_done}/{math.ceil(len(order) / cfg['micro_batch'])} "
+                      f"batches, elapsed={time.perf_counter() - epoch_started:.0f}s", flush=True)
         report = validation_report(model, val_items, tokenizer, cfg["calibration_batch"],
                                    torch, device, cfg["question_mode"])
         report.update(epoch=epoch + 1, peak_gpu_bytes=torch.cuda.max_memory_allocated())
