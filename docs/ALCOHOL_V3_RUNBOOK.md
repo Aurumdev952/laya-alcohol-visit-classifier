@@ -1,5 +1,7 @@
 # Alcohol attribution v3: causal-context retraining
 
+Run outcomes and remaining errors: [ALCOHOL_V3_RUN_RESULTS.md](ALCOHOL_V3_RUN_RESULTS.md).
+
 The v3 corpus targets the remaining negative-to-indirect errors found on the independently authored cases. It keeps the three-label, visit-level task and 30,000 synthetic reports. Half the matched groups contain two-note hard contexts: a documented non-alcohol mechanism plus an incidental alcohol mention for the negative variant, or an event linked to another person's drinking for the indirect variant. The direct variant documents the patient's own use in the same presentation. Each group stays in one split.
 
 The 21,000/3,000/3,000/3,000 train/validation/calibration/test split is unchanged in size. Training contains 3,500 hard groups; each other split has 500. The locked test has held-out sentence surfaces, three reserved presentation families, and additional mechanisms that do not appear in training. The old curated and counterfactual sets remain development diagnostics; none of their exact reports appears in v3. A separate 72-case authored synthetic challenge, frozen before v3 scoring, tests 12 further causal mechanisms in two note orders. All reports remain synthetic and cannot establish hospital-note accuracy.
