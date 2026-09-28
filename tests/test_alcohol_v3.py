@@ -1,5 +1,7 @@
 """Check v3 causal counterfactuals and dataset integrity."""
 
+import hashlib
+import json
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -8,6 +10,7 @@ from alcohol_ft.benchmark_v2 import summarize
 from alcohol_ft.data import read_cases
 from alcohol_ft.generate_v3 import HARD_CONTEXTS, TEST_ONLY_CONTEXTS, generate_split
 from alcohol_ft.task import LABELS, case_state, combine_components
+from eval.alcohol.generate_v3_adversarial import build_rows
 
 
 def test_hard_groups_are_matched_and_have_incidental_negative_mentions():
@@ -57,6 +60,24 @@ def test_v3_training_reports_do_not_copy_authored_examples():
     for name in ("curated", "generalization"):
         authored = read_cases(Path("eval/alcohol") / f"{name}.jsonl")
         assert states.isdisjoint(row["state"] for row in authored)
+
+
+def test_frozen_v3_adversarial_holdout_is_complete_and_unseen():
+    path = Path("eval/alcohol/v3_adversarial.jsonl")
+    manifest = json.loads(path.with_name("v3_adversarial_manifest.json").read_text())
+    cases = read_cases(path)
+    assert manifest["sha256"] == hashlib.sha256(path.read_bytes()).hexdigest()
+    assert len(cases) == manifest["cases"] == 72
+    assert [{key: value for key, value in case.items() if key != "state"}
+            for case in cases] == build_rows()
+    groups = defaultdict(set)
+    for case in cases:
+        groups[case["group_id"]].add(case["label"])
+    assert len(groups) == manifest["groups"] == 24
+    assert all(labels == set(LABELS) for labels in groups.values())
+    training_states = {case["state"] for case in
+                       read_cases(Path("data/alcohol_synthetic_v3/train.jsonl"))}
+    assert training_states.isdisjoint(case["state"] for case in cases)
 
 
 def test_v3_full_corpus_manifest_and_hard_coverage():

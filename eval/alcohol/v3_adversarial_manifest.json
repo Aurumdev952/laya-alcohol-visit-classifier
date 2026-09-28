@@ -1,0 +1,7 @@
+{
+  "cases": 72,
+  "groups": 24,
+  "sha256": "369c57f97db99f0d15232b1a71a717be6bfb20526d3be235479384111d59ede2",
+  "source": "authored_synthetic_v3_adversarial",
+  "caveat": "Not clinician-labeled; frozen before v3 model evaluation."
+}
