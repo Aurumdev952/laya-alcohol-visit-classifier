@@ -4,9 +4,10 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from alcohol_ft.audit_v3 import audit
+from alcohol_ft.benchmark_v2 import summarize
 from alcohol_ft.data import read_cases
 from alcohol_ft.generate_v3 import HARD_CONTEXTS, TEST_ONLY_CONTEXTS, generate_split
-from alcohol_ft.task import LABELS, combine_components
+from alcohol_ft.task import LABELS, case_state, combine_components
 
 
 def test_hard_groups_are_matched_and_have_incidental_negative_mentions():
@@ -47,6 +48,8 @@ def test_v3_keeps_reserved_families_in_test():
                for row in rows if row["family_seen_in_training"])
     assert any(not row["family_seen_in_training"] for row in rows)
     assert all(row["render_style"] in (7, 8) for row in rows)
+    assert {context[0] for context in TEST_ONLY_CONTEXTS} <= {
+        row["hard_category"] for row in rows if row["hard_group"]}
 
 
 def test_v3_training_reports_do_not_copy_authored_examples():
@@ -61,3 +64,21 @@ def test_v3_full_corpus_manifest_and_hard_coverage():
     assert report["manifest_sha256_verified"]
     assert report["splits"]["train"]["hard_groups"] == 3500
     assert report["splits"]["test"]["hard_groups"] == 500
+
+
+def test_hard_negative_slice_counts_false_indirect():
+    cases = generate_split("validation", 2, 57)
+    for case in cases:
+        case["state"] = case_state(case["encounters"])
+    predictions = [{"case_id": case["case_id"], "expected": case["label"],
+                    "predicted": "indirect" if case["hard_group"] and
+                    case["label"] == "negative" else case["label"],
+                    "probabilities": {label: 0.9 if label == (
+                        "indirect" if case["hard_group"] and case["label"] == "negative"
+                        else case["label"]) else 0.05 for label in LABELS}}
+                   for case in cases]
+    report = summarize(cases, predictions)
+    assert report["negative_to_indirect"] == 1
+    assert report["targeted_slices"]["hard_negative"]["count"] == 1
+    assert report["targeted_slices"]["hard_negative"]["negative_to_indirect"] == 1
+    assert report["targeted_slices"]["nonhard_negative"]["accuracy"] == 1

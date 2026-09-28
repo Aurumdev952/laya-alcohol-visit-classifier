@@ -149,8 +149,9 @@ def _hard_group(split: str, group_index: int, family_id: str, complaint: str,
     contexts = (DEVELOPMENTAL_CONTEXTS if developmental else
                 TEST_ONLY_CONTEXTS if split == "test" and group_index % 4 == 0 else
                 HARD_CONTEXTS)
+    context_index = group_index // 4 if contexts is TEST_ONLY_CONTEXTS else group_index // 2
     category, negative_event, indirect_event, incidental, other_drinking = contexts[
-        (group_index // 2) % len(contexts)]
+        context_index % len(contexts)]
     event_template, alcohol_template = SURFACE[split]
     common = _backgrounds(rng, complaint, style)
     extra = 16 if group_index % 20 == 0 else 2 if group_index % 5 == 0 else 0

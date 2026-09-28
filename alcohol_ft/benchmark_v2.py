@@ -22,6 +22,8 @@ def summarize(cases: list[dict], predictions: list[dict]) -> dict:
     report = metrics(ordered)
     report["negative_to_direct"] = sum(r["expected"] == "negative" and r["predicted"] == "direct"
                                        for r in ordered)
+    report["negative_to_indirect"] = sum(r["expected"] == "negative" and r["predicted"] == "indirect"
+                                         for r in ordered)
     report["high_confidence_errors_90"] = sum(r["expected"] != r["predicted"] and
                                               r["probabilities"][r["predicted"]] >= 0.9 for r in ordered)
     if any("components" in row for row in ordered):
@@ -51,13 +53,20 @@ def summarize(cases: list[dict], predictions: list[dict]) -> dict:
                                        "alcohol" in c["state"].lower()],
         "negative_without_alcohol_word": [c for c in cases if c["label"] == "negative" and
                                           "alcohol" not in c["state"].lower()],
+        "hard_context": [c for c in cases if c.get("hard_group") is True],
+        "hard_negative": [c for c in cases if c.get("hard_group") is True and
+                          c["label"] == "negative"],
+        "nonhard_negative": [c for c in cases if c.get("hard_group") is False and
+                             c["label"] == "negative"],
     }.items():
         if selected:
             values = [by_case[c["case_id"]] for c in selected]
             slices[name] = {"count": len(values), "accuracy": statistics.mean(
                 row["expected"] == row["predicted"] for row in values),
                 "negative_to_direct": sum(row["expected"] == "negative" and row["predicted"] == "direct"
-                                          for row in values)}
+                                          for row in values),
+                "negative_to_indirect": sum(row["expected"] == "negative" and
+                                             row["predicted"] == "indirect" for row in values)}
     report["targeted_slices"] = slices
     categories = {}
     for category in sorted({case.get("signal_category", "other") for case in cases}):
@@ -65,7 +74,9 @@ def summarize(cases: list[dict], predictions: list[dict]) -> dict:
         categories[category] = {"count": len(values), "accuracy": statistics.mean(
             row["expected"] == row["predicted"] for row in values),
             "negative_to_direct": sum(row["expected"] == "negative" and row["predicted"] == "direct"
-                                      for row in values)}
+                                      for row in values),
+            "negative_to_indirect": sum(row["expected"] == "negative" and
+                                         row["predicted"] == "indirect" for row in values)}
     report["category_slices"] = categories
     return report
 

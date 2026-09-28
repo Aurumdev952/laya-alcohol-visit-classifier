@@ -61,7 +61,7 @@ def audit(data_dir: Path, tokenizer_path: str | None = None) -> dict:
         if len(hard) != (SPLITS[part] + 1) // 2:
             raise ValueError(f"hard-negative coverage mismatch: {part}")
         seen_test_only = {r["hard_category"] for r in hard} & test_only
-        if (part == "test") != bool(seen_test_only):
+        if (part == "test" and seen_test_only != test_only) or (part != "test" and seen_test_only):
             raise ValueError(f"test-only hard context leakage/absence: {part}")
         lengths = sorted(len(tokenizer(r["state"], add_special_tokens=False)["input_ids"])
                          for r in rows) if tokenizer else []

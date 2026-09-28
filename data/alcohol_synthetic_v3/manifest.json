@@ -159,14 +159,16 @@
       "hard_groups": 500,
       "hard_negative_categories": {
         "pothole": 40,
-        "elevator": 101,
-        "playground": 100,
+        "elevator": 51,
+        "trolley": 49,
         "prenatal_record": 49,
         "bus": 19,
         "curb": 20,
         "electrical_fire": 41,
+        "ladder": 51,
         "prenatal_screen": 49,
         "stairway": 40,
+        "playground": 50,
         "debris": 41
       },
       "families": {
@@ -197,7 +199,7 @@
     "train": "34e41769312e8b6bb3219c9ba1b3dbaf6212e13666399854b7a39d054c4e3f74",
     "validation": "68566cc49b55142875fcb07569cea8104b60bf829bb4a2f8a001dc82c046d3b1",
     "calibration": "20052234bc6bccdfb0dc2ba49cbb1283319ca34bcb30bb5b316bf61d64232947",
-    "test": "07723cdcaa6f42786f12d3589ca3e47029c1f47cbd58784091872d141422413a"
+    "test": "11e1dfd4911675d9b0d1b72f7f2810787ca3cce01c7ef554a4f8d3ae322f9835"
   },
   "caveat": "Synthetic development data; no clinical performance claim."
 }
