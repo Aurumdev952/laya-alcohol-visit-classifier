@@ -1,0 +1,203 @@
+{
+  "version": 3,
+  "source": "fully_synthetic",
+  "seed": 20260929,
+  "counts": {
+    "train": {
+      "total": 21000,
+      "labels": {
+        "negative": 7000,
+        "indirect": 7000,
+        "direct": 7000
+      }
+    },
+    "validation": {
+      "total": 3000,
+      "labels": {
+        "indirect": 1000,
+        "negative": 1000,
+        "direct": 1000
+      }
+    },
+    "calibration": {
+      "total": 3000,
+      "labels": {
+        "direct": 1000,
+        "indirect": 1000,
+        "negative": 1000
+      }
+    },
+    "test": {
+      "total": 3000,
+      "labels": {
+        "indirect": 1000,
+        "direct": 1000,
+        "negative": 1000
+      }
+    }
+  },
+  "coverage": {
+    "train": {
+      "groups": 7000,
+      "hard_groups": 3500,
+      "hard_negative_categories": {
+        "shelf": 275,
+        "pothole": 274,
+        "bus": 274,
+        "stairway": 274,
+        "wet_floor": 275,
+        "exercise": 273,
+        "electrical_fire": 275,
+        "workplace": 274,
+        "sports": 275,
+        "curb": 275,
+        "mechanical_collision": 275,
+        "debris": 275,
+        "prenatal_screen": 103,
+        "prenatal_record": 103
+      },
+      "families": {
+        "back": 1236,
+        "finger": 1233,
+        "hip": 1236,
+        "ribs": 1236,
+        "developmental": 1233,
+        "forearm": 1233,
+        "ankle": 1236,
+        "hand": 1236,
+        "face": 1236,
+        "knee": 1236,
+        "scalp": 1236,
+        "elbow": 1236,
+        "shin": 1233,
+        "neck": 1236,
+        "wrist": 1236,
+        "shoulder": 1236,
+        "foot": 1236
+      }
+    },
+    "validation": {
+      "groups": 1000,
+      "hard_groups": 500,
+      "hard_negative_categories": {
+        "wet_floor": 39,
+        "sports": 40,
+        "bus": 38,
+        "exercise": 38,
+        "mechanical_collision": 40,
+        "electrical_fire": 40,
+        "prenatal_record": 15,
+        "pothole": 39,
+        "stairway": 39,
+        "debris": 40,
+        "prenatal_screen": 14,
+        "curb": 40,
+        "shelf": 39,
+        "workplace": 39
+      },
+      "families": {
+        "wrist": 177,
+        "foot": 177,
+        "ribs": 177,
+        "elbow": 177,
+        "shin": 174,
+        "ankle": 177,
+        "developmental": 174,
+        "finger": 177,
+        "back": 177,
+        "scalp": 177,
+        "knee": 177,
+        "hand": 177,
+        "neck": 177,
+        "shoulder": 177,
+        "hip": 177,
+        "forearm": 174,
+        "face": 177
+      }
+    },
+    "calibration": {
+      "groups": 1000,
+      "hard_groups": 500,
+      "hard_negative_categories": {
+        "workplace": 39,
+        "electrical_fire": 40,
+        "stairway": 39,
+        "bus": 38,
+        "shelf": 39,
+        "pothole": 39,
+        "debris": 40,
+        "curb": 40,
+        "wet_floor": 39,
+        "exercise": 38,
+        "sports": 40,
+        "prenatal_screen": 14,
+        "mechanical_collision": 40,
+        "prenatal_record": 15
+      },
+      "families": {
+        "foot": 177,
+        "face": 177,
+        "elbow": 177,
+        "wrist": 177,
+        "forearm": 174,
+        "scalp": 177,
+        "shoulder": 177,
+        "hand": 177,
+        "knee": 177,
+        "back": 177,
+        "neck": 177,
+        "developmental": 174,
+        "shin": 174,
+        "hip": 177,
+        "ankle": 177,
+        "ribs": 177,
+        "finger": 177
+      }
+    },
+    "test": {
+      "groups": 1000,
+      "hard_groups": 500,
+      "hard_negative_categories": {
+        "pothole": 40,
+        "elevator": 101,
+        "playground": 100,
+        "prenatal_record": 49,
+        "bus": 19,
+        "curb": 20,
+        "electrical_fire": 41,
+        "prenatal_screen": 49,
+        "stairway": 40,
+        "debris": 41
+      },
+      "families": {
+        "thigh": 501,
+        "ankle": 90,
+        "neurodevelopment": 498,
+        "ribs": 90,
+        "hand": 87,
+        "jaw": 501,
+        "scalp": 90,
+        "shoulder": 90,
+        "forearm": 87,
+        "elbow": 87,
+        "neck": 87,
+        "wrist": 90,
+        "hip": 87,
+        "developmental": 87,
+        "knee": 90,
+        "back": 87,
+        "finger": 87,
+        "face": 90,
+        "foot": 87,
+        "shin": 87
+      }
+    }
+  },
+  "sha256": {
+    "train": "34e41769312e8b6bb3219c9ba1b3dbaf6212e13666399854b7a39d054c4e3f74",
+    "validation": "68566cc49b55142875fcb07569cea8104b60bf829bb4a2f8a001dc82c046d3b1",
+    "calibration": "20052234bc6bccdfb0dc2ba49cbb1283319ca34bcb30bb5b316bf61d64232947",
+    "test": "07723cdcaa6f42786f12d3589ca3e47029c1f47cbd58784091872d141422413a"
+  },
+  "caveat": "Synthetic development data; no clinical performance claim."
+}
