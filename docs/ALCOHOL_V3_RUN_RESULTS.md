@@ -1,5 +1,7 @@
 # Alcohol attribution v3 run results
 
+Analysis of the direct-class regression: [DIRECT_RECALL_INVESTIGATION.md](DIRECT_RECALL_INVESTIGATION.md).
+
 ## Run and protocol
 
 The v3 run used 30,000 fully synthetic case reports: 21,000 train, 3,000 validation, 3,000 calibration, and 3,000 locked test. Each split contains complete direct/indirect/negative triplets. Half of the groups combine a non-alcohol visit mechanism with an incidental alcohol mention or link another person's impairment to the visit. The base checkpoint, `rlcd_ce` objective, training defaults, seed 42, and 1,024-token limit match v2. The selected epoch was 4 of 4 by validation macro F1. Its export temperature was 2.481, fit on the calibration split. The final checkpoint is `runs/alcohol-v3/laya_rlcd-seed42/final` (local, gitignored).
